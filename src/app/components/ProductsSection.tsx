@@ -64,7 +64,7 @@ const products: Product[] = [
     ],
     description: {
       en: 'Premium imported grass for sensitive horses. Low in calcium and easy to digest, making it the safest option for horses prone to colic or obesity.',
-      ar: 'علف مستورد فاخر للخيول الحساسة. منخفض ��لكالسيوم وسهل الهضم، مما يجعله الخيار الأكثر أمانًا للخيول المعرضة للمغص أو السمنة.'
+      ar: 'علف مستورد فاخر للخيول الحساسة. منخفض الكالسيوم وسهل الهضم، مما يجعله الخيار الأكثر أمانًا للخيول المعرضة للمغص أو السمنة.'
     }
   },
   {
