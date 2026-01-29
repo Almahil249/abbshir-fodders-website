@@ -23,6 +23,7 @@ export function ProductsSection() {
 
   const selectedProduct = selectedProductId ? products.find((p) => p.id === selectedProductId) : null;
 
+  /* Existing code... */
   const navigateProduct = (direction: 'next' | 'prev', e: React.MouseEvent) => {
     e.stopPropagation();
     if (!selectedProductId) return;
@@ -34,6 +35,24 @@ export function ProductsSection() {
 
     setSelectedProductId(products[newIndex].id);
   };
+
+  // Listen for external product selection events
+  useState(() => {
+    // Using simple event listener since we don't have a global store
+    const handleOpenProduct = (e: CustomEvent) => {
+      const { id } = e.detail;
+      if (id) {
+        setSelectedProductId(Number(id));
+        // Reset scroll for mobile consistency if needed, or let the caller handle scrolling
+      }
+    };
+
+    // @ts-ignore - CustomEvent types
+    window.addEventListener('open-product', handleOpenProduct);
+    // @ts-ignore
+    return () => window.removeEventListener('open-product', handleOpenProduct);
+  });
+  /* ... */
 
   const handleCardClick = (id: number) => {
     // Desktop: Always open modal (or switch current modal content if clicked externally, though modal covers screen)

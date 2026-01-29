@@ -1,8 +1,21 @@
 import { useLanguage } from '@/app/components/LanguageContext';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import productsData from '@/app/data/products.json';
 
 export function Footer() {
   const { language, t } = useLanguage();
+
+  const handleProductClick = (id: number) => {
+    const element = document.getElementById('products');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      // Dispatch open event
+      setTimeout(() => {
+        const event = new CustomEvent('open-product', { detail: { id } });
+        window.dispatchEvent(event);
+      }, 500);
+    }
+  };
 
   return (
     <footer id="contact" className="bg-gray-900 text-gray-300">
@@ -60,11 +73,21 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-bold text-white mb-4">{t('footer.products')}</h4>
             <ul className="space-y-2 text-sm">
-              <li className="hover:text-emerald-500 transition cursor-pointer">Alfalfa Hay</li>
-              <li className="hover:text-emerald-500 transition cursor-pointer">Rhodes Grass</li>
-              <li className="hover:text-emerald-500 transition cursor-pointer">Barley</li>
-              <li className="hover:text-emerald-500 transition cursor-pointer">Timothy Hay</li>
-              <li className="hover:text-emerald-500 transition cursor-pointer">Sudan Grass</li>
+              {productsData.slice(0, 4).map((product) => (
+                <li
+                  key={product.id}
+                  onClick={() => handleProductClick(product.id)}
+                  className="hover:text-emerald-500 transition cursor-pointer"
+                >
+                  {product.name[language as 'en' | 'ar']}
+                </li>
+              ))}
+              <li
+                onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
+                className="hover:text-emerald-500 transition cursor-pointer font-semibold text-emerald-400"
+              >
+                {language === 'ar' ? 'المزيد...' : 'More...'}
+              </li>
             </ul>
           </div>
 
