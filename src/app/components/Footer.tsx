@@ -24,7 +24,7 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-4">
-              {language === 'ar' ? 'أبشر للأعلاف' : 'Abbshir'}
+              {language === 'ar' ? 'أبشر للأعلاف' : 'Abbshir Fodders'}
             </h3>
             <p className="text-gray-400 leading-relaxed mb-4">
               {language === 'ar'

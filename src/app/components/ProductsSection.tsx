@@ -165,7 +165,7 @@ export function ProductsSection() {
                             className="w-full mt-4 py-2 text-emerald-600 text-sm font-bold bg-emerald-50 rounded-lg"
                             onClick={(e) => { e.stopPropagation(); setSelectedProductId(null); }}
                           >
-                            Close
+                            {language === 'ar' ? 'إغلاق' : 'Close'}
                           </button>
                         </motion.div>
                       )}
@@ -252,7 +252,7 @@ export function ProductsSection() {
 
                   <div className="mt-auto pt-8 border-t border-gray-100 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm text-gray-500 font-medium">Best For:</span>
+                      <span className="text-sm text-gray-500 font-medium">{t('products.bestFor')}:</span>
                       <div className="flex gap-1 text-2xl">
                         {selectedProduct.targets.map(t => <span key={t}>{t}</span>)}
                       </div>
@@ -264,7 +264,7 @@ export function ProductsSection() {
                         onClick={(e) => navigateProduct('prev', e)}
                         className="p-3 rounded-full hover:bg-gray-100 transition-colors border border-gray-200"
                       >
-                        <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className={`w-5 h-5 text-gray-700 ${language === 'ar' ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
                       </button>
@@ -272,7 +272,7 @@ export function ProductsSection() {
                         onClick={(e) => navigateProduct('next', e)}
                         className="p-3 rounded-full hover:bg-gray-100 transition-colors border border-gray-200"
                       >
-                        <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className={`w-5 h-5 text-gray-700 ${language === 'ar' ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </button>

@@ -48,7 +48,7 @@ export function Navigation({ onContactClick }: NavigationProps) {
           <div className="flex-shrink-0 flex items-center gap-3">
             <img src={logo} alt="Abbshir Logo" className="h-12 w-auto" />
             <h1 className="text-2xl font-bold text-emerald-700">
-              {language === 'ar' ? 'أبشر للأعلاف' : 'Abbshir'}
+              {language === 'ar' ? 'أبشر للأعلاف' : 'Abbshir Fodders'}
             </h1>
           </div>
 

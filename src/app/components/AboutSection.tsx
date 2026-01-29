@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useLanguage } from '@/app/components/LanguageContext';
 import { Award, Microscope, Truck, Leaf, TrendingUp, Calendar } from 'lucide-react';
+import aboutImage from '@/assets/aboutCover.png';
 
 export function AboutSection() {
   const { t } = useLanguage();
@@ -65,9 +66,6 @@ export function AboutSection() {
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               {t('about.description')}
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              {t('about.quality')}
-            </p>
           </motion.div>
 
           {/* Image */}
@@ -80,7 +78,7 @@ export function AboutSection() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1767938072214-dfa75c3b6dd2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmFiaWFuJTIwaG9yc2UlMjBzdGFibGV8ZW58MXx8fHwxNzY5MTQyMjMyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src={aboutImage}
                 alt="Arabian horse"
                 className="w-full h-96 object-cover"
               />

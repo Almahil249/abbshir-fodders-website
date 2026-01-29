@@ -22,26 +22,26 @@ const translations: Record<string, Record<Language, string>> = {
 
   // Hero
   'hero.headline': {
-    en: "Premium Fodder for the UAE's Champions & Livestock",
-    ar: 'أجود أنواع الأعلاف لأبطال ومواشي الإمارات'
+    en: "Looking for the Best Feed for Your Livestock? With Abbshir, Consider it Done!",
+    ar: 'تبحث عن أفضل علف لحلالك؟ "أبشر" بالسعد والجودة!'
   },
   'hero.subheadline': {
-    en: 'Supplying high-protein Alfalfa, Rhodes, and specialized grains for Camels, Horses, and Livestock across the Emirates.',
-    ar: 'نوفر البرسيم عالي البروتين، الرودس، والحبوب المتخصصة للإبل والخيول والماشية في جميع أنحاء الإمارات.'
+    en: 'We provide premium high-protein Alfalfa, Rhodes grass, and specialized grains tailored for the UAE’s finest camels, horses, and livestock. Quality you can trust, delivered straight to you.',
+    ar: 'نوفر لك أجود أنواع البرسيم عالي البروتين، والرودس، والحبوب المتخصصة التي تليق بأصايل الإمارات من الهجن والخيول والمواشي. جودة نضمنها، وتوصيل يوصلك وين ما كنت.'
   },
 
   // About
   'about.title': {
-    en: 'Fueling Performance. Nurturing Heritage.',
-    ar: 'أبشر للأعلاف: جودة تغذي الطموح'
+    en: 'Abbshir Feeds: Your Partner in the Field, Your Partner in Success',
+    ar: 'أبشر للأعلاف: رفيقك في المراح، وشريكك في النجاح'
   },
   'about.description': {
-    en: "At Abbshir, we understand that nutrition is the foundation of every champion—whether it's a racing camel on the track or livestock in the dairy farm. Based in the UAE, we specialize in the sourcing and trading of premium-grade fodder, ensuring a consistent supply chain for breeders and farmers who refuse to compromise on quality.",
-    ar: 'في شركة "أبشر"، نؤمن بأن التغذية السليمة هي حجر الزاوية لصحة الثروة الحيوانية في الإمارات. نحن أكثر من مجرد موردين؛ نحن شركاؤكم في النجاح، نوفر أجود أنواع الأعلاف التي تليق بالأصايل من الهجن والخيول، وتدعم إنتاجية المواشي.'
+    en: "At Abbshir, we don’t just supply feed; we stand by every livestock owner who aims for the top. We understand that your animals are your pride and joy. That’s why we dedicate our expertise to selecting nutrition that boosts their health and makes you proud.",
+    ar: 'في "أبشر"، ما نعتبر أنفسنا مجرد موردين، نحن شركاء لكل صاحب حلال يطمح للأفضل. نعلم أن ثروتك الحيوانية هي أغلى ما تملك، لذلك نضع بين يديك خلاصة خبرتنا في اختيار التغذية التي ترفع الرأس وتجمل المراح.'
   },
   'about.quality': {
-    en: "We don't just sell feed; we provide nutritional security. Our selection—from protein-rich Alfalfa to high-fiber Rhodes—is rigorously inspected to ensure it is free from dust, mold, and impurities, maximizing digestion and health for your animals.",
-    ar: 'نلتزم بتقديم خيارات متنوعة من البرسيم (الجت)، والرودس، والشعير، تم اختيارها بعناية فائقة لضمان خلوها من الشوائب والحفاظ على قيمتها الغذائية. هدفنا هو ضمان صحة قطعانكم، وزيادة الإنتاج، ورفع معدلات التحويل الغذائي بأعلى معايير الجودة.'
+    en: "",
+    ar: ""
   },
 
   // Trust Badges
@@ -50,12 +50,12 @@ const translations: Record<string, Record<Language, string>> = {
   'badge.fastDelivery': { en: 'Fast Delivery', ar: 'توصيل سريع' },
 
   // Key Values
-  'value.sourcing.title': { en: 'Premium Sourcing', ar: 'جودة لا تضاهى' },
-  'value.sourcing.desc': { en: "Directly imported from the world's best harvest regions.", ar: 'مستورد مباشرة من أفضل المصادر العالمية لضمان الجودة.' },
-  'value.integrity.title': { en: 'Nutritional Integrity', ar: 'تنوع غذائي شامل' },
-  'value.integrity.desc': { en: 'Lab-verified protein and fiber content for optimal weight gain and milk production.', ar: 'حلول متكاملة للتسمين، إدرار الحليب، وسباقات الهجن والخيول.' },
-  'value.availability.title': { en: 'Year-Round Availability', ar: 'إمداد مستمر' },
-  'value.availability.desc': { en: 'Consistent stock for Camels, Horses, Cows, and Sheep, unaffected by seasonal shifts.', ar: 'مخزون استراتيجي يضمن توفر المنتج لكم على مدار العام.' },
+  'value.sourcing.title': { en: 'Quality That Speaks for Itself', ar: 'جودة تبيض الوجه' },
+  'value.sourcing.desc': { en: "We handpick our Alfalfa, Rhodes, and Barley with extreme care, ensuring they are pure, nutrient-rich, and free from impurities.", ar: 'نختار لك البرسيم (الجت) والرودس والشعير بعناية فائقة، لضمان خلوها من الشوائب ووصولها بكامل قيمتها الغذائية.' },
+  'value.integrity.title': { en: "Your Animals' Health is Our Priority", ar: 'صحة حلالك أولويتنا' },
+  'value.integrity.desc': { en: 'Our goal goes beyond selling; we want to see your livestock thriving with high productivity and peak performance.', ar: 'هدفنا مو بس بيع الأعلاف، هدفنا نشوف حلالك في أفضل حال، بإنتاجية عالية ومعدلات نمو ممتازة.' },
+  'value.availability.title': { en: 'A Foundation of Trust', ar: 'ثقة متبادلة' },
+  'value.availability.desc': { en: 'We built "Abbshir" on honesty and reliability. We believe that proper nutrition is the secret ingredient to every winning race and every healthy herd.', ar: 'بنينا "أبشر" على الصدق والأمانة، لأننا نؤمن أن التغذية السليمة هي أساس الفوز والإنتاج.' },
 
   // Products
   'products.title': { en: 'Our Premium Products', ar: 'منتجاتنا المميزة' },

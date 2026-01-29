@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { useLanguage } from '@/app/components/LanguageContext';
+import heroImage from '@/assets/HeroCover.png';
 
 export function HeroSection() {
   const { t } = useLanguage();
@@ -10,7 +11,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
           <img
-            src="https://images.unsplash.com/photo-1763535697495-29dde944f098?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyYWNpbmclMjBjYW1lbCUyMGRlc2VydCUyMFVBRXxlbnwxfHx8fDE3NjkxOTUwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+            src={heroImage}
             alt="Desert camel"
             className="w-full h-full object-cover"
           />
@@ -25,11 +26,11 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight"
           >
             {t('hero.headline')}
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
