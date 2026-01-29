@@ -81,10 +81,17 @@ const translations: Record<string, Record<Language, string>> = {
   'footer.abuDhabi': { en: 'Abu Dhabi, UAE', ar: 'أبوظبي، الإمارات' },
   'footer.dubai': { en: 'Dubai, UAE', ar: 'دبي، الإمارات' },
   'footer.copyright': { en: '© 2026 Abbshir. All rights reserved.', ar: '© 2026 أبشر للأعلاف. جميع الحقوق محفوظة.' },
+
+  // Errors
+  'error.404.title': { en: '404 - Page Not Found', ar: '404 - الصفحة غير موجودة' },
+  'error.404.msg': { en: "The page you looking for doesn't exist or has been moved.", ar: 'الصفحة التي تبحث عنها غير موجودة أو تم نقلها.' },
+  'error.500.title': { en: '500 - Server Error', ar: '500 - خطأ في الخادم' },
+  'error.500.msg': { en: 'Something went wrong on our end. Please try again later.', ar: 'حدث خطأ ما من جانبنا. يرجى المحاولة مرة أخرى لاحقاً.' },
+  'error.backHome': { en: 'Back to Home', ar: 'العودة للرئيسية' },
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('ar');
 
   const toggleLanguage = () => {
     setLanguage(prev => prev === 'en' ? 'ar' : 'en');
@@ -93,6 +100,24 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const t = (key: string): string => {
     return translations[key]?.[language] || key;
   };
+
+  // Update language based on URL on mount
+  React.useEffect(() => {
+    const checkUrlForLanguage = () => {
+      // Check path (e.g., website.com/en) or query parameter (e.g., website.com/?lang=en)
+      const path = window.location.pathname.toLowerCase();
+      const params = new URLSearchParams(window.location.search);
+      const queryLang = params.get('lang')?.toLowerCase();
+
+      if (path.split('/').includes('en') || queryLang === 'en') {
+        setLanguage('en');
+      } else if (path.split('/').includes('ar') || queryLang === 'ar') {
+        setLanguage('ar');
+      }
+    };
+
+    checkUrlForLanguage();
+  }, []);
 
   // Update document title and dir attribute when language changes
   React.useEffect(() => {
