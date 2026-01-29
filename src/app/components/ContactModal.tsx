@@ -22,7 +22,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     e.preventDefault();
     // Create WhatsApp message
     const message = `Hello! My name is ${formData.name}.\n\nI'm interested in: ${formData.product}\n\nMessage: ${formData.message}\n\nPhone: ${formData.phone}`;
-    const whatsappUrl = `https://wa.me/971505018802?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/971506785893?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     onClose();
   };
@@ -122,7 +122,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               type="button"
               onClick={() => {
                 const message = `Hello from ${formData.name || 'a customer'}! I'd like to know more about your products.`;
-                const whatsappUrl = `https://wa.me/971505018802?text=${encodeURIComponent(message)}`;
+                const whatsappUrl = `https://wa.me/971506785893?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
               }}
               className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition shadow-md"

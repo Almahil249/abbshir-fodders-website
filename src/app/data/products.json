@@ -2,40 +2,48 @@
     {
         "id": 1,
         "name": {
-            "en": "Alfalfa Hay (Jett)",
+            "en": "Alfalfa Hay (Jett / Bersim)",
             "ar": "علف الجت (البرسيم)"
         },
-        "image": "https://images.unsplash.com/photo-1689796975697-e1735a01b55a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmVlbiUyMGhheSUyMGJhbGVzfGVufDF8fHx8MTc2OTE5NTAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+        "image": "https://deeringfarmsllc.com/wp-content/uploads/2025/01/organic-feed-1080x760.jpg",
         "targets": [
             "🐪",
             "🐎",
-            "🐄"
+            "🐄",
+            "🐑",
+            "🐐"
         ],
         "extraImages": [
-            "https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800"
+            "https://www.deercreekseed.com/media/mageplaza/blog/post/s/h/sheep_4.jpeg",
+            "https://s3.mordorintelligence.com/alfalfa-hay-market/alfalfa-hay-market-1768220730756-major-players.webp"
         ],
         "goal": {
-            "en": "Muscle Growth & Milk Production",
-            "ar": "بناء العضلات وإدرار الحليب"
+            "en": "Growth, Milk Production & Energy",
+            "ar": "النمو وإدرار الحليب والطاقة"
         },
         "stats": [
             {
-                "label": "Protein",
-                "value": "18-22%"
+                "label": {
+                    "en": "Protein",
+                    "ar": "البروتين"
+                },
+                "value": "16-22%"
             },
             {
-                "label": "Fiber",
-                "value": "25%"
+                "label": {
+                    "en": "Energy (ME)",
+                    "ar": "الطاقة (ME)"
+                },
+                "value": "1.8-2.2 Mcal/kg"
             }
         ],
         "description": {
-            "en": "The premium choice for high-performance animals. Rich in protein and calcium, ideal for racing camels, broodmares, and dairy cattle requiring maximum nutrition.",
-            "ar": "الخيار الأول للأداء العالي. غني بالبروتين والكالسيوم، مثالي لسباقات الهجن، والخيول، والأبقار الحلوب التي تحتاج إلى تغذية مكثفة."
+            "en": "Top balanced forage loved by breeders. High in protein and vitamins, supports strong growth, milk yield, and natural immunity for all animals.",
+            "ar": "أفضل علف متوازن يحبه المربون. غني بالبروتين والفيتامينات، يدعم النمو القوي وإنتاج الحليب والمناعة الطبيعية لكل الحيوانات."
         },
         "extraDetails": {
-            "en": "The premium choice for high-performance animals. Sourced from the finest farms, our Alfalfa Hay is cured to preserve maximum leaf retention and nutritional value. Rich in protein (18-22%) and calcium, it supports muscle development and bone health. Ideal for racing camels, broodmares, and dairy cattle requiring maximum nutrition for peak output.",
-            "ar": "الخيار الأول للأداء العالي. يتم حصاد برسيم الجت من أفضل المزارع ومعالجته للحفاظ على الأوراق والقيمة الغذائية الكاملة. غني بالبروتين (18-22%) والكالسيوم مما يدعم نمو العضلات وصحة العظام. مثالي لسباقات الهجن، والخيول، والأبقار الحلوب التي تحتاج إلى تغذية مكثفة لضمان أعلى مستويات الإنتاج."
+            "en": "Our premium Alfalfa (Jett) comes from trusted sources like Sudan, Egypt, Spain, USA, and South Africa. Perfect as a daily base for camels (especially racing), dairy cows, ewes/goats in lactation, and growing animals. Helps improve rumen health, reduce digestive issues, boost meat quality, and increase milk production. Rich in calcium and vitamins A/E for bone strength and overall vitality.",
+            "ar": "الجت الممتاز لدينا من مصادر موثوقة مثل السودان ومصر وإسبانيا وأمريكا وجنوب أفريقيا. مثالي كأساس يومي للإبل (خاصة السباق)، الأبقار الحلوب، النعاج والماعز المرضعة، والحيوانات النامية. يحسن صحة الكرش، يقلل مشاكل الهضم، يرفع جودة اللحم وإنتاج الحليب. غني بالكالسيوم وفيتامين A وE لقوة العظام والحيوية العامة."
         }
     },
     {
@@ -44,198 +52,54 @@
             "en": "Rhodes Grass",
             "ar": "علف الرودس"
         },
-        "image": "https://images.unsplash.com/photo-1697191579403-d1853ae3f9ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyaG9kZXMlMjBncmFzcyUyMGhheXxlbnwxfHx8fDE3NjkxOTUwMDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "image": "https://get.pxhere.com/photo/landscape-plant-hay-bale-field-meadow-grain-prairie-harvest-crop-pasture-soil-agriculture-plain-straw-bale-grassland-straw-plateau-ecosystem-region-steppe-rural-area-grass-family-480927.jpg",
         "targets": [
             "🐪",
             "🐄",
-            "🐑"
+            "🐑",
+            "🐐",
+            "🐎"
         ],
         "extraImages": [
-            "https://images.unsplash.com/photo-1605000797499-95a51c52b69f?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1472396961693-142e6e594e0c?auto=format&fit=crop&q=80&w=800"
+            "https://p1.hippopx.com/preview/339/398/374/hay-bale-hay-forage-dry-grass.jpg",
+            "https://p3.hippopx.com/preview/248/287/hay-bales-straw-bales-harvest-agriculture-nature-field-country-life-landscape-straw-field-straw.jpg"
         ],
         "goal": {
-            "en": "Maintenance & Digestion",
-            "ar": "صحة الهضم واستدامة النشاط"
+            "en": "Rumen Health & Daily Maintenance",
+            "ar": "صحة الكرش والتغذية اليومية"
         },
         "stats": [
             {
-                "label": "Protein",
-                "value": "9-12%"
+                "label": {
+                    "en": "Protein",
+                    "ar": "البروتين"
+                },
+                "value": "7-14%"
             },
             {
-                "label": "Fiber",
-                "value": "30%+"
+                "label": {
+                    "en": "Fiber (NDF)",
+                    "ar": "الألياف (NDF)"
+                },
+                "value": "55-65%"
             }
         ],
         "description": {
-            "en": "The UAE's staple forage. A balanced, high-fiber grass essential for maintaining healthy rumen function in camels and livestock. Perfect for daily feeding.",
-            "ar": "العلف الأساسي في الإمارات. حشائش متوازنة وعالية الألياف، ضرورية لصحة الجهاز الهضمي للهجن والمواشي. مثالي للتغذية اليومية المستمرة."
+            "en": "Reliable high-fiber grass that's easy to digest. Great for rumen health and daily feeding without extra protein overload.",
+            "ar": "علف عشبي موثوق عالي الألياف وسهل الهضم. رائع لصحة الكرش والتغذية اليومية بدون زيادة بروتين زائدة."
         },
         "extraDetails": {
-            "en": "The UAE's staple forage. A balanced, high-fiber grass essential for maintaining healthy rumen function in camels and livestock. Our Rhodes grass is free from dust and mold, ensuring respiratory health. Perfect for daily feeding as a base diet to maintain weight and digestive consistency.",
-            "ar": "العلف الأساسي في الإمارات. حشائش متوازنة وعالية الألياف، ضرورية لصحة الجهاز الهضمي للهجن والمواشي. يتميز علف الرودس لدينا بخلوه من الأتربة والشوائب لضمان سلامة الجهاز التنفسي. مثالي للتغذية اليومية المستمرة كوجبة أساسية للحفاظ على الوزن واستقرار الهضم."
+            "en": "Sourced from Sudan and Pakistan. Ideal base forage for camels, cattle, sheep/goats, and horses. Long fibers promote rumen movement, reduce digestive upsets, and support steady weight. Economical choice for consistent daily use in maintenance or moderate production stages.",
+            "ar": "من السودان وباكستان. مثالي كعلف أساسي للإبل والأبقار والضأن/الماعز والخيول. الألياف الطويلة تحسن حركة الكرش، تقلل اضطرابات الهضم، وتدعم الوزن المستقر. خيار اقتصادي للاستخدام اليومي المستمر في مراحل الصيانة أو الإنتاج المعتدل."
         }
     },
     {
         "id": 3,
         "name": {
-            "en": "Barley (Sha'eer)",
-            "ar": "علف الشعير"
-        },
-        "image": "https://images.unsplash.com/photo-1557735710-67da6393ff2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXJsZXklMjBncmFpbnxlbnwxfHx8fDE3NjkxOTUwMDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "targets": [
-            "🐑",
-            "🐐",
-            "🐪"
-        ],
-        "extraImages": [
-            "https://images.unsplash.com/photo-1516054575922-f0b8ee4becf1?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1499529112042-9551399ddc5f?auto=format&fit=crop&q=80&w=800"
-        ],
-        "goal": {
-            "en": "Fattening & High Energy",
-            "ar": "تسمين وطاقة قصوى"
-        },
-        "stats": [
-            {
-                "label": "Starch",
-                "value": "55%"
-            },
-            {
-                "label": "Energy",
-                "value": "High"
-            }
-        ],
-        "description": {
-            "en": "A high-energy grain aimed at rapid weight gain and conditioning. The preferred choice for fattening sheep and boosting energy levels in working camels.",
-            "ar": "مصدر الطاقة القصوى. حبوب عالية النشويات تهدف إلى زيادة الوزن بسرعة وتحسين الحالة الجسمانية. الخيار المفضل لتسمين الأغنام ودعم طاقة الهجن."
-        },
-        "extraDetails": {
-            "en": "A high-energy grain aimed at rapid weight gain and conditioning. The preferred choice for fattening sheep and boosting energy levels in working camels. Our Barley is thoroughly cleaned and processed to ensure high starch availability for maximum digestibility and efficiency.",
-            "ar": "مصدر الطاقة القصوى. حبوب عالية النشويات تهدف إلى زيادة الوزن بسرعة وتحسين الحالة الجسمانية. الخيار المفضل لتسمين الأغنام ودعم طاقة الهجن العاملة. يتم تنظيف ومعالجة الشعير لدينا بعناية لضمان أقصى استفادة غذائية وسهولة في الهضم."
-        }
-    },
-    {
-        "id": 4,
-        "name": {
-            "en": "Timothy Hay",
-            "ar": "علف تيموثي"
-        },
-        "image": "https://images.unsplash.com/photo-1745947826055-43921f66d8ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aW1vdGh5JTIwaGF5JTIwZ3Jhc3N8ZW58MXx8fHwxNzY5MTk1MDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-        "targets": [
-            "🐎"
-        ],
-        "extraImages": [
-            "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1598974357801-cbca100e65d3?auto=format&fit=crop&q=80&w=800"
-        ],
-        "goal": {
-            "en": "Colic Prevention & Light Diet",
-            "ar": "وقاية من المغص وخفيف على المعدة"
-        },
-        "stats": [
-            {
-                "label": "Protein",
-                "value": "8-10%"
-            },
-            {
-                "label": "Calcium",
-                "value": "Low"
-            }
-        ],
-        "description": {
-            "en": "Premium imported grass for sensitive horses. Low in calcium and easy to digest, making it the safest option for horses prone to colic or obesity.",
-            "ar": "علف مستورد فاخر للخيول الحساسة. منخفض الكالسيوم وسهل الهضم، مما يجعله الخيار الأكثر أمانًا للخيول المعرضة للمغص أو السمنة."
-        },
-        "extraDetails": {
-            "en": "Premium imported grass for sensitive horses. Low in calcium and easy to digest, making it the safest option for horses prone to colic or obesity.",
-            "ar": "علف مستورد فاخر للخيول الحساسة. منخفض الكالسيوم وسهل الهضم، مما يجعله الخيار الأكثر أمانًا للخيول المعرضة للمغص أو السمنة."
-        }
-    },
-    {
-        "id": 5,
-        "name": {
-            "en": "Sudan Grass",
-            "ar": "سودان جراس"
-        },
-        "image": "https://images.unsplash.com/photo-1689796975697-e1735a01b55a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmVlbiUyMGhheSUyMGJhbGVzfGVufDF8fHx8MTc2OTE5NTAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-        "targets": [
-            "🐄",
-            "🐑"
-        ],
-        "extraImages": [
-            "https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1604085572504-a392ddf0d86a?auto=format&fit=crop&q=80&w=800"
-        ],
-        "goal": {
-            "en": "Bulk & Forage",
-            "ar": "علف مالئ ومشبع"
-        },
-        "stats": [
-            {
-                "label": "Sugar",
-                "value": "Medium"
-            },
-            {
-                "label": "Texture",
-                "value": "Coarse"
-            }
-        ],
-        "description": {
-            "en": "An economical, fast-growing forage suitable for cattle herds. Provides excellent roughage to bulk up the diet and keep livestock satisfied.",
-            "ar": "علف اقتصادي ممتاز لقطعان الأبقار والمواشي. يوفر كمية كبيرة من الألياف الخشنة التي تساعد على الشبع وملء الكرش بتكلفة مناسبة."
-        },
-        "extraDetails": {
-            "en": "An economical, fast-growing forage suitable for cattle herds. Provides excellent roughage to bulk up the diet and keep livestock satisfied.",
-            "ar": "علف اقتصادي ممتاز لقطعان الأبقار والمواشي. يوفر كمية كبيرة من الألياف الخشنة التي تساعد على الشبع وملء الكرش بتكلفة مناسبة."
-        }
-    },
-    {
-        "id": 6,
-        "name": {
-            "en": "Peanut Hay (Foul Sudani)",
+            "en": "Peanut Straw (Foul Sudani)",
             "ar": "تبن الفول السوداني"
         },
-        "image": "https://images.unsplash.com/photo-1697191579403-d1853ae3f9ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyaG9kZXMlMjBncmFzcyUyMGhheXxlbnwxfHx8fDE3NjkxOTUwMDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "targets": [
-            "🐑",
-            "🐄"
-        ],
-        "extraImages": [
-            "https://images.unsplash.com/photo-1582885817887-f273523bd48e?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1595180630018-028a6fcf4722?auto=format&fit=crop&q=80&w=800"
-        ],
-        "goal": {
-            "en": "Palatability & Protein Boost",
-            "ar": "مستساغ جداً ورافع للبروتين"
-        },
-        "stats": [
-            {
-                "label": "Protein",
-                "value": "13-15%"
-            },
-            {
-                "label": "Taste",
-                "value": "Sweet/High"
-            }
-        ],
-        "description": {
-            "en": "Highly palatable leguminous hay. A favorite for sheep and goats due to its taste, offering a good protein boost comparable to lower-grade Alfalfa.",
-            "ar": "علف شهي جدًا ومحبب للأغنام والماعز. يعتبر مصدرًا ممتازًا للبروتين النباتي ويتميز بطعمه الذي يحفز الحيوانات على الأكل بشراهة."
-        },
-        "extraDetails": {
-            "en": "Highly palatable leguminous hay. A favorite for sheep and goats due to its taste, offering a good protein boost comparable to lower-grade Alfalfa.",
-            "ar": "علف شهي جدًا ومحبب للأغنام والماعز. يعتبر مصدرًا ممتازًا للبروتين النباتي ويتميز بطعمه الذي يحفز الحيوانات على الأكل بشراهة."
-        }
-    },
-    {
-        "id": 7,
-        "name": {
-            "en": "Wheat Straw (Tibn)",
-            "ar": "تبن القمح"
-        },
-        "image": "https://images.unsplash.com/photo-1606154358545-f9919f595a3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aGVhdCUyMHN0cmF3fGVufDF8fHx8MTc2OTE5NTAwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "image": "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJoYXJ2ZXN0X2hhcnZlc3RlZF9maWVsZF9zdHJhd18xLWltYWdlLWt5YmRpdnkxLmpwZw.jpg",
         "targets": [
             "🐪",
             "🐄",
@@ -243,30 +107,311 @@
             "🐐"
         ],
         "extraImages": [
-            "https://images.unsplash.com/photo-1589923188900-85dae5233296?auto=format&fit=crop&q=80&w=800",
-            "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=800"
+            "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw1MDUyMTk5ODU1Mi1pbWFnZS1reWNpbnBrei5qcGc.jpg",
+            "https://i0.hippopx.com/photos/374/114/357/grass-meadow-green-spring-preview.jpg"
         ],
         "goal": {
-            "en": "Fiber Filler",
-            "ar": "مصدر ألياف لملء الكرش"
+            "en": "Milk Boost & Easy Digestion",
+            "ar": "رفع إنتاج الحليب وهضم سهل"
         },
         "stats": [
             {
-                "label": "Energy",
-                "value": "Low"
+                "label": {
+                    "en": "Protein",
+                    "ar": "البروتين"
+                },
+                "value": "8-14%"
             },
             {
-                "label": "Function",
-                "value": "Rumen Health"
+                "label": {
+                    "en": "Fiber (NDF)",
+                    "ar": "الألياف (NDF)"
+                },
+                "value": "55-65%"
             }
         ],
         "description": {
-            "en": "The essential mixer. Used to add bulk to concentrate feeds (like grains) to slow digestion and prevent acidity in the stomach.",
-            "ar": "العنصر المكمل الأساسي. يُستخدم لخلطه مع الأعلاف المركزة (مثل الشعير) لزيادة الحجم، وإبطاء الهضم، ومنع الحموضة في معدة الحيوان."
+            "en": "Soft, tasty fibrous forage with good protein. Excellent for sensitive animals and boosting appetite and milk in camels/cattle.",
+            "ar": "علف ليفي ناعم وشهي ببروتين جيد. ممتاز للحيوانات الحساسة وزيادة الشهية والحليب عند الإبل والأبقار."
         },
         "extraDetails": {
-            "en": "The essential mixer. Used to add bulk to concentrate feeds (like grains) to slow digestion and prevent acidity in the stomach.",
-            "ar": "العنصر المكمل الأساسي. يُستخدم لخلطه مع الأعلاف المركزة (مثل الشعير) لزيادة الحجم، وإبطاء الهضم، ومنع الحموضة في معدة الحيوان."
+            "en": "From Pakistan and Sudan, often with some peanut residues for extra palatability. Trusted in UAE camel dairy farms for higher milk yield and quality. Soft fibers aid digestion in young/small animals, improve rumen movement, and work well as a supplement for fattening or low-appetite periods.",
+            "ar": "من باكستان والسودان، وقد يحتوي على بقايا بذور لتحسين الطعم. موثوق في مزارع حليب الإبل بالإمارات لزيادة كمية وجودة الحليب. الألياف الناعمة تساعد الهضم عند الصغار، تحسن حركة الكرش، وتصلح كمكمل للتسمين أو فترات ضعف الشهية."
+        }
+    },
+    {
+        "id": 4,
+        "name": {
+            "en": "Fenugreek Straw",
+            "ar": "تبن الحلبة"
+        },
+        "image": "https://deeringfarmsllc.com/wp-content/uploads/2025/01/alfalfa2-1080x760.jpg",
+        "targets": [
+            "🐑",
+            "🐐",
+            "🐪"
+        ],
+        "extraImages": [
+            "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvd2s0NjM3MDA1NC1pbWFnZS1rcDZjNWZsZS5qcGc.jpg",
+            "https://i0.hippopx.com/photos/292/22/386/horse-gram-kulthi-pulse-crop-residue-preview.jpg"
+        ],
+        "goal": {
+            "en": "Appetite Stimulation & Milk/Meat Quality",
+            "ar": "فتح الشهية وجودة اللحم/الحليب"
+        },
+        "stats": [
+            {
+                "label": {
+                    "en": "Protein",
+                    "ar": "البروتين"
+                },
+                "value": "6-8%"
+            },
+            {
+                "label": {
+                    "en": "Fiber (NDF)",
+                    "ar": "الألياف (NDF)"
+                },
+                "value": "55-65%"
+            }
+        ],
+        "description": {
+            "en": "Aromatic straw that boosts appetite naturally. Great for picky eaters like sheep/goats in cold weather or low intake periods.",
+            "ar": "تبن عطري يفتح الشهية بشكل طبيعي. رائع للحيوانات اللي أكلها قليل مثل الضأن والماعز في البرد أو ضعف الشهية."
+        },
+        "extraDetails": {
+            "en": "Sourced from Pakistan. Strong scent encourages higher feed intake, helping weak or recovering animals. Supports better milk flow in ewes/goats and improves meat whiteness/quality. Medium fibers are easy on digestion - ideal supplement when appetite drops.",
+            "ar": "من باكستان. الرائحة القوية تشجع على أكل أكثر، تساعد الحيوانات الضعيفة أو المتعافية. يدعم إدرار الحليب عند النعاج/الماعز ويحسن بياض وجودة اللحم. الألياف المتوسطة سهلة على الهضم - مكمل مثالي عند انخفاض الشهية."
+        }
+    },
+    {
+        "id": 5,
+        "name": {
+            "en": "Wheat Straw",
+            "ar": "تبن القمح"
+        },
+        "image": "https://images.pexels.com/photos/30446746/pexels-photo-30446746.jpeg?cs=srgb&dl=pexels-merictuna-30446746.jpg&fm=jpg",
+        "targets": [
+            "🐪",
+            "🐄",
+            "🐑",
+            "🐐"
+        ],
+        "extraImages": [
+            "https://pixnio.com/free-images/2017/03/21/2017-03-21-11-35-09-725x482.jpg",
+            "https://images.pexels.com/photos/13393630/pexels-photo-13393630.jpeg"
+        ],
+        "goal": {
+            "en": "Rumen Fill & Digestive Balance",
+            "ar": "ملء الكرش وتوازن الهضم"
+        },
+        "stats": [
+            {
+                "label": {
+                    "en": "Protein",
+                    "ar": "البروتين"
+                },
+                "value": "3-5%"
+            },
+            {
+                "label": {
+                    "en": "Fiber (NDF)",
+                    "ar": "الألياف (NDF)"
+                },
+                "value": "65-75%"
+            }
+        ],
+        "description": {
+            "en": "Classic roughage for rumen health. Adds bulk to prevent issues like bloat without adding extra protein or energy.",
+            "ar": "علف خشن كلاسيكي لصحة الكرش. يضيف حجم لمنع مشاكل مثل التخمة بدون زيادة بروتين أو طاقة."
+        },
+        "extraDetails": {
+            "en": "From Egypt, Spain, and Pakistan. Best as a mixer with concentrates/grains to slow digestion and maintain rumen pH. Supports steady gut movement and reduces acidosis risk - ideal filler for camels/cattle on high-energy diets.",
+            "ar": "من مصر وإسبانيا وباكستان. أفضل كمخلوط مع المركزات/الحبوب لإبطاء الهضم والحفاظ على حموضة الكرش. يدعم حركة الأمعاء المنتظمة ويقلل خطر الحموضة - مثالي كمالئ للإبل/الأبقار على علف عالي الطاقة."
+        }
+    },
+    {
+        "id": 6,
+        "name": {
+            "en": "Bermuda Grass",
+            "ar": "البرمودا"
+        },
+        "image": "https://get.pxhere.com/photo/landscape-plant-hay-bale-field-meadow-grain-prairie-harvest-crop-pasture-soil-agriculture-plain-straw-bale-grassland-straw-plateau-ecosystem-region-steppe-rural-area-grass-family-480927.jpg",
+        "targets": [
+            "🐑",
+            "🐐",
+            "🐪",
+            "🐄",
+            "🐎"
+        ],
+        "extraImages": [
+            "https://c1.peakpx.com/wallpaper/1021/522/547/straw-bales-straw-round-bales-harvest-wallpaper-preview.jpg",
+            "https://images.pexels.com/photos/30238684/pexels-photo-30238684/free-photo-of-large-round-hay-bales-in-texas-farmland-field.jpeg"
+        ],
+        "goal": {
+            "en": "Soft Digestion & Balance",
+            "ar": "هضم ناعم ومتوازن"
+        },
+        "stats": [
+            {
+                "label": {
+                    "en": "Protein",
+                    "ar": "البروتين"
+                },
+                "value": "10-14%"
+            },
+            {
+                "label": {
+                    "en": "Fiber (NDF)",
+                    "ar": "الألياف (NDF)"
+                },
+                "value": "50-60%"
+            }
+        ],
+        "description": {
+            "en": "Soft, digestible grass hay. Excellent for sensitive animals needing balanced fiber without heavy load.",
+            "ar": "علف عشبي ناعم وسهل الهضم. ممتاز للحيوانات الحساسة التي تحتاج ألياف متوازنة بدون إجهاد."
+        },
+        "extraDetails": {
+            "en": "Sourced from Spain. Great digestibility makes it suitable for young animals, horses, and those prone to digestive problems. Reduces gut issues while providing moderate energy and protein - ideal daily option for sheep, goats, camels, and cattle.",
+            "ar": "من إسبانيا. الهضم الممتاز يجعله مناسب للصغار والخيول والحيوانات المعرضة لمشاكل هضمية. يقلل اضطرابات الأمعاء مع طاقة وبروتين معتدل - خيار يومي رائع للضأن والماعز والإبل والأبقار."
+        }
+    },
+    {
+        "id": 7,
+        "name": {
+            "en": "Alfalfa + Wheat Straw Mix",
+            "ar": "مخلوط الجت وقش القمح"
+        },
+        "image": "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA2L2ZsNDg0MTIzODMxODItcHVibGljLWltYWdlLWtvbnRxNjUxLmpwZw.jpg",
+        "targets": [
+            "🐪",
+            "🐑",
+            "🐄"
+        ],
+        "extraImages": [
+            "https://pixnio.com/free-images/2017/03/20/2017-03-20-11-54-30.jpg",
+            "https://s3.mordorintelligence.com/alfalfa-hay-market/alfalfa-hay-market-1768220730756-major-players.webp"
+        ],
+        "goal": {
+            "en": "Balanced Nutrition & Cost Savings",
+            "ar": "تغذية متوازنة وتوفير تكلفة"
+        },
+        "stats": [
+            {
+                "label": {
+                    "en": "Protein",
+                    "ar": "البروتين"
+                },
+                "value": "10-14%"
+            },
+            {
+                "label": {
+                    "en": "Fiber (NDF)",
+                    "ar": "الألياف (NDF)"
+                },
+                "value": "50-60%"
+            }
+        ],
+        "description": {
+            "en": "Smart mix of high-protein alfalfa and fibrous wheat straw. Gives balanced nutrition for daily use at better value.",
+            "ar": "مزيج ذكي بين بروتين الجت العالي وألياف قش القمح. يعطي تغذية متوازنة للاستخدام اليومي بقيمة أفضل."
+        },
+        "extraDetails": {
+            "en": "From Egypt and Spain. Combines alfalfa's protein boost with straw's filling fiber for rumen health and moderate energy. Reduces overall feed cost while supporting growth/milk - perfect everyday option for camels, sheep, and cattle.",
+            "ar": "من مصر وإسبانيا. يجمع بروتين الجت مع ألياف القش لصحة الكرش وطاقة معتدلة. يقلل التكلفة مع دعم النمو/الحليب - خيار يومي مثالي للإبل والضأن والأبقار."
+        }
+    },
+    {
+        "id": 8,
+        "name": {
+            "en": "South African Teff Grass",
+            "ar": "التيف قراس الجنوب أفريقي"
+        },
+        "image": "https://get.pxhere.com/photo/landscape-plant-hay-bale-field-meadow-grain-prairie-harvest-crop-pasture-soil-agriculture-plain-straw-bale-grassland-straw-plateau-ecosystem-region-steppe-rural-area-grass-family-480927.jpg",
+        "targets": [
+            "🐑",
+            "🐐",
+            "🐎",
+            "🦌"
+        ],
+        "extraImages": [
+            "https://pixnio.com/free-images/2017/03/21/2017-03-21-11-35-09-725x482.jpg",
+            "https://images.pexels.com/photos/61151/straw-rice-grain-field-61151.jpeg"
+        ],
+        "goal": {
+            "en": "Light & Highly Digestible Forage",
+            "ar": "علف خفيف وهضم ممتاز"
+        },
+        "stats": [
+            {
+                "label": {
+                    "en": "Protein",
+                    "ar": "البروتين"
+                },
+                "value": "10-14%"
+            },
+            {
+                "label": {
+                    "en": "Fiber (NDF)",
+                    "ar": "الألياف (NDF)"
+                },
+                "value": "55-65%"
+            }
+        ],
+        "description": {
+            "en": "Soft, leafy grass hay that's very digestible. Perfect for sensitive or young animals needing light, high-quality forage.",
+            "ar": "علف عشبي ناعم وورقي سهل الهضم جداً. مثالي للحيوانات الحساسة أو الصغيرة التي تحتاج علف خفيف عالي الجودة."
+        },
+        "extraDetails": {
+            "en": "Premium from South Africa. Highly palatable with excellent digestibility - great for sheep, goats, horses, and deer. Reduces digestive problems while providing balanced fiber and protein for maintenance or light work.",
+            "ar": "ممتاز من جنوب أفريقيا. مستساغ جداً وهضمه ممتاز - رائع للضأن والماعز والخيول والغزلان. يقلل مشاكل الهضم مع ألياف وبروتين متوازن للصيانة أو العمل الخفيف."
+        }
+    },
+    {
+        "id": 9,
+        "name": {
+            "en": "American Timothy Hay",
+            "ar": "التيموثي الأمريكي"
+        },
+        "image": "https://deeringfarmsllc.com/wp-content/uploads/2025/01/alfalfa2-1080x760.jpg",
+        "targets": [
+            "🐎",
+            "🦌",
+            "🐑",
+            "🐐"
+        ],
+        "extraImages": [
+            "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw1MDM2MTQzNjk2Ny1wdWJsaWMtaW1hZ2Uta29ucWp1am0uanBn.jpg",
+            "https://s3.mordorintelligence.com/alfalfa-hay-market/alfalfa-hay-market-1768220730756-major-players.webp"
+        ],
+        "goal": {
+            "en": "Colic Prevention & Premium Quality",
+            "ar": "منع المغص وجودة فاخرة"
+        },
+        "stats": [
+            {
+                "label": {
+                    "en": "Protein",
+                    "ar": "البروتين"
+                },
+                "value": "8-12%"
+            },
+            {
+                "label": {
+                    "en": "Fiber (NDF)",
+                    "ar": "الألياف (NDF)"
+                },
+                "value": "55-65%"
+            }
+        ],
+        "description": {
+            "en": "World's top horse hay. High-quality fibers prevent colic and support healthy weight in performance animals.",
+            "ar": "أفضل علف خيول عالمياً. ألياف عالية الجودة تمنع المغص وتدعم الوزن الصحي للحيوانات الرياضية."
+        },
+        "extraDetails": {
+            "en": "Imported from the USA. Famous for excellent digestibility and low-dust quality - ideal for horses prone to colic or obesity. Maintains healthy weight, supports gut health, and suits sensitive sheep/goats or deer too.",
+            "ar": "مستورد من الولايات المتحدة. مشهور بهضم ممتاز وجودة منخفضة الغبار - مثالي للخيول المعرضة للمغص أو السمنة. يحافظ على وزن صحي، يدعم صحة الأمعاء، ويناسب الضأن/الماعز الحساسة أو الغزلان."
         }
     }
 ]

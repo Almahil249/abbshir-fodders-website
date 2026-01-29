@@ -11,7 +11,7 @@ interface Product {
   extraDetails?: { en: string; ar: string };
   targets: string[];
   goal: { en: string; ar: string };
-  stats: { label: string; value: string }[];
+  stats: { label: { en: string; ar: string }; value: string }[];
   description: { en: string; ar: string };
 }
 
@@ -108,7 +108,7 @@ export function ProductsSection() {
                   <div className="grid grid-cols-2 gap-3 mb-4">
                     {product.stats.map((stat, i) => (
                       <div key={i} className="bg-emerald-50 rounded-lg p-3 text-center">
-                        <p className="text-xs text-emerald-700 font-medium mb-1">{stat.label}</p>
+                        <p className="text-xs text-emerald-700 font-medium mb-1">{stat.label[language]}</p>
                         <p className="text-lg font-bold text-emerald-900">{stat.value}</p>
                       </div>
                     ))}
@@ -221,7 +221,7 @@ export function ProductsSection() {
                   <div className="flex gap-4 mb-8">
                     {selectedProduct.stats.map((stat, i) => (
                       <div key={i} className="bg-emerald-50 px-4 py-2 rounded-lg">
-                        <span className="block text-xs text-emerald-800 uppercase font-bold">{stat.label}</span>
+                        <span className="block text-xs text-emerald-800 uppercase font-bold">{stat.label[language]}</span>
                         <span className="block text-xl font-bold text-emerald-900">{stat.value}</span>
                       </div>
                     ))}

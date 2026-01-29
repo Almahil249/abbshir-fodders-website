@@ -1,0 +1,434 @@
+[
+    {
+        "id": 1,
+        "name": {
+            "en": "Alfalfa Hay (Jett)",
+            "ar": "علف الجت (البرسيم)"
+        },
+        "image": "https://images.unsplash.com/photo-1689796975697-e1735a01b55a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "targets": [
+            "🐪",
+            "🐎",
+            "🐄",
+            "🐑",
+            "🦌"
+        ],
+        "extraImages": [
+            "https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800"
+        ],
+        "goal": {
+            "en": "Muscle Growth & Milk Yield",
+            "ar": "بناء العضلات وإدرار الحليب"
+        },
+        "stats": [
+            {
+                "label": "Protein",
+                "value": "16-22%"
+            },
+            {
+                "label": "Energy",
+                "value": "High"
+            }
+        ],
+        "description": {
+            "en": "The premium choice for performance. Rich in protein and calcium, ideal for racing camels, broodmares, and growing livestock requiring maximum nutrition.",
+            "ar": "الخيار الأول للأداء العالي. غني بالبروتين والكالسيوم، مثالي لسباقات الهجن، والخيول، وتسمين الحلال الصغير الذي يحتاج إلى تغذية مكثفة."
+        },
+        "extraDetails": {
+            "en": "Considered the most scientifically balanced forage, Alfalfa is packed with digestible fiber and essential vitamins (A & E). It boosts natural immunity and provides the energy surplus needed for intensive training or peak lactation periods. Excellent for improving meat quality and finishing livestock.",
+            "ar": "يعتبر الجت العلف الأكثر توازناً علمياً، حيث يجمع بين الألياف القابلة للهضم والفيتامينات الأساسية لدعم المناعة. يوفر فائض الطاقة اللازم فترات التدريب الشاق أو ذروة إنتاج الحليب، كما يساعد بشكل فعال في تحسين جودة اللحم والتسمين النهائي."
+        }
+    },
+    {
+        "id": 2,
+        "name": {
+            "en": "Rhodes Grass",
+            "ar": "علف الرودس"
+        },
+        "image": "https://images.unsplash.com/photo-1697191579403-d1853ae3f9ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "targets": [
+            "🐪",
+            "🐄",
+            "🐑",
+            "🐎"
+        ],
+        "extraImages": [
+            "https://images.unsplash.com/photo-1605000797499-95a51c52b69f?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1472396961693-142e6e594e0c?auto=format&fit=crop&q=80&w=800"
+        ],
+        "goal": {
+            "en": "Daily Maintenance & Digestion",
+            "ar": "غذاء يومي وصحة للهضم"
+        },
+        "stats": [
+            {
+                "label": "Fiber",
+                "value": "High (Long)"
+            },
+            {
+                "label": "Usage",
+                "value": "Daily Staple"
+            }
+        ],
+        "description": {
+            "en": "The essential daily forage. Balanced fiber helps maintain healthy rumen function and stable weight for camels and livestock without excess protein.",
+            "ar": "العلف اليومي الأساسي. ألياف متوازنة تدعم صحة الكرش وتحافظ على استقرار وزن الهجن والمواشي دون زيادة مفرطة في البروتين."
+        },
+        "extraDetails": {
+            "en": "Rhodes grass is valued for its long stem structure, which promotes chewing and saliva production—critical for buffering rumen acidity. It is the perfect 'base' feed to keep animals satisfied and digestion regular, preventing the metabolic issues often caused by heavy grain diets.",
+            "ar": "يتميز الرودس بتركيبته الغنية بالألياف الطويلة التي تحفز عملية الاجترار وإنتاج اللعاب، وهو أمر حيوي لمعادلة حموضة الكرش. يعتبر 'القاعدة' المثالية للنظام الغذائي لإبقاء الحلال في حالة شبع وهضم منتظم، مما يقي من المشاكل المعوية الناتجة عن كثرة الحبوب."
+        }
+    },
+    {
+        "id": 3,
+        "name": {
+            "en": "Barley (Sha'eer)",
+            "ar": "علف الشعير"
+        },
+        "image": "https://images.unsplash.com/photo-1557735710-67da6393ff2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "targets": [
+            "🐑",
+            "🐐",
+            "🐪"
+        ],
+        "extraImages": [
+            "https://images.unsplash.com/photo-1516054575922-f0b8ee4becf1?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1499529112042-9551399ddc5f?auto=format&fit=crop&q=80&w=800"
+        ],
+        "goal": {
+            "en": "Rapid Fattening & Energy",
+            "ar": "تسمين سريع وطاقة قصوى"
+        },
+        "stats": [
+            {
+                "label": "Starch",
+                "value": "~55%"
+            },
+            {
+                "label": "Energy",
+                "value": "Very High"
+            }
+        ],
+        "description": {
+            "en": "High-energy grain designed for rapid weight gain. The top choice for fattening sheep for market and fueling working camels.",
+            "ar": "حبوب عالية الطاقة مصممة لزيادة الوزن بسرعة. الخيار الأول لتسمين الأغنام للسوق ودعم طاقة الهجن العاملة."
+        },
+        "extraDetails": {
+            "en": "Barley provides a dense source of starch that converts quickly to mass and energy. It is essential for conditioning thin animals or preparing livestock for sale. Best used in combination with fibrous hay (like Rhodes or Straw) to ensure safety and maximize nutrient absorption.",
+            "ar": "يوفر الشعير مصدراً كثيفاً للنشويات التي تتحول بسرعة إلى كتلة وطاقة. ضروري لتحسين حالة الحلال الضعيف أو تجهيز المواشي للبيع. يُفضل استخدامه دائماً مع الأعلاف الليفية (مثل الرودس أو التبن) لضمان سلامة الهضم وأقصى استفادة غذائية."
+        }
+    },
+    {
+        "id": 4,
+        "name": {
+            "en": "Timothy Hay",
+            "ar": "علف تيموثي"
+        },
+        "image": "https://images.unsplash.com/photo-1745947826055-43921f66d8ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "targets": [
+            "🐎",
+            "🦌"
+        ],
+        "extraImages": [
+            "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1598974357801-cbca100e65d3?auto=format&fit=crop&q=80&w=800"
+        ],
+        "goal": {
+            "en": "Colic Prevention & Weight Control",
+            "ar": "وقاية من المغص وتحكم بالوزن"
+        },
+        "stats": [
+            {
+                "label": "Calcium",
+                "value": "Low"
+            },
+            {
+                "label": "Digestibility",
+                "value": "Premium"
+            }
+        ],
+        "description": {
+            "en": "Premium grass specifically for horses. Low in calcium and easy to digest, making it the safest option for preventing colic and managing obesity.",
+            "ar": "حشائش فاخرة مخصصة للخيول. منخفضة الكالسيوم وسهلة الهضم، مما يجعلها الخيار الآمن للوقاية من المغص والتحكم في الوزن الزائد."
+        },
+        "extraDetails": {
+            "en": "Timothy is the gold standard for equine health, specifically for horses with sensitive stomachs or metabolic concerns. Its balanced fiber structure encourages natural grazing behavior without the calorie overload, keeping your horse fit, calm, and free from digestive distress.",
+            "ar": "التيموثي هو المعيار الذهبي لصحة الخيول، خاصة تلك ذات المعدة الحساسة. تركيبته الليفية المتوازنة تشجع على المضغ الطبيعي دون زيادة في السعرات الحرارية، مما يبقي خيلك في لياقة عالية، وهدوء، وأمان من الاضطرابات الهضمية."
+        }
+    },
+    {
+        "id": 5,
+        "name": {
+            "en": "Sudan Grass",
+            "ar": "سودان جراس"
+        },
+        "image": "https://images.unsplash.com/photo-1689796975697-e1735a01b55a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "targets": [
+            "🐄",
+            "🐑"
+        ],
+        "extraImages": [
+            "https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1604085572504-a392ddf0d86a?auto=format&fit=crop&q=80&w=800"
+        ],
+        "goal": {
+            "en": "Cost-Effective Bulk",
+            "ar": "علف مالئ واقتصادي"
+        },
+        "stats": [
+            {
+                "label": "Texture",
+                "value": "Coarse"
+            },
+            {
+                "label": "Cost",
+                "value": "Economical"
+            }
+        ],
+        "description": {
+            "en": "Economical forage providing excellent bulk. High in roughage to satisfy appetite and fill the rumen for cattle and sheep herds.",
+            "ar": "علف اقتصادي يوفر كمية كبيرة من الألياف. غني بالمواد المالئة لإشباع الشهية وملء الكرش لقطعان الأبقار والأغنام بتكلفة مناسبة."
+        },
+        "extraDetails": {
+            "en": "Perfect for herd maintenance, Sudan Grass offers a distinct advantage: high satiety. It keeps animals full for longer periods due to its coarse texture, making it an excellent 'filler' feed to mix with higher quality forages to reduce overall feeding costs.",
+            "ar": "مثالي للحفاظ على القطعـان الكبيرة. يوفر السودان جراس ميزة مهمة وهي 'الشبع'؛ حيث يُبقي الحيوانات ممتلئة لفترات أطول بفضل خشونته. ممتاز كعلف 'مالئ' لخلطه مع الأعلاف الأخرى لتقليل التكلفة الإجمالية للتغذية."
+        }
+    },
+    {
+        "id": 6,
+        "name": {
+            "en": "Peanut Hay (Foul Sudani)",
+            "ar": "تبن الفول السوداني"
+        },
+        "image": "https://images.unsplash.com/photo-1551009175-15bdf9dcb580?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "targets": [
+            "🐪",
+            "🐄",
+            "🐑",
+            "🐐"
+        ],
+        "extraImages": [
+            "https://images.unsplash.com/photo-1582885817887-f273523bd48e?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1595180630018-028a6fcf4722?auto=format&fit=crop&q=80&w=800"
+        ],
+        "goal": {
+            "en": "Milk Booster & Palatability",
+            "ar": "زيادة الحليب وشهي للأكل"
+        },
+        "stats": [
+            {
+                "label": "Palatability",
+                "value": "Excellent"
+            },
+            {
+                "label": "Protein",
+                "value": "13-15%"
+            }
+        ],
+        "description": {
+            "en": "Highly palatable legume hay rich in protein. Famous for boosting camel milk production and fattening sheep due to its irresistible taste.",
+            "ar": "علف بقولي شهي جداً وغني بالبروتين. مشهور بزيادة إنتاج حليب الإبل وتسمين الأغنام بفضل طعمه الذي لا يقاوم."
+        },
+        "extraDetails": {
+            "en": "This hay usually contains nutrient-rich leaves and remnants of peanut pods, making it a sweet, treat-like feed. It is known to significantly improve milk yield in camels and is soft enough for young or picky eaters who refuse coarser stems.",
+            "ar": "يحتوي هذا التبن عادةً على أوراق غنية وبقايا من حبات الفول، مما يجعله علفاً حلواً ومستساغاً كالمكافأة. معروف بقدرته الكبيرة على رفع إدرار الحليب عند الإبل، كما أنه ناعم وسهل الأكل للحلال الصغير أو الانتقائي الذي يرفض الأعلاف الخشنة."
+        }
+    },
+    {
+        "id": 7,
+        "name": {
+            "en": "Wheat Straw (Tibn)",
+            "ar": "تبن القمح"
+        },
+        "image": "https://images.unsplash.com/photo-1606154358545-f9919f595a3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "targets": [
+            "🐪",
+            "🐄",
+            "🐑",
+            "🐐"
+        ],
+        "extraImages": [
+            "https://images.unsplash.com/photo-1589923188900-85dae5233296?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=800"
+        ],
+        "goal": {
+            "en": "Acidity Control & Fiber",
+            "ar": "منع الحموضة وملء الكرش"
+        },
+        "stats": [
+            {
+                "label": "Function",
+                "value": "Mixer"
+            },
+            {
+                "label": "Fiber",
+                "value": "Very High"
+            }
+        ],
+        "description": {
+            "en": "Essential fiber source for mixing with grains. Slows digestion, prevents acidity (bloat), and adds necessary bulk to the diet.",
+            "ar": "مصدر أساسي للألياف لخلطه مع الحبوب. يعمل على إبطاء الهضم، ومنع الحموضة (التخمة)، وإضافة الحجم اللازم للوجبة الغذائية."
+        },
+        "extraDetails": {
+            "en": "While low in energy, Wheat Straw is mechanically crucial. It acts as a buffer in the stomach, preventing the rapid fermentation of grains that causes acidity. It is the necessary 'roughage' partner to any high-grain fattening diet.",
+            "ar": "رغم انخفاض طاقته، إلا أن تبن القمح ضروري من الناحية الميكانيكية. يعمل كعازل في المعدة يمنع التخمر السريع للحبوب الذي يسبب الحموضة. هو الشريك 'الخشن' الضروري لأي نظام غذائي يعتمد على التسمين بالحبوب."
+        }
+    },
+    {
+        "id": 8,
+        "name": {
+            "en": "Fenugreek Straw",
+            "ar": "تبن الحلبة"
+        },
+        "image": "https://images.unsplash.com/photo-1515586617300-834e007d4baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "targets": [
+            "🐑",
+            "🐐",
+            "🐪"
+        ],
+        "extraImages": [
+            "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=800"
+        ],
+        "goal": {
+            "en": "Appetite Stimulant & Meat Whitening",
+            "ar": "فاتح شهية وتبييض اللحم"
+        },
+        "stats": [
+            {
+                "label": "Aroma",
+                "value": "Strong"
+            },
+            {
+                "label": "Benefit",
+                "value": "Health Tonic"
+            }
+        ],
+        "description": {
+            "en": "Aromatic straw known as a natural appetite stimulant. Excellent for 'whitening' meat in sheep and boosting milk flow in cold weather.",
+            "ar": "تبن عطري معروف كفاتح شهية طبيعي. ممتاز لـ 'تبييض' اللحم في الأغنام وزيادة إدرار الحليب، خاصة في الأجواء الباردة."
+        },
+        "extraDetails": {
+            "en": "The strong, sweet scent of Fenugreek triggers the appetite of even the weakest animals. It acts as a natural tonic, often used to improve the color and quality of meat before market, and to keep animals warm and active during winter.",
+            "ar": "الرائحة العطرية القوية للحلبة تحفز شهية حتى أضعف الحيوانات. يعمل كمقوٍ طبيعي، وغالباً ما يستخدم لتحسين لون وجودة اللحم (تبييض اللحم) قبل البيع، ولإبقاء الحلال دافئاً ونشيطاً خلال الشتاء."
+        }
+    },
+    {
+        "id": 9,
+        "name": {
+            "en": "Bermuda Grass",
+            "ar": "علف البرمودا"
+        },
+        "image": "https://images.unsplash.com/photo-1533460004989-b6503e04654e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "targets": [
+            "🐑",
+            "🐐",
+            "🐎"
+        ],
+        "extraImages": [
+            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=800"
+        ],
+        "goal": {
+            "en": "Gentle Digestion",
+            "ar": "هضم لطيف ومناسب للصغار"
+        },
+        "stats": [
+            {
+                "label": "Texture",
+                "value": "Soft/Fine"
+            },
+            {
+                "label": "Protein",
+                "value": "10-14%"
+            }
+        ],
+        "description": {
+            "en": "Soft, fine-textured grass that is easy to digest. Perfect for sensitive stomachs and younger livestock requiring balanced fiber.",
+            "ar": "حشائش ناعمة الملمس وسهلة الهضم. مثالية للمعدات الحساسة والمواشي الصغيرة التي تحتاج إلى ألياف متوازنة ولطيفة."
+        },
+        "extraDetails": {
+            "en": "With its fine strands, Bermuda grass passes easily through the digestive tract, preventing impaction. It is an excellent choice for weaning animals off milk onto solid feed, or for horses that require a steady, non-heating energy source.",
+            "ar": "بفضل أليافه الدقيقة، يمر البرمودا بسهولة عبر الجهاز الهضمي مما يمنع الانسداد. هو خيار ممتاز لفطم الحيوانات (نقلها من الحليب للأكل)، أو للخيول التي تحتاج مصدراً للطاقة المستقرة التي لا تسبب سخونة."
+        }
+    },
+    {
+        "id": 10,
+        "name": {
+            "en": "Alfalfa & Straw Mix",
+            "ar": "مخلوط الجت والتبن"
+        },
+        "image": "https://images.unsplash.com/photo-1492496913980-501348b61469?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "targets": [
+            "🐪",
+            "🐑",
+            "🐄"
+        ],
+        "extraImages": [
+            "https://images.unsplash.com/photo-1605218427368-35b8206d09c7?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1532509854226-a2d9d8e66f8e?auto=format&fit=crop&q=80&w=800"
+        ],
+        "goal": {
+            "en": "Balanced Diet & Convenience",
+            "ar": "وجبة متوازنة وتوفير"
+        },
+        "stats": [
+            {
+                "label": "Balance",
+                "value": "Protein/Fiber"
+            },
+            {
+                "label": "Value",
+                "value": "Cost-Effective"
+            }
+        ],
+        "description": {
+            "en": "A pre-mixed balance of nutrient-rich Alfalfa and fibrous Straw. Offers the perfect combination of protein and roughage for daily maintenance.",
+            "ar": "خليط متوازن مسبقاً يجمع بين بروتين الجت وألياف التبن. يوفر المزيج المثالي من التغذية والمواد المالئة للاستخدام اليومي."
+        },
+        "extraDetails": {
+            "en": "This mix solves the problem of animals 'picking' only the good leaves. By combining the high nutrition of Alfalfa with the filling fiber of Wheat Straw, you get a complete feed that maintains moderate energy levels while reducing overall feeding costs.",
+            "ar": "يحل هذا المخلوط مشكلة 'تنقية' الحيوانات للأوراق فقط. من خلال دمج القيمة الغذائية للجت مع ألياف التبن المشبعة، تحصل على علف متكامل يحافظ على مستويات طاقة معتدلة ويقلل من تكلفة العلف الإجمالية."
+        }
+    },
+    {
+        "id": 11,
+        "name": {
+            "en": "South African Teff Grass",
+            "ar": "التيف قراس (جنوب أفريقي)"
+        },
+        "image": "https://images.unsplash.com/photo-1596733430284-f7437764b1a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "targets": [
+            "🦌",
+            "🐎",
+            "🐑"
+        ],
+        "extraImages": [
+            "https://images.unsplash.com/photo-1495107334309-fcf20504fa5f?auto=format&fit=crop&q=80&w=800",
+            "https://images.unsplash.com/photo-1527153374670-381440d9d08e?auto=format&fit=crop&q=80&w=800"
+        ],
+        "goal": {
+            "en": "Sensitive Stomachs & Deer",
+            "ar": "للغزلان والمعدة الحساسة"
+        },
+        "stats": [
+            {
+                "label": "Texture",
+                "value": "Ultra-Soft"
+            },
+            {
+                "label": "Sugar",
+                "value": "Low"
+            }
+        ],
+        "description": {
+            "en": "Ultra-soft, fine grass with low sugar. The safest choice for deer, sensitive horses, and livestock prone to metabolic issues.",
+            "ar": "حشائش ناعمة جداً ومنخفضة السكريات. الخيار الأكثر أماناً للغزلان، والخيول الحساسة، والمواشي المعرضة لمشاكل الهضم والتمثيل الغذائي."
+        },
+        "extraDetails": {
+            "en": "Teff is famous for being hypoallergenic and incredibly palatable due to its soft texture. It is the number one recommendation for gazelles and deer, as well as horses prone to laminitis, as it provides necessary fiber without the sugar spikes.",
+            "ar": "يشتهر التيف بأنه لا يسبب الحساسية ومستساغ جداً بفضل نعومته. هو التوصية الأولى للغزلان والظباء، وكذلك الخيول المعرضة لالتهاب الحافر (الحمرة)، حيث يوفر الألياف الضرورية دون رفع مستوى السكر في الدم."
+        }
+    }
+]

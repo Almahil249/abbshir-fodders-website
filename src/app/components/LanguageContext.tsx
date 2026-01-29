@@ -11,6 +11,9 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 const translations: Record<string, Record<Language, string>> = {
+  // Meta
+  'meta.title': { en: 'Abbshir - Premium Fodder UAE', ar: 'أبشر - أعلاف فاخرة في الإمارات' },
+
   // Navigation
   'nav.about': { en: 'About Us', ar: 'من نحن' },
   'nav.products': { en: 'Products', ar: 'المنتجات' },
@@ -90,6 +93,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const t = (key: string): string => {
     return translations[key]?.[language] || key;
   };
+
+  // Update document title and dir attribute when language changes
+  React.useEffect(() => {
+    document.title = translations['meta.title'][language];
+    document.documentElement.lang = language;
+    document.body.dir = language === 'ar' ? 'rtl' : 'ltr';
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
