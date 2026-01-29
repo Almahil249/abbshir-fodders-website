@@ -99,7 +99,10 @@ export function ProductsSection() {
                 <div className="relative h-56 overflow-hidden">
                   <img
                     src={product.image}
-                    alt={product.name[language]}
+                    alt={language === 'ar'
+                      ? `${product.name.ar} - معتمد من ADAFSA - توزيع أبشر للأعلاف الإمارات`
+                      : `${product.name.en} - Certified by ADAFSA - Distributed by Abbshir Fodder UAE`
+                    }
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
@@ -157,7 +160,15 @@ export function ProductsSection() {
                           {product.extraImages && (
                             <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
                               {product.extraImages.map((img, i) => (
-                                <img key={i} src={img} className="w-24 h-24 object-cover rounded-lg flex-shrink-0" alt="" />
+                                <img
+                                  key={i}
+                                  src={img}
+                                  className="w-24 h-24 object-cover rounded-lg flex-shrink-0"
+                                  alt={language === 'ar'
+                                    ? `${product.name.ar} - معرض الصور ${i + 1}`
+                                    : `${product.name.en} - Gallery Image ${i + 1}`
+                                  }
+                                />
                               ))}
                             </div>
                           )}
@@ -218,13 +229,27 @@ export function ProductsSection() {
                 {/* Visual Section (Left) */}
                 <div className="lg:w-1/2 bg-gray-100 p-6 flex flex-col gap-4">
                   <div className="w-full h-80 rounded-2xl overflow-hidden shadow-md">
-                    <img src={selectedProduct.image} alt="" className="w-full h-full object-cover" />
+                    <img
+                      src={selectedProduct.image}
+                      alt={language === 'ar'
+                        ? `${selectedProduct.name.ar} - معتمد من ADAFSA - توزيع أبشر للأعلاف الإمارات`
+                        : `${selectedProduct.name.en} - Certified by ADAFSA - Distributed by Abbshir Fodder UAE`
+                      }
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   {/* Gallery */}
                   <div className="flex gap-4 overflow-x-auto pb-2">
                     {selectedProduct.extraImages?.map((img, i) => (
                       <div key={i} className="w-32 h-24 flex-shrink-0 rounded-xl overflow-hidden shadow-sm border-2 border-transparent hover:border-emerald-500 transition-all">
-                        <img src={img} alt="" className="w-full h-full object-cover" />
+                        <img
+                          src={img}
+                          alt={language === 'ar'
+                            ? `${selectedProduct.name.ar} - معرض الصور ${i + 1} - معتمد من ADAFSA`
+                            : `${selectedProduct.name.en} - Gallery Image ${i + 1} - Certified by ADAFSA`
+                          }
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     ))}
                   </div>

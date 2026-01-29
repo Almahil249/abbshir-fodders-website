@@ -12,7 +12,14 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const translations: Record<string, Record<Language, string>> = {
   // Meta
-  'meta.title': { en: 'Abbshir - Premium Fodder UAE', ar: 'أبشر - أعلاف فاخرة في الإمارات' },
+  'meta.title': {
+    en: 'Abbshir | High-Quality Certified Fodder & Animal Feed UAE',
+    ar: 'أبشر لتجارة الأعلاف | Certified Fodder & Animal Feed UAE'
+  },
+  'meta.description': {
+    en: 'Abbshir: Leading provider of ADAFSA lab-certified fodder. Supporting UAE Animal Wealth and livestock breeders in Sweihan, Nahil, and Al Sila.',
+    ar: 'أبشر لتجارة الأعلاف: نورد أجود أنواع الجت، الرودس، والتيموثي المعتمدة من هيئة أبوظبي للزراعة والسلامة الغذائية (ADAFSA). نخدم مربي الحلال في سويحان، ناهل، غياثي، والسلع.'
+  },
 
   // Navigation
   'nav.about': { en: 'About Us', ar: 'من نحن' },
@@ -119,9 +126,15 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     checkUrlForLanguage();
   }, []);
 
-  // Update document title and dir attribute when language changes
+  // Update document title, meta description, and dir attribute when language changes
   React.useEffect(() => {
     document.title = translations['meta.title'][language];
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', translations['meta.description'][language]);
+    }
+
     document.documentElement.lang = language;
     document.body.dir = language === 'ar' ? 'rtl' : 'ltr';
   }, [language]);
