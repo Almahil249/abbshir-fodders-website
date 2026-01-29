@@ -43,12 +43,12 @@ const translations: Record<string, Record<Language, string>> = {
 
   // Trust Badges
   'badge.organic': { en: '100% Organic', ar: '100% عضوي' },
-  'badge.labTested': { en: 'Lab Tested', ar: 'مختبر معتمد' },
+  'badge.labTested': { en: 'Lab Tested', ar: 'مختبر ومضمون' },
   'badge.fastDelivery': { en: 'Fast Delivery', ar: 'توصيل سريع' },
 
   // Key Values
   'value.sourcing.title': { en: 'Premium Sourcing', ar: 'جودة لا تضاهى' },
-  'value.sourcing.desc': { en: "Directly imported from the world's best harvest regions.", ar: 'أعلاف نقية، خالية من الأتربة، ومخزنة بطرق علمية حديثة.' },
+  'value.sourcing.desc': { en: "Directly imported from the world's best harvest regions.", ar: 'مستورد مباشرة من أفضل المصادر العالمية لضمان الجودة.' },
   'value.integrity.title': { en: 'Nutritional Integrity', ar: 'تنوع غذائي شامل' },
   'value.integrity.desc': { en: 'Lab-verified protein and fiber content for optimal weight gain and milk production.', ar: 'حلول متكاملة للتسمين، إدرار الحليب، وسباقات الهجن والخيول.' },
   'value.availability.title': { en: 'Year-Round Availability', ar: 'إمداد مستمر' },
