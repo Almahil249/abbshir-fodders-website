@@ -1,16 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="icon" type="image/png" href="/src/assets/abbshirLogo.png" />
-      <title>Abbshir - Premium Fodder UAE</title>
-    </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#059669" />
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+  <!-- Primary Meta Tags -->
+  <title>أبشر للأعلاف | Abbshir – Certified Fodder & Animal Feed UAE</title>
+  <meta name="description"
+    content="أبشر لتجارة الأعلاف: نورد أجود أنواع الأعلاف؛ الجت، الرودس، والتيموثي المعتمدة من هيئة أبوظبي للزراعة والسلامة الغذائية. نخدم مُربي الحلال في أبوظبي، العين، دبي، سويحان، ناهل، وغياثي. | Abbshir: ADAFSA-certified Alfalfa, Rhodes & Timothy hay supplier across UAE." />
+  <meta name="keywords"
+    content="الثروة الحيوانية, مربي الحلال, علف الجت, برسيم, رودس, تبن, سباقات الهجن, ADAFSA, Sweihan, Nahil, Ghayathi, Animal Wealth, Livestock UAE, Tamm, fodder UAE, alfalfa UAE, camel feed, horse hay UAE, Timothy hay, أعلاف الإمارات" />
+  <meta name="author" content="Abbshir Fodder Trading" />
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+
+  <!-- Canonical & Hreflang -->
+  <link rel="canonical" href="https://www.abbshir.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.abbshir.com/" />
+  <link rel="alternate" hreflang="ar-ae" href="https://www.abbshir.com/ar" />
+  <link rel="alternate" hreflang="en-ae" href="https://www.abbshir.com/en" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.abbshir.com/" />
+  <meta property="og:site_name" content="Abbshir Fodder Trading – أبشر لتجارة الأعلاف" />
+  <meta property="og:title" content="أبشر للأعلاف | ADAFSA-Certified Fodder Supplier UAE" />
+  <meta property="og:description"
+    content="Leading UAE supplier of lab-certified Alfalfa, Rhodes Grass, Timothy Hay & more. Serving livestock breeders across Abu Dhabi, Dubai, Sweihan, Nahil, Ghayathi & the Western Region." />
+  <meta property="og:image" content="https://www.abbshir.com/Logo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Abbshir Fodder – ADAFSA Certified Alfalfa & Hay UAE" />
+  <meta property="og:locale" content="ar_AE" />
+  <meta property="og:locale:alternate" content="en_AE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="أبشر للأعلاف | ADAFSA-Certified Fodder Supplier UAE" />
+  <meta name="twitter:description"
+    content="Premium ADAFSA-certified Alfalfa, Rhodes Grass, Timothy Hay & more. Delivered to livestock breeders across the UAE." />
+  <meta name="twitter:image" content="https://www.abbshir.com/Logo.png" />
+  <meta name="twitter:image:alt" content="Abbshir Fodder – ADAFSA Certified Fodder UAE" />
+
+  <!-- Performance Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+  <!-- Structured Data: WholesaleStore + LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["WholesaleStore", "LocalBusiness"],
+    "name": "Abbshir Fodder Trading – أبشر لتجارة الأعلاف",
+    "alternateName": "أبشر للأعلاف",
+    "url": "https://www.abbshir.com",
+    "logo": "https://www.abbshir.com/Logo.png",
+    "image": "https://www.abbshir.com/Logo.png",
+    "description": "Leading provider of ADAFSA lab-certified fodder in the UAE. Supporting Animal Wealth (الثروة الحيوانية) and livestock breeders (مربي الحلال) with premium Alfalfa, Rhodes Grass, Timothy Hay, and more.",
+    "telephone": ["+971505018802", "+971506785893"],
+    "email": "info@abbshir.com",
+    "priceRange": "$$",
+    "openingHours": "Mo-Su 06:00-22:00",
+    "currenciesAccepted": "AED",
+    "paymentAccepted": "Cash, Bank Transfer, TAMM Platform",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "AE",
+      "addressRegion": "Abu Dhabi",
+      "addressLocality": "Sweihan"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "24.1167",
+      "longitude": "55.3167"
+    },
+    "areaServed": [
+      "Sweihan", "Nahil", "Al Sila", "Ghayathi", "Al Anka", "Boukriya",
+      "Madinat Zayed", "Liwa", "Ruwais", "Western Region",
+      "Abu Dhabi", "Al Ain", "Dubai", "Sharjah", "Ajman",
+      "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"
+    ],
+    "sameAs": [
+      "https://www.abbshir.com"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.4",
+      "reviewCount": "34",
+      "bestRating": "5",
+      "worstRating": "2"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Alfalfa Hay (Jat / Bersim) – علف الجت البرسيم",
+          "description": "ADAFSA lab-tested Alfalfa with 16–22% protein. Ideal for camel racing, milk production, and all livestock.",
+          "brand": { "@type": "Brand", "name": "Abbshir" },
+          "countryOfOrigin": ["Sudan", "Egypt", "Spain", "USA", "South Africa"],
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "reviewCount": "28", "bestRating": "5", "worstRating": "3" }
+        },
+        "priceCurrency": "AED",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Rhodes Grass – علف الرودس",
+          "description": "Premium fiber source for rumen health. Protein: 7–14%. Sourced from Sudan and Pakistan.",
+          "brand": { "@type": "Brand", "name": "Abbshir" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47", "bestRating": "5", "worstRating": "3" }
+        },
+        "priceCurrency": "AED",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "American Timothy Hay – التيموثي الأمريكي",
+          "description": "The gold standard for horse racing and show animals. Prevents colic. Imported from the USA.",
+          "brand": { "@type": "Brand", "name": "Abbshir" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47", "bestRating": "5", "worstRating": "3" }
+        },
+        "priceCurrency": "AED",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Peanut Straw – تبن الفول السوداني",
+          "description": "Soft, digestible fiber for young livestock and milk boost. Protein: 8–14%. Origin: Pakistan.",
+          "brand": { "@type": "Brand", "name": "Abbshir" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47", "bestRating": "5", "worstRating": "3" }
+        },
+        "priceCurrency": "AED",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Fenugreek Straw – تبن الحلبة",
+          "description": "Aromatic appetite stimulant for sheep and goats during low-intake periods. Enhances milk and meat quality.",
+          "brand": { "@type": "Brand", "name": "Abbshir" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47", "bestRating": "5", "worstRating": "3" }
+        },
+        "priceCurrency": "AED",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Wheat Straw – تبن القمح",
+          "description": "Essential roughage for rumen fill and digestive balance. Egypt, Spain, and Pakistan origins.",
+          "brand": { "@type": "Brand", "name": "Abbshir" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47", "bestRating": "5", "worstRating": "3" }
+        },
+        "priceCurrency": "AED",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Bermuda Grass – البرمودا",
+          "description": "Soft grass for sensitive digestive systems and young animals. Protein: 10–14%. Origin: Spain.",
+          "brand": { "@type": "Brand", "name": "Abbshir" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47", "bestRating": "5", "worstRating": "3" }
+        },
+        "priceCurrency": "AED",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Alfalfa + Wheat Straw Mix – مخلوط الجت وقش القمح",
+          "description": "Balanced daily maintenance feed. Cost-effective nutritional stability for camels, sheep, and cattle.",
+          "brand": { "@type": "Brand", "name": "Abbshir" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47", "bestRating": "5", "worstRating": "3" }
+        },
+        "priceCurrency": "AED",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "South African Teff Grass – التيف قراس الجنوب أفريقي",
+          "description": "Premium fine grass for horses and deer. Highly digestible fiber. Origin: South Africa.",
+          "brand": { "@type": "Brand", "name": "Abbshir" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47", "bestRating": "5", "worstRating": "3" }
+        },
+        "priceCurrency": "AED",
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  }
+  </script>
+
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where can I buy ADAFSA-certified Alfalfa in the UAE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Abbshir provides ADAFSA laboratory-tested Alfalfa (Jat) with 16–22% protein. Available via the TAMM Abu Dhabi platform or at our distribution centres in Sweihan and Nahil. Contact us at +971 50 501 8802."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "أين يمكنني شراء أعلاف معتمدة في غياثي والسلع؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "تقدم شركة أبشر لتجارة الأعلاف توصيل جميع أنواع الأعلاف المعتمدة من هيئة أبوظبي للزراعة والسلامة الغذائية إلى غياثي والسلع وكافة مناطق الظفرة. يمكن الطلب عبر منصة تم أو بالاتصال على +971 50 501 8802."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you deliver fodder to remote farms in Madinat Zayed and Liwa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Abbshir Fodder offers rapid delivery to Madinat Zayed, Liwa, Ruwais, and deep desert farms across the Western Region of Abu Dhabi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل يتوفر لديكم تغذية خاصة لسباقات الهجن؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، نوفر الجت الأمريكي والتيموثي هاي عالي الجودة المخصص لدعم أداء الهجن في السباقات، مع ضمان خلوه من الغبار والشوائب لسلامة الجهاز التنفسي والهضمي."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I order fodder through the TAMM platform?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can order by selecting 'Abbshir Fodder Trading' as your preferred supplier on the TAMM Abu Dhabi 'Fodder Market' (سوق الأعلاف) service to utilise your government subsidies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما هي أوقات العمل في مركز توزيع سويحان؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعمل في مراكز توزيع سويحان وناهل يومياً من الساعة 6 صباحاً وحتى 10 مساءً لخدمة مربي الحلال وتسهيل استلام الأعلاف بسرعة."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home – أبشر للأعلاف",
+        "item": "https://www.abbshir.com/"
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

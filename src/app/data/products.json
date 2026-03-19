@@ -5,7 +5,7 @@
             "en": "Alfalfa Hay (Jett / Bersim)",
             "ar": "علف الجت (البرسيم)"
         },
-        "image": "https://deeringfarmsllc.com/wp-content/uploads/2025/01/organic-feed-1080x760.jpg",
+        "image": "src/app/data/ProductsIMG/1/Alfalfa1.jpg",
         "targets": [
             "🐪",
             "🐎",
@@ -14,8 +14,8 @@
             "🐐"
         ],
         "extraImages": [
-            "https://www.deercreekseed.com/media/mageplaza/blog/post/s/h/sheep_4.jpeg",
-            "https://s3.mordorintelligence.com/alfalfa-hay-market/alfalfa-hay-market-1768220730756-major-players.webp"
+            "src/app/data/ProductsIMG/1/Alfalfa2.jpg",
+            "src/app/data/ProductsIMG/1/Alfalfa3.jpg"
         ],
         "goal": {
             "en": "Growth, Milk Production & Energy",
@@ -52,7 +52,7 @@
             "en": "Rhodes Grass",
             "ar": "علف الرودس"
         },
-        "image": "https://get.pxhere.com/photo/landscape-plant-hay-bale-field-meadow-grain-prairie-harvest-crop-pasture-soil-agriculture-plain-straw-bale-grassland-straw-plateau-ecosystem-region-steppe-rural-area-grass-family-480927.jpg",
+        "image": "src/app/data/ProductsIMG/2/Rhodes2.jpg",
         "targets": [
             "🐪",
             "🐄",
@@ -61,7 +61,7 @@
             "🐎"
         ],
         "extraImages": [
-            "https://p1.hippopx.com/preview/339/398/374/hay-bale-hay-forage-dry-grass.jpg",
+            "src/app/data/ProductsIMG/2/Rhodes1.jpg",
             "https://p3.hippopx.com/preview/248/287/hay-bales-straw-bales-harvest-agriculture-nature-field-country-life-landscape-straw-field-straw.jpg"
         ],
         "goal": {
@@ -99,7 +99,7 @@
             "en": "Peanut Straw (Foul Sudani)",
             "ar": "تبن الفول السوداني"
         },
-        "image": "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJoYXJ2ZXN0X2hhcnZlc3RlZF9maWVsZF9zdHJhd18xLWltYWdlLWt5YmRpdnkxLmpwZw.jpg",
+        "image": "src/app/data/ProductsIMG/3/PeanutStraw1.jpg",
         "targets": [
             "🐪",
             "🐄",
@@ -107,8 +107,8 @@
             "🐐"
         ],
         "extraImages": [
-            "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw1MDUyMTk5ODU1Mi1pbWFnZS1reWNpbnBrei5qcGc.jpg",
-            "https://i0.hippopx.com/photos/374/114/357/grass-meadow-green-spring-preview.jpg"
+            "src/app/data/ProductsIMG/3/PeanutStraw2.jpg",
+            "src/app/data/ProductsIMG/3/PeanutStraw3.jpg"
         ],
         "goal": {
             "en": "Milk Boost & Easy Digestion",
@@ -145,15 +145,15 @@
             "en": "Fenugreek Straw",
             "ar": "تبن الحلبة"
         },
-        "image": "https://deeringfarmsllc.com/wp-content/uploads/2025/01/alfalfa2-1080x760.jpg",
+        "image": "src/app/data/ProductsIMG/4/FenugreekStraw1.jpg",
         "targets": [
             "🐑",
             "🐐",
             "🐪"
         ],
         "extraImages": [
-            "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvd2s0NjM3MDA1NC1pbWFnZS1rcDZjNWZsZS5qcGc.jpg",
-            "https://i0.hippopx.com/photos/292/22/386/horse-gram-kulthi-pulse-crop-residue-preview.jpg"
+            "src/app/data/ProductsIMG/4/FenugreekStraw2.jpg",
+            "src/app/data/ProductsIMG/4/FenugreekStraw3.jpg"
         ],
         "goal": {
             "en": "Appetite Stimulation & Milk/Meat Quality",
@@ -374,7 +374,7 @@
             "en": "American Timothy Hay",
             "ar": "التيموثي الأمريكي"
         },
-        "image": "https://deeringfarmsllc.com/wp-content/uploads/2025/01/alfalfa2-1080x760.jpg",
+        "image": "src/app/data/ProductsIMG/9/Timothy1.jpg",
         "targets": [
             "🐎",
             "🦌",
