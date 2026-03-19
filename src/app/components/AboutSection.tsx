@@ -79,7 +79,7 @@ export function AboutSection() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src={aboutImage}
-                alt="Arabian horse"
+                alt="Arabian horse feeding – ADAFSA certified alfalfa and hay by Abbshir Fodder UAE"
                 className="w-full h-96 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/30 to-transparent"></div>

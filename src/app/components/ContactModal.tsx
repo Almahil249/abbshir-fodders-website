@@ -167,7 +167,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             </button>
             <button
               type="button"
-              onClick={handleSubmit} // Using same handler for WhatsApp logic as requested, but could separate if needed.
+              onClick={handleSubmit}
               className="flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-[#25D366] text-white rounded-xl hover:bg-[#1faa52] active:scale-[0.98] transition-all shadow-md font-medium"
             >
               <MessageCircle className="w-4 h-4" />

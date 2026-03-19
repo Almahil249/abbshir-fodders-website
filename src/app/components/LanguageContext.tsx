@@ -128,15 +128,75 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   // Update document title, meta description, and dir attribute when language changes
   React.useEffect(() => {
-    document.title = translations['meta.title'][language];
+    const lang = language;
 
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', translations['meta.description'][language]);
+    // --- Basic meta ---
+    document.title = translations['meta.title'][lang];
+    document.documentElement.lang = lang;
+    document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    // Helper: get or create a <meta> tag by attribute
+    const setMeta = (attr: string, value: string, content: string) => {
+      let el = document.querySelector(`meta[${attr}="${value}"]`) as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, value);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+
+    // Helper: get or create a <link> tag by rel+hreflang
+    const setLink = (rel: string, hreflang: string, href: string) => {
+      let el = document.querySelector(`link[rel="${rel}"][hreflang="${hreflang}"]`) as HTMLLinkElement | null;
+      if (!el) {
+        el = document.createElement('link');
+        el.setAttribute('rel', rel);
+        el.setAttribute('hreflang', hreflang);
+        document.head.appendChild(el);
+      }
+      el.href = href;
+    };
+
+    // --- Standard meta ---
+    setMeta('name', 'description', translations['meta.description'][lang]);
+    setMeta('name', 'keywords',
+      lang === 'ar'
+        ? 'الثروة الحيوانية, مربي الحلال, علف الجت, برسيم, رودس, تبن, سباقات الهجن, ADAFSA, سويحان, ناهل, غياثي, أعلاف الإمارات, منصة تم'
+        : 'fodder UAE, alfalfa UAE, camel feed, horse hay UAE, Timothy hay, Rhodes grass, ADAFSA certified, Sweihan, Nahil, Ghayathi, Animal Wealth, Livestock UAE, Tamm platform'
+    );
+
+    // --- Open Graph ---
+    const ogTitle   = lang === 'ar' ? 'أبشر للأعلاف | موردون أعلاف معتمدة ADAFSA في الإمارات' : 'Abbshir Fodders | ADAFSA-Certified Fodder Supplier UAE';
+    const ogDesc    = translations['meta.description'][lang];
+    const ogLocale  = lang === 'ar' ? 'ar_AE' : 'en_AE';
+    const ogAltLoc  = lang === 'ar' ? 'en_AE' : 'ar_AE';
+    const ogUrl     = lang === 'ar' ? 'https://www.abbshir.com/ar' : 'https://www.abbshir.com/en';
+
+    setMeta('property', 'og:title',            ogTitle);
+    setMeta('property', 'og:description',      ogDesc);
+    setMeta('property', 'og:locale',           ogLocale);
+    setMeta('property', 'og:locale:alternate', ogAltLoc);
+    setMeta('property', 'og:url',              ogUrl);
+
+    // --- Twitter Card ---
+    setMeta('name', 'twitter:title',       ogTitle);
+    setMeta('name', 'twitter:description', ogDesc);
+
+    // --- Canonical ---
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
     }
+    canonical.href = ogUrl;
 
-    document.documentElement.lang = language;
-    document.body.dir = language === 'ar' ? 'rtl' : 'ltr';
+    // --- hreflang alternates ---
+    setLink('alternate', 'x-default', 'https://www.abbshir.com/');
+    setLink('alternate', 'ar-ae',     'https://www.abbshir.com/ar');
+    setLink('alternate', 'en-ae',     'https://www.abbshir.com/en');
+
   }, [language]);
 
   return (

@@ -12,8 +12,10 @@ export function HeroSection() {
         <div className="relative w-full h-full">
           <img
             src={heroImage}
-            alt="Desert camel"
+            alt="Camel and livestock on UAE desert – Abbshir premium ADAFSA-certified fodder supplier"
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
         </div>

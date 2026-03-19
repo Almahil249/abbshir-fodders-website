@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /404
 
-Sitemap: https://abbshir.com/sitemap.xml
+Sitemap: https://www.abbshir.com/sitemap.xml
