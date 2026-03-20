@@ -5,7 +5,7 @@
             "en": "Alfalfa Hay (Jett / Bersim)",
             "ar": "علف الجت (البرسيم)"
         },
-        "image": "src/app/data/ProductsIMG/1/Alfalfa1.jpg",
+        "image": "/ProductsIMG/1/Alfalfa1.jpg",
         "targets": [
             "🐪",
             "🐎",
@@ -14,8 +14,8 @@
             "🐐"
         ],
         "extraImages": [
-            "src/app/data/ProductsIMG/1/Alfalfa2.jpg",
-            "src/app/data/ProductsIMG/1/Alfalfa3.jpg"
+            "/ProductsIMG/1/Alfalfa2.jpg",
+            "/ProductsIMG/1/Alfalfa3.jpg"
         ],
         "goal": {
             "en": "Growth, Milk Production & Energy",
@@ -52,7 +52,7 @@
             "en": "Rhodes Grass",
             "ar": "علف الرودس"
         },
-        "image": "src/app/data/ProductsIMG/2/Rhodes2.jpg",
+        "image": "/ProductsIMG/2/Rhodes2.jpg",
         "targets": [
             "🐪",
             "🐄",
@@ -61,7 +61,7 @@
             "🐎"
         ],
         "extraImages": [
-            "src/app/data/ProductsIMG/2/Rhodes1.jpg",
+            "/ProductsIMG/2/Rhodes1.jpg",
             "https://p3.hippopx.com/preview/248/287/hay-bales-straw-bales-harvest-agriculture-nature-field-country-life-landscape-straw-field-straw.jpg"
         ],
         "goal": {
@@ -99,7 +99,7 @@
             "en": "Peanut Straw (Foul Sudani)",
             "ar": "تبن الفول السوداني"
         },
-        "image": "src/app/data/ProductsIMG/3/PeanutStraw1.jpg",
+        "image": "/ProductsIMG/3/PeanutStraw1.jpg",
         "targets": [
             "🐪",
             "🐄",
@@ -107,8 +107,8 @@
             "🐐"
         ],
         "extraImages": [
-            "src/app/data/ProductsIMG/3/PeanutStraw2.jpg",
-            "src/app/data/ProductsIMG/3/PeanutStraw3.jpg"
+            "/ProductsIMG/3/PeanutStraw2.jpg",
+            "/ProductsIMG/3/PeanutStraw3.jpg"
         ],
         "goal": {
             "en": "Milk Boost & Easy Digestion",
@@ -145,15 +145,15 @@
             "en": "Fenugreek Straw",
             "ar": "تبن الحلبة"
         },
-        "image": "src/app/data/ProductsIMG/4/FenugreekStraw1.jpg",
+        "image": "/ProductsIMG/4/FenugreekStraw1.jpg",
         "targets": [
             "🐑",
             "🐐",
             "🐪"
         ],
         "extraImages": [
-            "src/app/data/ProductsIMG/4/FenugreekStraw2.jpg",
-            "src/app/data/ProductsIMG/4/FenugreekStraw3.jpg"
+            "/ProductsIMG/4/FenugreekStraw2.jpg",
+            "/ProductsIMG/4/FenugreekStraw3.jpg"
         ],
         "goal": {
             "en": "Appetite Stimulation & Milk/Meat Quality",
@@ -374,7 +374,7 @@
             "en": "American Timothy Hay",
             "ar": "التيموثي الأمريكي"
         },
-        "image": "src/app/data/ProductsIMG/9/Timothy1.jpg",
+        "image": "/ProductsIMG/9/Timothy1.jpg",
         "targets": [
             "🐎",
             "🦌",

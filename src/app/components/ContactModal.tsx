@@ -55,7 +55,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       message += `Phone: ${formData.phone}`;
     }
 
-    const whatsappUrl = `https://wa.me/971506785893?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/971544447822?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     onClose();
   };

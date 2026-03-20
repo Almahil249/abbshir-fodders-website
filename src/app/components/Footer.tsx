@@ -90,8 +90,7 @@ export function Footer() {
                 <div>
                   <p className="text-sm font-medium">{t('footer.phone')}</p>
                   <div className="flex flex-col">
-                    <a href="tel:+971505018802" className="text-sm hover:text-emerald-500 w-fit" dir="ltr" aria-label="Call Abbshir on +971 50 501 8802">+971 50 501 8802</a>
-                    <a href="tel:+971506785893" className="text-sm hover:text-emerald-500 w-fit" dir="ltr" aria-label="Call Abbshir on +971 50 678 5893">+971 50 678 5893</a>
+                    <a href="tel:+971544447822" className="text-sm hover:text-emerald-500 w-fit" dir="ltr" aria-label="Call Abbshir on +971 54 444 7822">+971 54 444 7822</a>
                   </div>
                 </div>
               </li>
