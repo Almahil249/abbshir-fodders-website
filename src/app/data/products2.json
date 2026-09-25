@@ -23,11 +23,17 @@
         },
         "stats": [
             {
-                "label": "Protein",
+                "label": {
+                    "en": "Protein",
+                    "ar": "البروتين"
+                },
                 "value": "16-22%"
             },
             {
-                "label": "Energy",
+                "label": {
+                    "en": "Energy",
+                    "ar": "الطاقة"
+                },
                 "value": "High"
             }
         ],
@@ -38,7 +44,34 @@
         "extraDetails": {
             "en": "Considered the most scientifically balanced forage, Alfalfa is packed with digestible fiber and essential vitamins (A & E). It boosts natural immunity and provides the energy surplus needed for intensive training or peak lactation periods. Excellent for improving meat quality and finishing livestock.",
             "ar": "يعتبر الجت العلف الأكثر توازناً علمياً، حيث يجمع بين الألياف القابلة للهضم والفيتامينات الأساسية لدعم المناعة. يوفر فائض الطاقة اللازم فترات التدريب الشاق أو ذروة إنتاج الحليب، كما يساعد بشكل فعال في تحسين جودة اللحم والتسمين النهائي."
-        }
+        },
+        "slug": "alfalfa-hay-premium",
+        "sku": "P2-ALF-001",
+        "brandId": "abbshir",
+        "categoryId": "alfalfa",
+        "unit": "bale",
+        "basePrice": 7600,
+        "bulkPricing": [
+            {
+                "minQty": 10,
+                "pricePerUnit": 7100
+            },
+            {
+                "minQty": 50,
+                "pricePerUnit": 6600
+            }
+        ],
+        "stock": 220,
+        "originCountry": "sudan",
+        "weight": 25,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "camel",
+            "horse",
+            "cattle",
+            "sheep",
+            "deer"
+        ]
     },
     {
         "id": 2,
@@ -63,11 +96,17 @@
         },
         "stats": [
             {
-                "label": "Fiber",
+                "label": {
+                    "en": "Fiber",
+                    "ar": "الألياف"
+                },
                 "value": "High (Long)"
             },
             {
-                "label": "Usage",
+                "label": {
+                    "en": "Usage",
+                    "ar": "الاستخدام"
+                },
                 "value": "Daily Staple"
             }
         ],
@@ -78,7 +117,33 @@
         "extraDetails": {
             "en": "Rhodes grass is valued for its long stem structure, which promotes chewing and saliva production—critical for buffering rumen acidity. It is the perfect 'base' feed to keep animals satisfied and digestion regular, preventing the metabolic issues often caused by heavy grain diets.",
             "ar": "يتميز الرودس بتركيبته الغنية بالألياف الطويلة التي تحفز عملية الاجترار وإنتاج اللعاب، وهو أمر حيوي لمعادلة حموضة الكرش. يعتبر 'القاعدة' المثالية للنظام الغذائي لإبقاء الحلال في حالة شبع وهضم منتظم، مما يقي من المشاكل المعوية الناتجة عن كثرة الحبوب."
-        }
+        },
+        "slug": "rhodes-grass-select",
+        "sku": "P2-RHD-002",
+        "brandId": "abbshir",
+        "categoryId": "grass",
+        "unit": "bale",
+        "basePrice": 4600,
+        "bulkPricing": [
+            {
+                "minQty": 15,
+                "pricePerUnit": 4300
+            },
+            {
+                "minQty": 50,
+                "pricePerUnit": 4000
+            }
+        ],
+        "stock": 350,
+        "originCountry": "pakistan",
+        "weight": 20,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "camel",
+            "cattle",
+            "sheep",
+            "horse"
+        ]
     },
     {
         "id": 3,
@@ -102,11 +167,17 @@
         },
         "stats": [
             {
-                "label": "Starch",
+                "label": {
+                    "en": "Starch",
+                    "ar": "النشا"
+                },
                 "value": "~55%"
             },
             {
-                "label": "Energy",
+                "label": {
+                    "en": "Energy",
+                    "ar": "الطاقة"
+                },
                 "value": "Very High"
             }
         ],
@@ -117,7 +188,34 @@
         "extraDetails": {
             "en": "Barley provides a dense source of starch that converts quickly to mass and energy. It is essential for conditioning thin animals or preparing livestock for sale. Best used in combination with fibrous hay (like Rhodes or Straw) to ensure safety and maximize nutrient absorption.",
             "ar": "يوفر الشعير مصدراً كثيفاً للنشويات التي تتحول بسرعة إلى كتلة وطاقة. ضروري لتحسين حالة الحلال الضعيف أو تجهيز المواشي للبيع. يُفضل استخدامه دائماً مع الأعلاف الليفية (مثل الرودس أو التبن) لضمان سلامة الهضم وأقصى استفادة غذائية."
-        }
+        },
+        "slug": "barley-grain",
+        "sku": "P2-BAR-003",
+        "brandId": "al-ghurair",
+        "categoryId": "grains-concentrates",
+        "unit": "bag",
+        "basePrice": 6200,
+        "salePrice": 5800,
+        "bulkPricing": [
+            {
+                "minQty": 20,
+                "pricePerUnit": 5600
+            },
+            {
+                "minQty": 50,
+                "pricePerUnit": 5300
+            }
+        ],
+        "stock": 300,
+        "isFeatured": true,
+        "originCountry": "uae",
+        "weight": 50,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "sheep",
+            "goat",
+            "camel"
+        ]
     },
     {
         "id": 4,
@@ -140,11 +238,17 @@
         },
         "stats": [
             {
-                "label": "Calcium",
+                "label": {
+                    "en": "Calcium",
+                    "ar": "الكالسيوم"
+                },
                 "value": "Low"
             },
             {
-                "label": "Digestibility",
+                "label": {
+                    "en": "Digestibility",
+                    "ar": "قابلية الهضم"
+                },
                 "value": "Premium"
             }
         ],
@@ -155,7 +259,31 @@
         "extraDetails": {
             "en": "Timothy is the gold standard for equine health, specifically for horses with sensitive stomachs or metabolic concerns. Its balanced fiber structure encourages natural grazing behavior without the calorie overload, keeping your horse fit, calm, and free from digestive distress.",
             "ar": "التيموثي هو المعيار الذهبي لصحة الخيول، خاصة تلك ذات المعدة الحساسة. تركيبته الليفية المتوازنة تشجع على المضغ الطبيعي دون زيادة في السعرات الحرارية، مما يبقي خيلك في لياقة عالية، وهدوء، وأمان من الاضطرابات الهضمية."
-        }
+        },
+        "slug": "timothy-hay-premium",
+        "sku": "P2-TIM-004",
+        "brandId": "bartl",
+        "categoryId": "grass",
+        "unit": "bale",
+        "basePrice": 11500,
+        "bulkPricing": [
+            {
+                "minQty": 10,
+                "pricePerUnit": 10500
+            },
+            {
+                "minQty": 30,
+                "pricePerUnit": 9800
+            }
+        ],
+        "stock": 45,
+        "originCountry": "usa",
+        "weight": 25,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "horse",
+            "deer"
+        ]
     },
     {
         "id": 5,
@@ -178,11 +306,17 @@
         },
         "stats": [
             {
-                "label": "Texture",
+                "label": {
+                    "en": "Texture",
+                    "ar": "القوام"
+                },
                 "value": "Coarse"
             },
             {
-                "label": "Cost",
+                "label": {
+                    "en": "Cost",
+                    "ar": "التكلفة"
+                },
                 "value": "Economical"
             }
         ],
@@ -193,7 +327,33 @@
         "extraDetails": {
             "en": "Perfect for herd maintenance, Sudan Grass offers a distinct advantage: high satiety. It keeps animals full for longer periods due to its coarse texture, making it an excellent 'filler' feed to mix with higher quality forages to reduce overall feeding costs.",
             "ar": "مثالي للحفاظ على القطعـان الكبيرة. يوفر السودان جراس ميزة مهمة وهي 'الشبع'؛ حيث يُبقي الحيوانات ممتلئة لفترات أطول بفضل خشونته. ممتاز كعلف 'مالئ' لخلطه مع الأعلاف الأخرى لتقليل التكلفة الإجمالية للتغذية."
-        }
+        },
+        "slug": "sudan-grass-hay",
+        "sku": "P2-SUD-005",
+        "brandId": "abbshir",
+        "categoryId": "grass",
+        "unit": "bale",
+        "basePrice": 4200,
+        "bulkPricing": [
+            {
+                "minQty": 15,
+                "pricePerUnit": 3900
+            },
+            {
+                "minQty": 50,
+                "pricePerUnit": 3600
+            }
+        ],
+        "stock": 160,
+        "originCountry": "sudan",
+        "weight": 20,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "camel",
+            "cattle",
+            "sheep",
+            "goat"
+        ]
     },
     {
         "id": 6,
@@ -218,11 +378,17 @@
         },
         "stats": [
             {
-                "label": "Palatability",
+                "label": {
+                    "en": "Palatability",
+                    "ar": "الاستساغة"
+                },
                 "value": "Excellent"
             },
             {
-                "label": "Protein",
+                "label": {
+                    "en": "Protein",
+                    "ar": "البروتين"
+                },
                 "value": "13-15%"
             }
         ],
@@ -233,7 +399,32 @@
         "extraDetails": {
             "en": "This hay usually contains nutrient-rich leaves and remnants of peanut pods, making it a sweet, treat-like feed. It is known to significantly improve milk yield in camels and is soft enough for young or picky eaters who refuse coarser stems.",
             "ar": "يحتوي هذا التبن عادةً على أوراق غنية وبقايا من حبات الفول، مما يجعله علفاً حلواً ومستساغاً كالمكافأة. معروف بقدرته الكبيرة على رفع إدرار الحليب عند الإبل، كما أنه ناعم وسهل الأكل للحلال الصغير أو الانتقائي الذي يرفض الأعلاف الخشنة."
-        }
+        },
+        "slug": "peanut-hay-select",
+        "sku": "P2-PNT-006",
+        "brandId": "abbshir",
+        "categoryId": "straw",
+        "unit": "bale",
+        "basePrice": 4100,
+        "bulkPricing": [
+            {
+                "minQty": 20,
+                "pricePerUnit": 3800
+            },
+            {
+                "minQty": 50,
+                "pricePerUnit": 3500
+            }
+        ],
+        "stock": 130,
+        "originCountry": "sudan",
+        "weight": 18,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "camel",
+            "sheep",
+            "goat"
+        ]
     },
     {
         "id": 7,
@@ -258,11 +449,17 @@
         },
         "stats": [
             {
-                "label": "Function",
+                "label": {
+                    "en": "Function",
+                    "ar": "الوظيفة"
+                },
                 "value": "Mixer"
             },
             {
-                "label": "Fiber",
+                "label": {
+                    "en": "Fiber",
+                    "ar": "الألياف"
+                },
                 "value": "Very High"
             }
         ],
@@ -273,7 +470,33 @@
         "extraDetails": {
             "en": "While low in energy, Wheat Straw is mechanically crucial. It acts as a buffer in the stomach, preventing the rapid fermentation of grains that causes acidity. It is the necessary 'roughage' partner to any high-grain fattening diet.",
             "ar": "رغم انخفاض طاقته، إلا أن تبن القمح ضروري من الناحية الميكانيكية. يعمل كعازل في المعدة يمنع التخمر السريع للحبوب الذي يسبب الحموضة. هو الشريك 'الخشن' الضروري لأي نظام غذائي يعتمد على التسمين بالحبوب."
-        }
+        },
+        "slug": "wheat-straw-tibn",
+        "sku": "P2-WHT-007",
+        "brandId": "abbshir",
+        "categoryId": "straw",
+        "unit": "bale",
+        "basePrice": 3100,
+        "bulkPricing": [
+            {
+                "minQty": 25,
+                "pricePerUnit": 2800
+            },
+            {
+                "minQty": 60,
+                "pricePerUnit": 2500
+            }
+        ],
+        "stock": 450,
+        "originCountry": "uae",
+        "weight": 20,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "cattle",
+            "camel",
+            "sheep",
+            "goat"
+        ]
     },
     {
         "id": 8,
@@ -297,11 +520,17 @@
         },
         "stats": [
             {
-                "label": "Aroma",
+                "label": {
+                    "en": "Aroma",
+                    "ar": "الرائحة"
+                },
                 "value": "Strong"
             },
             {
-                "label": "Benefit",
+                "label": {
+                    "en": "Benefit",
+                    "ar": "الفائدة"
+                },
                 "value": "Health Tonic"
             }
         ],
@@ -312,7 +541,32 @@
         "extraDetails": {
             "en": "The strong, sweet scent of Fenugreek triggers the appetite of even the weakest animals. It acts as a natural tonic, often used to improve the color and quality of meat before market, and to keep animals warm and active during winter.",
             "ar": "الرائحة العطرية القوية للحلبة تحفز شهية حتى أضعف الحيوانات. يعمل كمقوٍ طبيعي، وغالباً ما يستخدم لتحسين لون وجودة اللحم (تبييض اللحم) قبل البيع، ولإبقاء الحلال دافئاً ونشيطاً خلال الشتاء."
-        }
+        },
+        "slug": "fenugreek-straw-select",
+        "sku": "P2-FEN-008",
+        "brandId": "abbshir",
+        "categoryId": "straw",
+        "unit": "bale",
+        "basePrice": 3900,
+        "bulkPricing": [
+            {
+                "minQty": 20,
+                "pricePerUnit": 3600
+            },
+            {
+                "minQty": 50,
+                "pricePerUnit": 3300
+            }
+        ],
+        "stock": 95,
+        "originCountry": "sudan",
+        "weight": 18,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "sheep",
+            "goat",
+            "camel"
+        ]
     },
     {
         "id": 9,
@@ -336,11 +590,17 @@
         },
         "stats": [
             {
-                "label": "Texture",
+                "label": {
+                    "en": "Texture",
+                    "ar": "القوام"
+                },
                 "value": "Soft/Fine"
             },
             {
-                "label": "Protein",
+                "label": {
+                    "en": "Protein",
+                    "ar": "البروتين"
+                },
                 "value": "10-14%"
             }
         ],
@@ -351,7 +611,33 @@
         "extraDetails": {
             "en": "With its fine strands, Bermuda grass passes easily through the digestive tract, preventing impaction. It is an excellent choice for weaning animals off milk onto solid feed, or for horses that require a steady, non-heating energy source.",
             "ar": "بفضل أليافه الدقيقة، يمر البرمودا بسهولة عبر الجهاز الهضمي مما يمنع الانسداد. هو خيار ممتاز لفطم الحيوانات (نقلها من الحليب للأكل)، أو للخيول التي تحتاج مصدراً للطاقة المستقرة التي لا تسبب سخونة."
-        }
+        },
+        "slug": "bermuda-grass-select",
+        "sku": "P2-BER-009",
+        "brandId": "bartl",
+        "categoryId": "grass",
+        "unit": "bale",
+        "basePrice": 8700,
+        "bulkPricing": [
+            {
+                "minQty": 10,
+                "pricePerUnit": 8100
+            },
+            {
+                "minQty": 40,
+                "pricePerUnit": 7600
+            }
+        ],
+        "stock": 110,
+        "originCountry": "usa",
+        "weight": 25,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "horse",
+            "sheep",
+            "goat",
+            "deer"
+        ]
     },
     {
         "id": 10,
@@ -375,11 +661,17 @@
         },
         "stats": [
             {
-                "label": "Balance",
+                "label": {
+                    "en": "Balance",
+                    "ar": "التوازن"
+                },
                 "value": "Protein/Fiber"
             },
             {
-                "label": "Value",
+                "label": {
+                    "en": "Value",
+                    "ar": "القيمة الغذائية"
+                },
                 "value": "Cost-Effective"
             }
         ],
@@ -390,7 +682,32 @@
         "extraDetails": {
             "en": "This mix solves the problem of animals 'picking' only the good leaves. By combining the high nutrition of Alfalfa with the filling fiber of Wheat Straw, you get a complete feed that maintains moderate energy levels while reducing overall feeding costs.",
             "ar": "يحل هذا المخلوط مشكلة 'تنقية' الحيوانات للأوراق فقط. من خلال دمج القيمة الغذائية للجت مع ألياف التبن المشبعة، تحصل على علف متكامل يحافظ على مستويات طاقة معتدلة ويقلل من تكلفة العلف الإجمالية."
-        }
+        },
+        "slug": "alfalfa-straw-mix-select",
+        "sku": "P2-MIX-010",
+        "brandId": "abbshir",
+        "categoryId": "alfalfa",
+        "unit": "bale",
+        "basePrice": 5600,
+        "bulkPricing": [
+            {
+                "minQty": 15,
+                "pricePerUnit": 5200
+            },
+            {
+                "minQty": 50,
+                "pricePerUnit": 4800
+            }
+        ],
+        "stock": 85,
+        "originCountry": "spain",
+        "weight": 22,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "camel",
+            "cattle",
+            "sheep"
+        ]
     },
     {
         "id": 11,
@@ -414,11 +731,17 @@
         },
         "stats": [
             {
-                "label": "Texture",
+                "label": {
+                    "en": "Texture",
+                    "ar": "القوام"
+                },
                 "value": "Ultra-Soft"
             },
             {
-                "label": "Sugar",
+                "label": {
+                    "en": "Sugar",
+                    "ar": "السكريات"
+                },
                 "value": "Low"
             }
         ],
@@ -429,6 +752,31 @@
         "extraDetails": {
             "en": "Teff is famous for being hypoallergenic and incredibly palatable due to its soft texture. It is the number one recommendation for gazelles and deer, as well as horses prone to laminitis, as it provides necessary fiber without the sugar spikes.",
             "ar": "يشتهر التيف بأنه لا يسبب الحساسية ومستساغ جداً بفضل نعومته. هو التوصية الأولى للغزلان والظباء، وكذلك الخيول المعرضة لالتهاب الحافر (الحمرة)، حيث يوفر الألياف الضرورية دون رفع مستوى السكر في الدم."
-        }
+        },
+        "slug": "teff-grass-premium",
+        "sku": "P2-TEF-011",
+        "brandId": "zabeel",
+        "categoryId": "grass",
+        "unit": "bale",
+        "basePrice": 9800,
+        "bulkPricing": [
+            {
+                "minQty": 10,
+                "pricePerUnit": 9200
+            },
+            {
+                "minQty": 30,
+                "pricePerUnit": 8700
+            }
+        ],
+        "stock": 70,
+        "originCountry": "south-africa",
+        "weight": 20,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "horse",
+            "deer",
+            "camel"
+        ]
     }
 ]

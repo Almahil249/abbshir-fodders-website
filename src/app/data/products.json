@@ -44,7 +44,36 @@
         "extraDetails": {
             "en": "Our premium Alfalfa (Jett) comes from trusted sources like Sudan, Egypt, Spain, USA, and South Africa. Perfect as a daily base for camels (especially racing), dairy cows, ewes/goats in lactation, and growing animals. Helps improve rumen health, reduce digestive issues, boost meat quality, and increase milk production. Rich in calcium and vitamins A/E for bone strength and overall vitality.",
             "ar": "الجت الممتاز لدينا من مصادر موثوقة مثل السودان ومصر وإسبانيا وأمريكا وجنوب أفريقيا. مثالي كأساس يومي للإبل (خاصة السباق)، الأبقار الحلوب، النعاج والماعز المرضعة، والحيوانات النامية. يحسن صحة الكرش، يقلل مشاكل الهضم، يرفع جودة اللحم وإنتاج الحليب. غني بالكالسيوم وفيتامين A وE لقوة العظام والحيوية العامة."
-        }
+        },
+        "slug": "alfalfa-hay-bersim",
+        "sku": "AB-ALF-001",
+        "brandId": "abbshir",
+        "categoryId": "alfalfa",
+        "unit": "bale",
+        "basePrice": 7500,
+        "salePrice": 7000,
+        "bulkPricing": [
+            {
+                "minQty": 10,
+                "pricePerUnit": 6800
+            },
+            {
+                "minQty": 50,
+                "pricePerUnit": 6400
+            }
+        ],
+        "stock": 250,
+        "isFeatured": true,
+        "originCountry": "sudan",
+        "weight": 25,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "camel",
+            "horse",
+            "cattle",
+            "sheep",
+            "goat"
+        ]
     },
     {
         "id": 2,
@@ -91,7 +120,35 @@
         "extraDetails": {
             "en": "Sourced from Sudan and Pakistan. Ideal base forage for camels, cattle, sheep/goats, and horses. Long fibers promote rumen movement, reduce digestive upsets, and support steady weight. Economical choice for consistent daily use in maintenance or moderate production stages.",
             "ar": "من السودان وباكستان. مثالي كعلف أساسي للإبل والأبقار والضأن/الماعز والخيول. الألياف الطويلة تحسن حركة الكرش، تقلل اضطرابات الهضم، وتدعم الوزن المستقر. خيار اقتصادي للاستخدام اليومي المستمر في مراحل الصيانة أو الإنتاج المعتدل."
-        }
+        },
+        "slug": "rhodes-grass",
+        "sku": "AB-RHD-002",
+        "brandId": "abbshir",
+        "categoryId": "grass",
+        "unit": "bale",
+        "basePrice": 4500,
+        "bulkPricing": [
+            {
+                "minQty": 15,
+                "pricePerUnit": 4200
+            },
+            {
+                "minQty": 50,
+                "pricePerUnit": 3900
+            }
+        ],
+        "stock": 400,
+        "isFeatured": true,
+        "originCountry": "pakistan",
+        "weight": 20,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "camel",
+            "cattle",
+            "sheep",
+            "goat",
+            "horse"
+        ]
     },
     {
         "id": 3,
@@ -137,7 +194,33 @@
         "extraDetails": {
             "en": "From Pakistan and Sudan, often with some peanut residues for extra palatability. Trusted in UAE camel dairy farms for higher milk yield and quality. Soft fibers aid digestion in young/small animals, improve rumen movement, and work well as a supplement for fattening or low-appetite periods.",
             "ar": "من باكستان والسودان، وقد يحتوي على بقايا بذور لتحسين الطعم. موثوق في مزارع حليب الإبل بالإمارات لزيادة كمية وجودة الحليب. الألياف الناعمة تساعد الهضم عند الصغار، تحسن حركة الكرش، وتصلح كمكمل للتسمين أو فترات ضعف الشهية."
-        }
+        },
+        "slug": "peanut-straw",
+        "sku": "AB-PNT-003",
+        "brandId": "abbshir",
+        "categoryId": "straw",
+        "unit": "bale",
+        "basePrice": 4000,
+        "bulkPricing": [
+            {
+                "minQty": 20,
+                "pricePerUnit": 3700
+            },
+            {
+                "minQty": 50,
+                "pricePerUnit": 3400
+            }
+        ],
+        "stock": 180,
+        "originCountry": "sudan",
+        "weight": 18,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "camel",
+            "sheep",
+            "goat",
+            "cattle"
+        ]
     },
     {
         "id": 4,
@@ -182,7 +265,33 @@
         "extraDetails": {
             "en": "Sourced from Pakistan. Strong scent encourages higher feed intake, helping weak or recovering animals. Supports better milk flow in ewes/goats and improves meat whiteness/quality. Medium fibers are easy on digestion - ideal supplement when appetite drops.",
             "ar": "من باكستان. الرائحة القوية تشجع على أكل أكثر، تساعد الحيوانات الضعيفة أو المتعافية. يدعم إدرار الحليب عند النعاج/الماعز ويحسن بياض وجودة اللحم. الألياف المتوسطة سهلة على الهضم - مكمل مثالي عند انخفاض الشهية."
-        }
+        },
+        "slug": "fenugreek-straw",
+        "sku": "AB-FEN-004",
+        "brandId": "abbshir",
+        "categoryId": "straw",
+        "unit": "bale",
+        "basePrice": 3800,
+        "bulkPricing": [
+            {
+                "minQty": 20,
+                "pricePerUnit": 3500
+            },
+            {
+                "minQty": 50,
+                "pricePerUnit": 3200
+            }
+        ],
+        "stock": 120,
+        "originCountry": "sudan",
+        "weight": 18,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "sheep",
+            "goat",
+            "camel",
+            "cattle"
+        ]
     },
     {
         "id": 5,
@@ -228,7 +337,34 @@
         "extraDetails": {
             "en": "From Egypt, Spain, and Pakistan. Best as a mixer with concentrates/grains to slow digestion and maintain rumen pH. Supports steady gut movement and reduces acidosis risk - ideal filler for camels/cattle on high-energy diets.",
             "ar": "من مصر وإسبانيا وباكستان. أفضل كمخلوط مع المركزات/الحبوب لإبطاء الهضم والحفاظ على حموضة الكرش. يدعم حركة الأمعاء المنتظمة ويقلل خطر الحموضة - مثالي كمالئ للإبل/الأبقار على علف عالي الطاقة."
-        }
+        },
+        "slug": "wheat-straw",
+        "sku": "AB-WHT-005",
+        "brandId": "abbshir",
+        "categoryId": "straw",
+        "unit": "bale",
+        "basePrice": 3200,
+        "bulkPricing": [
+            {
+                "minQty": 25,
+                "pricePerUnit": 2900
+            },
+            {
+                "minQty": 60,
+                "pricePerUnit": 2600
+            }
+        ],
+        "stock": 500,
+        "originCountry": "egypt",
+        "weight": 22,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "cattle",
+            "camel",
+            "sheep",
+            "goat",
+            "horse"
+        ]
     },
     {
         "id": 6,
@@ -275,7 +411,34 @@
         "extraDetails": {
             "en": "Sourced from Spain. Great digestibility makes it suitable for young animals, horses, and those prone to digestive problems. Reduces gut issues while providing moderate energy and protein - ideal daily option for sheep, goats, camels, and cattle.",
             "ar": "من إسبانيا. الهضم الممتاز يجعله مناسب للصغار والخيول والحيوانات المعرضة لمشاكل هضمية. يقلل اضطرابات الأمعاء مع طاقة وبروتين معتدل - خيار يومي رائع للضأن والماعز والإبل والأبقار."
-        }
+        },
+        "slug": "bermuda-grass",
+        "sku": "AB-BER-006",
+        "brandId": "bartl",
+        "categoryId": "grass",
+        "unit": "bale",
+        "basePrice": 8500,
+        "salePrice": 8000,
+        "bulkPricing": [
+            {
+                "minQty": 10,
+                "pricePerUnit": 7800
+            },
+            {
+                "minQty": 40,
+                "pricePerUnit": 7400
+            }
+        ],
+        "stock": 140,
+        "originCountry": "usa",
+        "weight": 25,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "horse",
+            "camel",
+            "sheep",
+            "deer"
+        ]
     },
     {
         "id": 7,
@@ -320,7 +483,33 @@
         "extraDetails": {
             "en": "From Egypt and Spain. Combines alfalfa's protein boost with straw's filling fiber for rumen health and moderate energy. Reduces overall feed cost while supporting growth/milk - perfect everyday option for camels, sheep, and cattle.",
             "ar": "من مصر وإسبانيا. يجمع بروتين الجت مع ألياف القش لصحة الكرش وطاقة معتدلة. يقلل التكلفة مع دعم النمو/الحليب - خيار يومي مثالي للإبل والضأن والأبقار."
-        }
+        },
+        "slug": "alfalfa-wheat-straw-mix",
+        "sku": "AB-MIX-007",
+        "brandId": "abbshir",
+        "categoryId": "alfalfa",
+        "unit": "bale",
+        "basePrice": 5500,
+        "bulkPricing": [
+            {
+                "minQty": 15,
+                "pricePerUnit": 5100
+            },
+            {
+                "minQty": 50,
+                "pricePerUnit": 4700
+            }
+        ],
+        "stock": 90,
+        "originCountry": "spain",
+        "weight": 22,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "camel",
+            "cattle",
+            "sheep",
+            "goat"
+        ]
     },
     {
         "id": 8,
@@ -366,7 +555,33 @@
         "extraDetails": {
             "en": "Premium from South Africa. Highly palatable with excellent digestibility - great for sheep, goats, horses, and deer. Reduces digestive problems while providing balanced fiber and protein for maintenance or light work.",
             "ar": "ممتاز من جنوب أفريقيا. مستساغ جداً وهضمه ممتاز - رائع للضأن والماعز والخيول والغزلان. يقلل مشاكل الهضم مع ألياف وبروتين متوازن للصيانة أو العمل الخفيف."
-        }
+        },
+        "slug": "south-african-teff-grass",
+        "sku": "AB-TEF-008",
+        "brandId": "zabeel",
+        "categoryId": "grass",
+        "unit": "bale",
+        "basePrice": 9500,
+        "bulkPricing": [
+            {
+                "minQty": 10,
+                "pricePerUnit": 8900
+            },
+            {
+                "minQty": 30,
+                "pricePerUnit": 8400
+            }
+        ],
+        "stock": 75,
+        "isFeatured": true,
+        "originCountry": "south-africa",
+        "weight": 20,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "horse",
+            "camel",
+            "deer"
+        ]
     },
     {
         "id": 9,
@@ -412,6 +627,33 @@
         "extraDetails": {
             "en": "Imported from the USA. Famous for excellent digestibility and low-dust quality - ideal for horses prone to colic or obesity. Maintains healthy weight, supports gut health, and suits sensitive sheep/goats or deer too.",
             "ar": "مستورد من الولايات المتحدة. مشهور بهضم ممتاز وجودة منخفضة الغبار - مثالي للخيول المعرضة للمغص أو السمنة. يحافظ على وزن صحي، يدعم صحة الأمعاء، ويناسب الضأن/الماعز الحساسة أو الغزلان."
-        }
+        },
+        "slug": "american-timothy-hay",
+        "sku": "AB-TIM-009",
+        "brandId": "bartl",
+        "categoryId": "grass",
+        "unit": "bale",
+        "basePrice": 11000,
+        "salePrice": 10500,
+        "bulkPricing": [
+            {
+                "minQty": 10,
+                "pricePerUnit": 10000
+            },
+            {
+                "minQty": 30,
+                "pricePerUnit": 9500
+            }
+        ],
+        "stock": 60,
+        "isFeatured": true,
+        "originCountry": "usa",
+        "weight": 25,
+        "weightUnit": "kg",
+        "speciesTargets": [
+            "horse",
+            "deer",
+            "camel"
+        ]
     }
 ]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "abbshir",
+    "name": {
+      "en": "Abbshir Fodder",
+      "ar": "أبشر للأعلاف"
+    },
+    "logo": "/Logo.png",
+    "description": {
+      "en": "Premium imported and local forage distributed by Abbshir, ADAFSA-certified across the UAE.",
+      "ar": "أعلاف مستوردة ومحلية فاخرة وموزعة من أبشر، معتمدة من هيئة أبوظبي للزراعة والسلامة الغذائية."
+    }
+  },
+  {
+    "id": "arasco",
+    "name": {
+      "en": "ARASCO",
+      "ar": "أراسكو"
+    },
+    "description": {
+      "en": "Leading Saudi Arabian animal feed manufacturer producing WAFI and specialty compound feeds.",
+      "ar": "الشركة الرائدة في صناعة الأعلاف المركبة مثل وافي والأعلاف التخصصية بالمملكة العربية السعودية."
+    }
+  },
+  {
+    "id": "al-ghurair",
+    "name": {
+      "en": "Al Ghurair Foods",
+      "ar": "الغرير للأغذية"
+    },
+    "description": {
+      "en": "Pioneering UAE food and livestock feed miller providing premium grains and rations.",
+      "ar": "إحدى كبرى شركات مطاحن الحبوب والأعلاف في الإمارات بجودة عالية وموثوقية."
+    }
+  },
+  {
+    "id": "bartl",
+    "name": {
+      "en": "Bartl",
+      "ar": "بارتل"
+    },
+    "description": {
+      "en": "Renowned European brand known for specialized horse and livestock forage nutrition.",
+      "ar": "علامة أوروبية متخصصة في تغذية الخيول والماشية ذات الجودة العالية."
+    }
+  },
+  {
+    "id": "zabeel",
+    "name": {
+      "en": "Zabeel Feed",
+      "ar": "أعلاف زعبيل"
+    },
+    "description": {
+      "en": "Prestigious UAE equine and camel feed specialist producing scientifically formulated nutrition.",
+      "ar": "أعلاف إماراتية متميزة متخصصة في تغذية خيول السباق وهجن النخبة."
+    }
+  }
+]

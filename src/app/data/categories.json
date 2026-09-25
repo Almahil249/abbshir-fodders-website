@@ -1,0 +1,42 @@
+[
+  {
+    "id": "alfalfa",
+    "name": {
+      "en": "Alfalfa & Clover",
+      "ar": "الجت والبرسيم"
+    },
+    "image": "/ProductsIMG/1/Alfalfa1.jpg"
+  },
+  {
+    "id": "grass",
+    "name": {
+      "en": "Grass & Rhodes",
+      "ar": "الرودس والأعشاب"
+    },
+    "image": "/ProductsIMG/2/Rhodes2.jpg"
+  },
+  {
+    "id": "straw",
+    "name": {
+      "en": "Straw & Stalks",
+      "ar": "التبن والقش"
+    },
+    "image": "/ProductsIMG/3/PeanutStraw1.jpg"
+  },
+  {
+    "id": "grains-concentrates",
+    "name": {
+      "en": "Grains & Concentrates",
+      "ar": "الحبوب والأعلاف المركزة"
+    },
+    "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": "feed-additives",
+    "name": {
+      "en": "Feed Additives & Supplements",
+      "ar": "إضافات ومكملات الأعلاف"
+    },
+    "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=800"
+  }
+]
