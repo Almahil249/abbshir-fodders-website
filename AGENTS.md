@@ -16,9 +16,12 @@ i18n library without an explicit task to migrate the whole site.
 
 ## Non-Negotiable Invariants
 
-1. **Every page ships in both `en` and `ar`, RTL-correct.** No new UI copy is
-   hardcoded in one language — it goes through `LanguageContext`'s `t()` /
-   the bilingual object shape (`{ en, ar }`) already used in `products.json`.
+1. **Every customer-facing page ships in both `en` and `ar`, RTL-correct.**
+   No new UI copy is hardcoded in one language — it goes through
+   `LanguageContext`'s `t()` / the bilingual object shape (`{ en, ar }`)
+   already used in `products.json`. **Admin-portal routes (`/admin/*`) are
+   exempt** — they are English-only internal ops tools (see Open Decision
+   #2 in `PROJECT_SNAPSHOT.md`).
 2. **Money is never a bare `float` in state or JSON.** Store prices as integer
    minor units (fils, 1 AED = 100 fils) or fixed-precision strings; format for
    display only at render time. Currency is AED everywhere unless a task says
@@ -51,6 +54,14 @@ i18n library without an explicit task to migrate the whole site.
 8. **All new routes are added to `App.tsx`'s existing `<Routes>` tree**,
    nested under the current `<BrowserRouter>` and `<LanguageProvider>` —
    do not introduce a second router or duplicate providers.
+9. **Admin mock-auth follows the same disclosure discipline as customer
+   mock-auth (Invariant #7).** Every admin login/session/role-gate touch
+   point must be commented `// MOCK — replace when backend lands`. No
+   plaintext password retention, no real credential claims. The admin
+   mock-auth layer lives in `services/admin/*` (paralleling
+   `services/commerce/*`) and is clearly separated from the customer
+   `sessionStore` — admin and customer auth are distinct concerns that
+   happen to both be mocked in Phase 1.
 
 ---
 

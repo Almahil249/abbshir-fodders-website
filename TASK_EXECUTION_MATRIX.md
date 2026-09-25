@@ -487,3 +487,544 @@ persistent accounts, inventory sync) as a distinct future phase.
 
 Stop and report.
 ```
+
+---
+
+## Model Roster — Reconciliation Note (2026-09-25)
+
+The header of this file declares: **Gemini 3.8 Flash**, **Gemini 3.1 Pro**,
+**Claude Sonnet 4.6**, **Claude Opus 4.6**. This predates the Phase 3
+planning pass. No external "Sept 2026 cross-provider pricing table" was
+supplied or found in the repo. The Phase 3 tasks below use the **same four
+models** already declared above, following the same routing rubric:
+
+- **Gemini 3.8 Flash** — broad, checklist-shaped verification passes,
+  responsive sweep work. Cheap and fast.
+- **Gemini 3.1 Pro** — read-only or templated tasks with low ambiguity.
+- **Claude Sonnet 4.6 (Thinking)** — well-defined but non-trivial feature
+  work (the large middle band).
+- **Claude Opus 4.6 (Thinking)** — irreversible architecture, security
+  surface, genuinely ambiguous trade-offs, or final-gate reviews.
+
+> **Drift note (D10):** The user prompt referenced a separate roster with
+> "Gemini 3.5 Flash" — this does not match the existing header's "Gemini
+> 3.8 Flash." We retain "3.8 Flash" as declared in the existing header
+> since that's the canonical version in this file. If a model version
+> renaming has occurred, update this note rather than silently switching.
+
+---
+
+## STEP 3 — Admin Portal Task Matrix (Phase 3)
+
+> **Dependency gate:** T013 should not start until T002 (State Management:
+> Zustand stores & Vitest) and T003 (`services/commerce/*` Provider) are
+> complete. The admin mock layer mirrors those patterns and depends on the
+> Zustand/Vitest infrastructure and the `CommerceCatalogProvider` interface
+> shape being finalized. This planning pass (Phase 3) has no code
+> dependency on T002–T012 finishing.
+
+Run each task below in its own fresh conversation, in order. Each row
+links to its paste-ready prompt underneath the table.
+
+| Task | Name | Model | Justification | Skills |
+|:---|:---|:---|:---|:---|
+| **T013** | Admin Foundations (types, mock service, storage adapter) | Claude Opus 4.6 (Thinking) | Sets the admin domain model, mock-service interface, IndexedDB adapter, and seed generator that every subsequent admin task depends on — the one place where a wrong call is expensive to unwind, paralleling why Step 1 used Opus. | `codebase-design`, `zod`, `writing-for-agents` |
+| **T014** | Admin Shell & Layout (sidebar, header, routing, role-gate) | Claude Sonnet 4.6 (Thinking) | Well-defined but non-trivial: admin routing tree, lazy loading, sidebar state, role-gate stub, all composing shadcn primitives correctly — several moving parts that must agree. | `ui-ux-pro-max`, `ui-styling`, `shadcn-ui`, `web-design-guidelines` |
+| **T015** | Catalog & Inventory UI (table, create/edit wizard, variant matrix, image dropzone) | Claude Sonnet 4.6 (Thinking) | The most complex admin screen: TanStack Table integration, Zod-validated multi-step form, variant matrix builder, real binary image upload — each is non-trivial and they must work together. | `table-features`, `table-state`, `ui-ux-pro-max`, `zod`, `shadcn-ui` |
+| **T016** | Order Management UI (list, status tabs, detail drawer, state machine, tracking ID) | Claude Sonnet 4.6 (Thinking) | State-machine enforcement in the UI, status transition validation, detail drawer with timeline — well-defined but the state machine logic must be correct first time. | `table-features`, `table-state`, `ui-styling`, `shadcn-ui` |
+| **T017** | Financials & Analytics UI (summary cards, charts, ledger, mock refund) | Claude Sonnet 4.6 (Thinking) | Dashboard metrics, chart rendering, ledger table, and mock refund flow — multiple UI patterns but each is well-constrained. | `ui-ux-pro-max`, `table-features`, `shadcn-ui` |
+| **T018** | Bulk Actions & CSV Export | Gemini 3.1 Pro | Templated: batch status update on selected rows + CSV serialization of table data — well-specified, low ambiguity, building on T015/T016's DataGrid. | `table-features`, `table-state` |
+| **T019** | English-Only QA + Accessibility Sweep | Gemini 3.8 Flash | Broad, checklist-shaped verification across all admin routes — fast and cheap is the right tool. No bilingual complexity (admin is English-only). | `web-design-guidelines`, `ui-styling` |
+| **T020** | Final Review: mock-auth honesty, float-money audit, sync-boundary, order-provenance, scope | Claude Opus 4.6 (Thinking) | Last gate before calling Phase 3 done — checks for float-money leaks, mock-auth disclosure compliance, sync-boundary violations, synthetic-order labeling, and scope creep across T013–T019. Needs highest reasoning to catch what per-task reviews missed. | `code-review`, `codebase-design` |
+
+---
+
+### Prompt T013 — Admin Foundations (types, mock service, storage adapter)
+```text
+/goal Execute Task T013: Admin Foundations.
+Read @AGENTS.md (especially Invariants #6, #7, #9), @RULES.md (§2, §3, §9),
+@PROJECT_SNAPSHOT.md (T002 and T003 must be complete — if not, stop and
+report), and @.agents/rules/50-admin.md.
+Activate skills: codebase-design, zod, writing-for-agents.
+
+This task creates the admin data infrastructure. Do NOT build any UI —
+that's T014+.
+
+1. Add admin-specific types to types/ecommerce.ts (additive only —
+   Invariant #4 applies to this file too):
+
+   - AdminProduct — extends Product with:
+     createdAt: string (ISO 8601)
+     updatedAt: string (ISO 8601)
+     isPublished: boolean
+     variantMatrix: ProductVariant[] (array of { label: string, sku: string,
+       priceFils: number, stock: number, weight: string, weightUnit: string })
+     imageKeys: string[] (IndexedDB blob keys for uploaded photos)
+
+   - OrderStatus = 'pending' | 'confirmed' | 'processing' | 'shipped' |
+     'delivered' | 'cancelled'
+
+   - OrderStatusTransition = { from: OrderStatus, to: OrderStatus,
+     timestamp: string (ISO 8601), actor: string }
+
+   - VALID_ORDER_TRANSITIONS: Record<OrderStatus, OrderStatus[]> — the
+     allowed state machine: pending → [confirmed, cancelled],
+     confirmed → [processing, cancelled], processing → [shipped, cancelled],
+     shipped → [delivered], delivered → [] (terminal), cancelled → [] (terminal)
+
+   - AdminOrderLine = { productId: string, slug: string, name: Localized,
+     quantity: number, unitPriceFils: number, lineTotalFils: number }
+
+   - AdminOrder = { orderId: string, customerName: string,
+     customerEmail: string, customerPhone: string,
+     items: AdminOrderLine[], status: OrderStatus,
+     statusHistory: OrderStatusTransition[], trackingId?: string,
+     subtotalFils: number, vatFils: number, totalFils: number,
+     createdAt: string, updatedAt: string, notes: string,
+     isSynthetic: boolean }
+
+   - AdminFinancialSummary = { totalRevenueFils: number,
+     totalOrderCount: number, averageOrderFils: number,
+     refundedFils: number, periodStart: string, periodEnd: string,
+     statusBreakdown: Record<OrderStatus, number> }
+
+   - AdminServiceProvider interface:
+     listProducts(params?: CatalogFilterParams): Promise<AdminProduct[]>
+     getProduct(productId: string): Promise<AdminProduct | null>
+     createProduct(data: Omit<AdminProduct, 'createdAt' | 'updatedAt'>):
+       Promise<AdminProduct>
+     updateProduct(productId: string, data: Partial<AdminProduct>):
+       Promise<AdminProduct>
+     deleteProduct(productId: string): Promise<void>
+     storeImageBlob(file: File): Promise<string> (returns IndexedDB key)
+     getImageBlob(key: string): Promise<Blob | null>
+     deleteImageBlob(key: string): Promise<void>
+     listOrders(params?: { status?: OrderStatus, page?: number,
+       pageSize?: number }): Promise<{ orders: AdminOrder[],
+       total: number }>
+     getOrder(orderId: string): Promise<AdminOrder | null>
+     updateOrderStatus(orderId: string, newStatus: OrderStatus,
+       actor: string): Promise<AdminOrder> (enforces VALID_ORDER_TRANSITIONS)
+     updateTrackingId(orderId: string, trackingId: string):
+       Promise<AdminOrder>
+     getFinancialSummary(periodStart: string, periodEnd: string):
+       Promise<AdminFinancialSummary>
+     seedIfEmpty(): Promise<void>
+     clearAdminData(): Promise<void>
+
+   - validateOrderTransition(current: OrderStatus, next: OrderStatus):
+     boolean — pure function checking VALID_ORDER_TRANSITIONS.
+
+   - parseAedToFils(input: string): number — converts "45.50" → 4550,
+     using Math.round(parseFloat(input) * 100). Never stores the float.
+
+2. Create services/admin/LocalAdminProvider.ts implementing
+   AdminServiceProvider:
+   - Uses IndexedDB (via idb library or thin wrapper) for product and
+     order storage. Product image blobs stored as IndexedDB Blob values
+     keyed by UUID (crypto.randomUUID()).
+   - Admin session state in localStorage under 'abbshir:admin-session',
+     every touch point commented // MOCK — replace when backend lands.
+   - seedIfEmpty() reads products.json/products2.json, creates
+     AdminProduct records in IndexedDB, and generates ~20 synthetic
+     AdminOrder records with isSynthetic: true, deterministic PRNG for
+     test reproducibility.
+   - All methods return Promise<T>. No real network calls.
+   - updateOrderStatus() enforces VALID_ORDER_TRANSITIONS — throws if
+     transition is invalid.
+
+3. Create services/admin/index.ts exporting:
+   export const adminService: AdminServiceProvider =
+     new LocalAdminProvider();
+
+4. Add idb as a dependency (npm install idb) — this is the only new
+   runtime dependency. Do NOT install @tanstack/react-query here — that
+   comes in T014 when the first admin UI component needs it.
+
+5. Write Vitest unit tests (the runner must exist from T002):
+   - validateOrderTransition: test all valid transitions return true,
+     all invalid transitions (e.g. pending → shipped) return false.
+   - parseAedToFils: "45.50" → 4550, "0.01" → 1, "999.99" → 99999,
+     "0" → 0, edge cases.
+   - LocalAdminProvider.seedIfEmpty: verify it creates products and
+     ~20 orders with isSynthetic: true.
+   - LocalAdminProvider.updateOrderStatus: verify valid transition
+     succeeds, invalid transition throws.
+
+Update PROJECT_SNAPSHOT.md: mark T013 complete, note new files and the
+idb dependency. Stop and report.
+```
+
+### Prompt T014 — Admin Shell & Layout
+```text
+/goal Execute Task T014: Admin Shell & Layout.
+Read @AGENTS.md, @RULES.md (§6, §9), @PROJECT_SNAPSHOT.md (T013 must be
+complete), and @.agents/rules/50-admin.md.
+Activate skills: ui-ux-pro-max, ui-styling, shadcn-ui,
+web-design-guidelines.
+
+Build the admin shell — the layout wrapper all admin pages render inside.
+Do NOT build catalog/order/financial pages yet — those are T015–T017.
+
+1. Install @tanstack/react-query and wrap the admin route subtree in a
+   QueryClientProvider (separate from any customer-side providers).
+
+2. Add admin routes to App.tsx's existing <Routes> tree (Invariant #8),
+   all under /admin/*. Use React.lazy() + <Suspense> with skeleton
+   fallbacks so admin code doesn't add to the customer bundle:
+   - /admin → redirect to /admin/dashboard
+   - /admin/login → AdminLoginPage
+   - /admin/dashboard → AdminDashboardPage (placeholder for T017)
+   - /admin/catalog → AdminCatalogPage (placeholder for T015)
+   - /admin/catalog/new → AdminCatalogNewPage (placeholder for T015)
+   - /admin/catalog/:productId → AdminCatalogEditPage (placeholder for T015)
+   - /admin/orders → AdminOrdersPage (placeholder for T016)
+   - /admin/orders/:orderId → AdminOrderDetailPage (placeholder for T016)
+   - /admin/financials → AdminFinancialsPage (placeholder for T017)
+
+3. Build src/app/components/admin/AdminLayout.tsx:
+   - Sidebar: collapsible, built from shadcn sidebar primitive. Sections:
+     Dashboard, Catalog, Orders, Financials. Active route highlighted.
+   - Header: breadcrumbs (shadcn breadcrumb), admin user display from
+     localStorage abbshir:admin-session, sign-out action.
+   - Main content area with <Outlet> for nested routes.
+
+4. Build src/app/components/admin/AdminRoleGate.tsx:
+   - Checks localStorage abbshir:admin-session for a mock admin user.
+   - If not present, redirects to /admin/login.
+   - Comment every auth check with // MOCK — replace when backend lands
+     (Invariant #9).
+
+5. Build src/app/pages/admin/AdminLoginPage.tsx:
+   - Simple form: email + password fields (shadcn form/input).
+   - On submit: shape-validate only (non-empty fields), write mock admin
+     user to localStorage, redirect to /admin/dashboard.
+   - Visible caption: "Demo admin access — not a real authentication
+     system."
+   - Never store the password. Comment: // MOCK — replace when backend lands.
+
+6. Create placeholder pages for T015–T017 routes — each renders a heading
+   and "Coming in T0XX" text inside the AdminLayout.
+
+Admin is English-only — no bilingual/RTL requirement.
+Verify: npm run build clean, npm run dev boots, /admin renders the shell
+with sidebar and header. Customer-facing routes unaffected.
+
+Update PROJECT_SNAPSHOT.md: mark T014 complete, note @tanstack/react-query
+dependency addition. Stop and report.
+```
+
+### Prompt T015 — Catalog & Inventory UI
+```text
+/goal Execute Task T015: Catalog & Inventory UI.
+Read @AGENTS.md, @RULES.md (§2, §4, §9), @PROJECT_SNAPSHOT.md (T014 must
+be complete), and @.agents/rules/50-admin.md, @.agents/rules/20-state.md.
+Activate skills: table-features, table-state, ui-ux-pro-max, zod, shadcn-ui.
+
+Build the admin catalog management screens inside the AdminLayout shell.
+
+1. Build src/app/components/admin/DataGrid.tsx:
+   - Generic, reusable data table wrapping shadcn table + TanStack Table.
+   - Supports: sortable columns, text filter, pagination, row selection
+     (checkbox column).
+   - Filter/sort/pagination state synced to URL search params.
+   - Accepts column definitions and data as props — not hardcoded to
+     products.
+   - Skeleton loading state using shadcn skeleton.
+
+2. Build src/app/components/admin/ImageDropzone.tsx:
+   - Drag-and-drop + click-to-browse file upload area.
+   - Uses HTML5 drag events + <input type="file" accept="image/*" multiple>.
+   - On drop/select: calls adminService.storeImageBlob(file) for each
+     file, stores returned keys.
+   - Displays image previews via URL.createObjectURL(blob), revokes on
+     unmount.
+   - Shows existing images for edit mode (loads blobs from IndexedDB via
+     adminService.getImageBlob).
+   - Delete button per image (calls adminService.deleteImageBlob).
+
+3. Build src/app/pages/admin/AdminCatalogPage.tsx:
+   - DataGrid showing all admin products from adminService.listProducts()
+     via TanStack Query useQuery hook.
+   - Columns: image thumbnail, name, SKU, brand, category, price (AED
+     formatted from fils), stock, status (published/draft), actions
+     (edit/delete).
+   - "Add Product" button linking to /admin/catalog/new.
+   - Row click navigates to /admin/catalog/:productId.
+
+4. Build src/app/pages/admin/AdminCatalogEditPage.tsx (handles both create
+   and edit):
+   - Multi-step wizard form using react-hook-form + Zod validation:
+     Step 1: Basic info (name EN/AR, description EN/AR, SKU, brandId
+       select, categoryId select)
+     Step 2: Pricing (basePrice in AED input → parseAedToFils on save,
+       salePrice, bulk pricing tiers)
+     Step 3: Variants (variant matrix builder — add/remove rows with
+       label, SKU suffix, price override, stock, weight)
+     Step 4: Images (ImageDropzone for product photos)
+     Step 5: Review & publish (summary, isPublished toggle, save button)
+   - Uses TanStack Query useMutation for create/update with optimistic UI.
+   - Zod schema validates: price > 0, stock >= 0, SKU non-empty, at least
+     one image.
+   - On save: converts AED prices to fils via parseAedToFils, calls
+     adminService.createProduct or adminService.updateProduct.
+
+5. Build src/app/components/admin/StatusPill.tsx:
+   - shadcn badge variant, color-coded: pending=amber, confirmed=blue,
+     processing=indigo, shipped=purple, delivered=green, cancelled=red.
+   - Accepts status: OrderStatus as prop.
+
+Admin is English-only. Verify: npm run build clean, /admin/catalog
+renders product grid, /admin/catalog/new shows the wizard.
+
+Update PROJECT_SNAPSHOT.md: mark T015 complete. Stop and report.
+```
+
+### Prompt T016 — Order Management UI
+```text
+/goal Execute Task T016: Order Management UI.
+Read @AGENTS.md, @RULES.md (§2, §9), @PROJECT_SNAPSHOT.md (T015 must be
+complete — DataGrid and StatusPill are prerequisites),
+@.agents/rules/50-admin.md (Order Provenance section).
+Activate skills: table-features, table-state, ui-styling, shadcn-ui.
+
+Build the admin order management screens. Per Open Decision #5, all
+orders are seeded/synthetic mock data — clearly labeled.
+
+1. Build src/app/pages/admin/AdminOrdersPage.tsx:
+   - Status tabs at top: All, Pending, Confirmed, Processing, Shipped,
+     Delivered, Cancelled. Each tab filters the DataGrid.
+   - DataGrid (from T015) showing orders from adminService.listOrders()
+     via TanStack Query, with columns: order ID, customer name, date,
+     items count, total (AED from fils), status (StatusPill), actions.
+   - "Demo Data" banner at top when all displayed orders are synthetic:
+     "These orders are sample data for demonstration purposes."
+   - Row click opens order detail.
+   - Bulk actions bar (appears when rows selected): "Update Status" dropdown.
+
+2. Build src/app/pages/admin/AdminOrderDetailPage.tsx (renders in a shadcn
+   sheet/drawer, or a detail panel — pick one and note the choice):
+   - Order header: order ID, customer info, creation date, current status
+     (StatusPill).
+   - Status timeline: vertical timeline showing statusHistory transitions
+     (from → to, timestamp, actor). Use shadcn separator + custom layout.
+   - Status action: dropdown to advance status. Only shows valid next
+     states from VALID_ORDER_TRANSITIONS. Calls
+     adminService.updateOrderStatus() via useMutation. If transition is
+     invalid, show error toast (sonner). On success, invalidate order
+     query.
+   - Tracking ID input: text field, saves via
+     adminService.updateTrackingId(). Shown only when status is 'shipped'
+     or 'delivered'.
+   - Line items table: product name, quantity, unit price (AED), line
+     total (AED).
+   - Order summary: subtotal, VAT (5%), total — all formatted from fils.
+   - "Synthetic Order" badge if order.isSynthetic is true.
+   - Notes field: editable textarea for admin notes.
+
+3. State machine enforcement in UI:
+   - The status dropdown only shows valid transitions. E.g. when status
+     is 'pending', dropdown shows only 'Confirm' and 'Cancel'.
+   - After selecting a new status, a confirmation dialog (shadcn
+     alert-dialog) asks "Change status from [current] to [new]?" with
+     Confirm/Cancel buttons.
+   - On confirm, mutation fires. Optimistic UI: StatusPill updates
+     immediately, rolls back on error.
+
+Admin is English-only. Verify: npm run build clean, /admin/orders shows
+the order grid with status tabs, clicking an order shows the detail with
+timeline and status controls.
+
+Update PROJECT_SNAPSHOT.md: mark T016 complete. Stop and report.
+```
+
+### Prompt T017 — Financials & Analytics UI
+```text
+/goal Execute Task T017: Financials & Analytics UI.
+Read @AGENTS.md, @RULES.md (§2), @PROJECT_SNAPSHOT.md (T016 must be
+complete), @.agents/rules/50-admin.md.
+Activate skills: ui-ux-pro-max, table-features, shadcn-ui.
+
+Build the admin dashboard and financials screens.
+
+1. Build src/app/components/admin/MetricCard.tsx:
+   - shadcn card variant for KPI display.
+   - Props: label (string), value (string — pre-formatted), trend
+     (optional: { direction: 'up' | 'down' | 'flat', percentage: number }).
+   - Trend indicator: green up-arrow for 'up', red down-arrow for 'down',
+     grey dash for 'flat'.
+   - All monetary values must be pre-formatted via formatPrice() before
+     passing as the value prop — MetricCard itself is currency-agnostic.
+
+2. Build/update src/app/pages/admin/AdminDashboardPage.tsx:
+   - Row of MetricCards: Total Revenue, Total Orders, Average Order Value,
+     Refunded Amount. Data from adminService.getFinancialSummary() via
+     useQuery. All monetary values in fils, formatted via formatPrice().
+   - Recent orders table: last 5 orders from adminService.listOrders(),
+     mini DataGrid with order ID, customer, total, status (StatusPill).
+   - Quick stats: order status breakdown (pie/donut chart or simple bar
+     chart). Use a lightweight chart library (recharts — it's commonly
+     paired with shadcn) or pure SVG.
+
+3. Build src/app/pages/admin/AdminFinancialsPage.tsx:
+   - Period selector: date range picker (shadcn calendar + popover) or
+     preset buttons (Today, This Week, This Month, All Time).
+   - MetricCards row for the selected period.
+   - Revenue chart: line or bar chart showing revenue over time. Use the
+     same chart library as the dashboard.
+   - Ledger table: DataGrid showing individual orders as line items,
+     sortable by date/amount. Columns: date, order ID, customer, items,
+     subtotal, VAT, total, status.
+   - Mock refund flow: on the ledger, a "Refund" button per delivered
+     order. Clicking opens a confirmation dialog. On confirm, updates
+     the financial summary's refundedFils and marks the order as
+     'cancelled'. This is a simplified mock — real refund logic would
+     involve a payment gateway.
+
+4. All monetary values: integer fils in state, formatted to AED only at
+   the display boundary. No bare float arithmetic.
+
+Admin is English-only. Verify: npm run build clean, /admin/dashboard
+shows metrics and recent orders, /admin/financials shows the period
+selector and charts.
+
+Update PROJECT_SNAPSHOT.md: mark T017 complete. Stop and report.
+```
+
+### Prompt T018 — Bulk Actions & CSV Export
+```text
+/goal Execute Task T018: Bulk Actions & CSV Export.
+Read @AGENTS.md, @RULES.md, @PROJECT_SNAPSHOT.md (T015 and T016 must be
+complete — DataGrid with row selection is a prerequisite).
+Activate skills: table-features, table-state.
+
+Add bulk operations and CSV export to the admin catalog and order tables.
+
+1. Catalog bulk actions (AdminCatalogPage):
+   - When rows are selected, a floating action bar appears with:
+     - "Publish" / "Unpublish" toggles (batch update isPublished).
+     - "Delete" (batch delete with confirmation dialog).
+   - Each action calls the appropriate adminService method for each
+     selected product via Promise.all(), then invalidates the product
+     list query.
+   - Show a toast (sonner) with success count: "3 products published."
+
+2. Order bulk actions (AdminOrdersPage):
+   - When rows are selected, a floating action bar appears with:
+     - "Update Status" dropdown showing only statuses that are valid
+       transitions for ALL selected orders (intersection of valid next
+       states). If no common transition exists, the dropdown is disabled
+       with tooltip "Selected orders have no common valid transition."
+   - Fires adminService.updateOrderStatus() for each selected order.
+   - Show a toast with success/failure count.
+
+3. CSV Export:
+   - "Export CSV" button on both catalog and order DataGrid toolbars.
+   - Catalog CSV columns: SKU, Name (EN), Brand, Category, Base Price
+     (AED — formatted from fils for human readability), Sale Price (AED),
+     Stock, Published.
+   - Order CSV columns: Order ID, Customer, Date, Status, Items Count,
+     Subtotal (AED), VAT (AED), Total (AED), Tracking ID.
+   - Generate CSV client-side (no backend) using a simple serializer.
+     Trigger download via Blob + URL.createObjectURL + click-on-anchor.
+   - Monetary columns in CSV are formatted as AED decimal ("45.50"), not
+     fils integers, for human readability in spreadsheets.
+
+Admin is English-only. Verify: npm run build clean, bulk actions work on
+both catalog and orders, CSV downloads correctly.
+
+Update PROJECT_SNAPSHOT.md: mark T018 complete. Stop and report.
+```
+
+### Prompt T019 — English-Only QA + Accessibility Sweep
+```text
+/goal Execute Task T019: Admin QA + Accessibility Sweep.
+Read @AGENTS.md, @RULES.md, @PROJECT_SNAPSHOT.md (T013–T018 must be
+complete). Activate skills: web-design-guidelines, ui-styling.
+
+This is the admin equivalent of T010/T011 but English-only (no bilingual/
+RTL complexity per Open Decision #2).
+
+1. For each admin route (/admin/login, /admin/dashboard, /admin/catalog,
+   /admin/catalog/new, /admin/catalog/:productId, /admin/orders,
+   /admin/orders/:orderId, /admin/financials):
+   - Verify rendering at mobile (~375px), tablet (~768px), desktop
+     (~1280px). Fix any overflow, unreadable text, or unreachable control.
+   - Verify the admin sidebar collapses properly on mobile.
+   - Verify DataGrid is horizontally scrollable on narrow viewports.
+
+2. Accessibility audit:
+   - Every interactive control has an accessible name (aria-label or
+     visible text — not just an icon).
+   - Form inputs have associated labels.
+   - Color contrast meets WCAG 2.1 AA (4.5:1 normal text, 3:1 large).
+   - StatusPill includes text label, not just color.
+   - ImageDropzone is keyboard operable (can tab to it, trigger file
+     picker with Enter/Space).
+   - DataGrid rows are keyboard-navigable.
+   - Status change confirmation dialog traps focus correctly.
+   - All toasts (sonner) are announced to screen readers.
+
+3. Mock-auth disclosure check:
+   - /admin/login shows "Demo admin access" caption.
+   - Every // MOCK comment is present at auth touch points.
+
+4. Synthetic order labeling check:
+   - "Demo Data" banner/badge visible on order list and detail pages.
+   - Every synthetic order shows its isSynthetic status.
+
+Fix every issue found — this task's job is fixing, not cataloguing.
+
+Update PROJECT_SNAPSHOT.md: mark T019 complete, list what was fixed.
+Stop and report.
+```
+
+### Prompt T020 — Final Review: Admin Phase 3
+```text
+/goal Execute Task T020: Admin Phase 3 Final Review.
+Read @AGENTS.md (all 9 Invariants), @RULES.md (all sections including §9),
+@PROJECT_SNAPSHOT.md (T013–T019 must be marked complete).
+Activate skills: code-review, codebase-design.
+
+Do NOT modify UI. Audit the full diff introduced across T013–T019 against
+five axes:
+
+1. **Float-money audit:** grep every file under src/app/components/admin/,
+   src/app/pages/admin/, services/admin/ for any bare float used for money
+   in state, IndexedDB, or component logic. formatPrice() and
+   parseAedToFils() should be the only places floats appear transiently.
+   Flag any violation.
+
+2. **Mock-auth honesty (Invariant #9):** verify every admin auth touch
+   point (services/admin/* session methods, AdminRoleGate, AdminLoginPage)
+   has the // MOCK — replace when backend lands comment. Verify no
+   plaintext password is retained anywhere after the login form submits.
+   Verify the "Demo admin access" caption is visible on the login page.
+
+3. **Sync-boundary compliance (Open Decision #1):** verify admin data
+   operations (product CRUD, order status updates) go through
+   services/admin/* → IndexedDB only, never writing back to
+   products.json/products2.json or any file in src/app/data/. Verify the
+   customer storefront (services/commerce/*) is completely unaffected by
+   admin edits.
+
+4. **Order-provenance compliance (Open Decision #5):** verify every
+   synthetic order has isSynthetic: true, is labeled as demo data in the
+   UI, and no admin UI implies real customer transactions exist.
+
+5. **Scope audit:** does each task (T013–T019) match what its prompt
+   actually asked for? Flag anything built beyond task scope. Verify no
+   admin code leaked into customer-facing components/routes/stores.
+
+Fix any Standards-axis violation directly. Report Spec-axis findings
+without reverting.
+
+Produce a final report appended to PROJECT_SNAPSHOT.md under "## Phase 3
+Admin Portal Completion Report": what was built, what mock limitations
+exist, and what would be needed to connect the admin portal to a real
+backend (real auth, real database, real image storage, real order pipeline)
+as a distinct future phase.
+
+Stop and report.
+```
+
