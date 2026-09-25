@@ -7,13 +7,11 @@ assumes the repo root already contains `AGENTS.md`, `RULES.md`,
 `PROJECT_SNAPSHOT.md`, `types/ecommerce.ts`, and the `.agents/` tree from
 this package.
 
-Model roster available: **Gemini 3.8 Flash**, **Gemini 3.1 Pro**,
-**Claude Sonnet 4.6**, **Claude Opus 4.6**. Routing below follows one
-rule: reconnaissance/templated/well-specified UI → cheapest model that can
-do it; anything with irreversible architectural consequences, security
-surface, or genuinely ambiguous trade-offs → Opus 4.6 (Thinking); the
-large middle band of "well-defined but non-trivial" feature work → Sonnet
-4.6 (Thinking).
+Model roster and applications available:
+- **Google Antigravity:** **Claude Opus 4.6 (Thinking)**, **Claude Sonnet 4.6 (Thinking)**, **Gemini 3.1 Pro**, **Gemini 3.8 Flash**.
+- **Codex:** **GPT-6 Astra**, **GPT-6 Sol**, **GPT-6 Luna** (plus GPT-5.6 family).
+
+Routing below follows one rule: reconnaissance/templated/routine work → cheapest model that can do it (GPT-6 Luna / Gemini 3.8 Flash / Gemini 3.1 Pro); well-defined coding & multi-step implementations → GPT-6 Sol / Claude Sonnet 4.6 (Thinking); complex UI layout / bilingual reasoning → Claude Sonnet 4.6 (Thinking); irreversible architecture, security boundary, or final reviews → Claude Opus 4.6 (Thinking) / GPT-6 Astra.
 
 ---
 
@@ -21,15 +19,19 @@ large middle band of "well-defined but non-trivial" feature work → Sonnet
 
 | | |
 |:---|:---|
+| **Application** | **Google Antigravity** |
 | **Model** | **Claude Opus 4.6 (Thinking)** |
 | **Justification** | Sets the domain model, the state strategy, and the backend seam that every later task builds on — the one place where a wrong call is expensive to unwind. Also the only task that needs to hold the whole existing codebase (bilingual system, no-backend constraint, shadcn kit) and the whole target (sudanriver.com IA) in view at once. |
-| **Skills to load** | `domain-modeling`, `codebase-design`, `writing-for-agents`, `to-tickets`, `security-review` (light pass, for the mock-auth boundary) |
+| **Skills to load** | `codebase-design`, `writing-for-agents` |
 
 ```text
+Run this in: Google Antigravity — Claude Opus 4.6 (Thinking).
+Activate skills: codebase-design, writing-for-agents.
+
 /goal Act as Super Architect for the Abbshir FODDERS e-commerce build.
 
-Read @AGENTS.md , @RULES.md , @PROJECT_SNAPSHOT.md , and @types/ecommerce.ts
-first — they encode verified facts about this repo (Vite+React+TS+
+Read @AGENTS.md @RULES.md @PROJECT_SNAPSHOT.md @types/ecommerce.ts first
+— they encode verified facts about this repo (Vite+React+TS+
 react-router-dom v7, shadcn/ui already vendored in
 src/app/components/ui/, bilingual EN/AR via LanguageContext, NO backend,
 NO state library, products.json/products2.json with no price/brand/
@@ -99,28 +101,30 @@ Do not implement any UI. Stop and report.
 Run each task below in its own fresh conversation, in order. Each row
 links to its paste-ready prompt underneath the table.
 
-| Task | Name | Model | Justification | Skills |
-|:---|:---|:---|:---|:---|
-| **T000** | Reconnaissance & Reference Capture | Gemini 3.1 Pro | Read-only, browser-heavy (visits 7 live URLs), no irreversible decisions — cheap model with good vision/browsing is the right fit. | `domain-modeling`, `ui-components` |
-| **T001** | Catalog Data Model & Extension | Claude Sonnet 4.6 (Thinking) | Well-defined but consequential — every later task depends on the shape of Product/Brand/Category and slug scheme being right the first time. | `domain-modeling`, `codebase-design` |
-| **T002** | State Management (Zustand: cart, wishlist, session) | Claude Sonnet 4.6 (Thinking) | New dependency + store design; needs to reason about persistence, hydration, and the mock-session boundary correctly. | `codebase-design`, `testing` |
-| **T003** | `services/commerce/*` Provider Implementation | Claude Sonnet 4.6 (Thinking) | Implements the seam the whole app depends on; must be correct and swap-ready, not just functional. | `codebase-design`, `domain-modeling` |
-| **T004** | `/shop` Catalog Grid + Filters + Sort | Claude Sonnet 4.6 (Thinking) | Core, highest-traffic page; sidebar filter state + sort + reused card component is non-trivial UI logic. | `ui-components`, `prototype` |
-| **T005** | `/product-brand/:brandId` | Gemini 3.1 Pro | Reuses T004's grid component almost entirely — templated, low-risk. | `ui-components` |
-| **T006** | `/product/:slug` Product Detail Page | Claude Sonnet 4.6 (Thinking) | Gallery, spec table, bulk-price display, quantity stepper wired to `getUnitPrice()` and the cart store — several moving parts that must agree. | `ui-components`, `domain-modeling` |
-| **T007** | `/cart` (drawer or page) | Claude Sonnet 4.6 (Thinking) | Subtotal/tax/total math, empty states, quantity edit/remove, checkout CTA — needs the pricing function used correctly, not reimplemented. | `ui-components`, `codebase-design` |
-| **T008** | `/signin` & `/register` | Gemini 3.1 Pro | Standard form pattern on top of shadcn `form`/`input`; the mock-auth boundary is simple by design (see AGENTS.md Invariant #7). | `ui-components` |
-| **T009** | Navigation Integration (Shop/Cart-badge/Sign-in links, mobile menu) | Gemini 3.1 Pro | Wiring existing store state into an existing component — low ambiguity. | `ui-components` |
-| **T010** | Bilingual/RTL QA Pass (all new routes) | Claude Sonnet 4.6 (Thinking) | Needs to actually reason about layout breakage in RTL, not just toggle and glance — the constraint most likely to be silently dropped. | `ui-components` |
-| **T011** | Responsive & Accessibility Sweep | Gemini 3.8 Flash | Broad, checklist-shaped verification pass across many small viewports/components — fast and cheap is the right tool. | `ui-components` |
-| **T012** | Final Review: Data Integrity, Mock-Auth Honesty, Scope Audit | Claude Opus 4.6 (Thinking) | Last gate before calling Phase 2 done — checks for float-money leaks, dangling brand/category IDs, undisclosed mock-auth behavior, and scope creep across all prior tasks. Needs the highest reasoning to catch what the per-task reviews missed. | `security-review`, `code-review` |
+| Task | Name | Application | Model | Justification | Skills |
+|:---|:---|:---|:---|:---|:---|
+| **T000** | Reconnaissance & Reference Capture | Google Antigravity | Gemini 3.1 Pro | Read-only, browser-heavy (visits 7 live URLs), no irreversible decisions — cheap model with vision and live browsing in Antigravity is the right fit. | — |
+| **T001** | Catalog Data Model & Extension | Codex | GPT-6 Sol | Well-defined TypeScript data modeling and JSON schema extensions; GPT-6 Sol provides strong multi-step coding value. | `codebase-design` |
+| **T002** | State Management (Zustand: cart, wishlist, session) | Codex | GPT-6 Sol | New dependency, store design, and Vitest test suite creation; GPT-6 Sol excels at multi-step TypeScript stores and test authoring. | `codebase-design`, `vitest` |
+| **T003** | `services/commerce/*` Provider Implementation | Codex | GPT-6 Sol | Implements the mock commerce provider interface satisfying types/ecommerce.ts; GPT-6 Sol handles interface-satisfying services efficiently. | `codebase-design`, `vitest` |
+| **T004** | `/shop` Catalog Grid + Filters + Sort | Google Antigravity | Claude Sonnet 4.6 (Thinking) | Core, highest-traffic page; sidebar filter state + sort + reused card component is non-trivial UI logic. | `ui-ux-pro-max`, `shadcn-ui`, `ui-styling` |
+| **T005** | `/product-brand/:brandId` | Codex | GPT-6 Luna | Reuses T004's grid component almost entirely — templated, low-risk routine task ideal for GPT-6 Luna. | `shadcn-ui`, `ui-styling` |
+| **T006** | `/product/:slug` Product Detail Page | Google Antigravity | Claude Sonnet 4.6 (Thinking) | Gallery, spec table, bulk-price display, quantity stepper wired to `getUnitPrice()` and the cart store — several moving parts that must agree. | `shadcn-ui`, `ui-styling`, `codebase-design` |
+| **T007** | `/cart` (drawer or page) | Google Antigravity | Claude Sonnet 4.6 (Thinking) | Subtotal/tax/total math, empty states, quantity edit/remove, checkout CTA — needs the pricing function used correctly, not reimplemented. | `shadcn-ui`, `ui-styling`, `codebase-design` |
+| **T008** | `/signin` & `/register` | Codex | GPT-6 Luna | Standard form pattern on top of shadcn `form`/`input` and mock session store — routine task well suited for GPT-6 Luna. | `shadcn-ui`, `ui-styling` |
+| **T009** | Navigation Integration (Shop/Cart-badge/Sign-in links, mobile menu) | Codex | GPT-6 Luna | Wiring existing store state into an existing component — low ambiguity routine task ideal for GPT-6 Luna. | `shadcn-ui`, `ui-styling` |
+| **T010** | Bilingual/RTL QA Pass (all new routes) | Google Antigravity | Claude Sonnet 4.6 (Thinking) | Needs to actually reason about layout breakage in RTL, not just toggle and glance — the constraint most likely to be silently dropped. | `ui-styling`, `web-design-guidelines` |
+| **T011** | Responsive & Accessibility Sweep | Google Antigravity | Gemini 3.8 Flash | Broad, checklist-shaped verification pass across many small viewports/components — fast and cheap is the right tool. | `web-design-guidelines`, `ui-styling` |
+| **T012** | Final Review: Data Integrity, Mock-Auth Honesty, Scope Audit | Google Antigravity | Claude Opus 4.6 (Thinking) | Last gate before calling Phase 2 done — checks for float-money leaks, dangling brand/category IDs, undisclosed mock-auth behavior, and scope creep across all prior tasks. Needs the highest reasoning to catch what the per-task reviews missed. | `code-review`, `codebase-design` |
 
 ---
 
 ### Prompt T000 — Reconnaissance & Reference Capture
 ```text
+Run this in: Google Antigravity — Gemini 3.1 Pro.
+
 /goal Execute Task T000: Reconnaissance & Reference Capture.
-Read @AGENTS.md and @PROJECT_SNAPSHOT.md (must reflect the Step 1
+Read @AGENTS.md @PROJECT_SNAPSHOT.md (must reflect the Step 1
 Architect Handoff — if that section is missing, stop and report that
 Step 1 hasn't been run yet).
 
@@ -155,10 +159,12 @@ complete. Stop and report.
 
 ### Prompt T001 — Catalog Data Model & Extension
 ```text
+Run this in: Codex — GPT-6 Sol.
+Activate skills: codebase-design.
+
 /goal Execute Task T001: Catalog Data Model & Extension.
-Read @AGENTS.md , @RULES.md , @PROJECT_SNAPSHOT.md (T000 must be complete —
-check "Reference IA Notes" exists), and @types/ecommerce.ts.
-Activate skills: domain-modeling, codebase-design.
+Read @AGENTS.md @RULES.md @PROJECT_SNAPSHOT.md (T000 must be complete —
+check "Reference IA Notes" exists) and @types/ecommerce.ts first.
 
 1. Finalize Category and Brand lookup data: Alfalfa, Grass, Grains &
    Concentrates, Feed Additives, Straw (categories); Al Ghurair Foods,
@@ -184,6 +190,7 @@ Activate skills: domain-modeling, codebase-design.
    brands.json/categories.json — no dangling references. Verify every
    slug is unique, lowercase, hyphenated.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T001_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T001 complete, log any placeholder-price
 decision in the Decisions Log, note the file paths created. Stop and
 report — list every PLACEHOLDER price so the client can be asked for
@@ -192,9 +199,12 @@ real numbers.
 
 ### Prompt T002 — State Management (Zustand)
 ```text
+Run this in: Codex — GPT-6 Sol.
+Activate skills: codebase-design, vitest.
+
 /goal Execute Task T002: State Management Setup.
-Read @AGENTS.md , @RULES.md (§3), @PROJECT_SNAPSHOT.md (T001 must be
-complete). Activate skills: codebase-design, testing.
+Read @AGENTS.md @RULES.md (§3) @PROJECT_SNAPSHOT.md (T001 must be
+complete).
 
 Add zustand as a dependency. Create src/app/state/ with three stores,
 typed against the interfaces in types/ecommerce.ts:
@@ -216,17 +226,19 @@ types/ecommerce.ts) across a no-tier product, a multi-tier product at
 boundary quantities; cartStore addItem/updateQuantity/removeItem/clear;
 wishlistStore toggle (add then remove).
 
-Do not wire these stores into any UI yet — that's T004+. Update
-PROJECT_SNAPSHOT.md: mark T002 complete, note the new dependency and test
+Do not wire these stores into any UI yet — that's T004+. Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T002_walkthrough.md,
+Update PROJECT_SNAPSHOT.md: mark T002 complete, note the new dependency and test
 runner addition. Stop and report.
 ```
 
 ### Prompt T003 — `services/commerce/*` Provider
 ```text
+Run this in: Codex — GPT-6 Sol.
+Activate skills: codebase-design, vitest.
+
 /goal Execute Task T003: services/commerce Provider Implementation.
-Read @AGENTS.md (Invariant #6), @RULES.md (§3), @PROJECT_SNAPSHOT.md
-(T001, T002 must be complete). Activate skills: codebase-design,
-domain-modeling.
+Read @AGENTS.md (Invariant #6) @RULES.md (§3) @PROJECT_SNAPSHOT.md
+(T001, T002 must be complete).
 
 Implement services/commerce/LocalCatalogProvider.ts, satisfying the
 CommerceCatalogProvider interface from types/ecommerce.ts, reading
@@ -248,15 +260,18 @@ brand returns only matching items; price-asc/price-desc sort is correct;
 getProductBySlug returns null for an unknown slug, not throws;
 listCategories/listBrands length matches the JSON files.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T003_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T003 complete. Stop and report.
 ```
 
 ### Prompt T004 — `/shop` Catalog Grid + Filters + Sort
 ```text
+Run this in: Google Antigravity — Claude Sonnet 4.6 (Thinking).
+Activate skills: ui-ux-pro-max, shadcn-ui, ui-styling.
+
 /goal Execute Task T004: /shop Catalog Grid, Filters, Sort.
-Read @AGENTS.md , @RULES.md (§1, §4, §6), @PROJECT_SNAPSHOT.md ("Reference
+Read @AGENTS.md @RULES.md (§1, §4, §6) @PROJECT_SNAPSHOT.md ("Reference
 IA Notes" for /shop must exist from T000; T003 must be complete).
-Activate skills: ui-components, prototype.
 
 Add the /shop route to App.tsx's existing <Routes> tree. Build:
 - src/app/components/shop/ProductCard.tsx — image, bilingual name, price
@@ -279,16 +294,19 @@ Bilingual + RTL required (RULES.md §1) — verify in both languages before
 reporting done. Reuse Navigation.tsx as-is for now; nav links come in
 T009.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T004_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T004 complete, note new files. Stop and
 report.
 ```
 
 ### Prompt T005 — `/product-brand/:brandId`
 ```text
+Run this in: Codex — GPT-6 Luna.
+Activate skills: shadcn-ui, ui-styling.
+
 /goal Execute Task T005: /product-brand/:brandId Route.
-Read @AGENTS.md , @PROJECT_SNAPSHOT.md (T004 must be complete, including
+Read @AGENTS.md @PROJECT_SNAPSHOT.md (T004 must be complete, including
 its Reference IA Notes for the sudanriver.com /product-brand/2 page).
-Activate skills: ui-components.
 
 Add the /product-brand/:brandId route to App.tsx. Reuse
 ProductCard/CategoryFilterSidebar/SortSelect from T004 as-is — this page
@@ -303,15 +321,18 @@ component from T004 if it isn't already reusable as-is; if extraction is
 needed, keep it minimal and note the refactor in PROJECT_SNAPSHOT.md
 rather than expanding scope further.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T005_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T005 complete. Stop and report.
 ```
 
 ### Prompt T006 — `/product/:slug` Product Detail Page
 ```text
+Run this in: Google Antigravity — Claude Sonnet 4.6 (Thinking).
+Activate skills: shadcn-ui, ui-styling, codebase-design.
+
 /goal Execute Task T006: /product/:slug Product Detail Page.
-Read @AGENTS.md , @RULES.md (§2), @PROJECT_SNAPSHOT.md ("Reference IA
+Read @AGENTS.md @RULES.md (§2) @PROJECT_SNAPSHOT.md ("Reference IA
 Notes" for the sudanriver.com PDP must exist; T003 must be complete).
-Activate skills: ui-components, domain-modeling.
 
 Add the /product/:slug route to App.tsx. Build ProductDetailPage using
 catalog.getProductBySlug(slug):
@@ -333,15 +354,19 @@ catalog.getProductBySlug(slug):
 
 Bilingual + RTL required — verify both before reporting done.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T006_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T006 complete. Stop and report.
 ```
 
 ### Prompt T007 — `/cart`
 ```text
+Run this in: Google Antigravity — Claude Sonnet 4.6 (Thinking).
+Activate skills: shadcn-ui, ui-styling, codebase-design.
+
 /goal Execute Task T007: /cart Page.
-Read @AGENTS.md , @RULES.md (§2), @PROJECT_SNAPSHOT.md ("Reference IA
+Read @AGENTS.md @RULES.md (§2) @PROJECT_SNAPSHOT.md ("Reference IA
 Notes" for the sudanriver.com cart must exist; T002, T003 must be
-complete). Activate skills: ui-components, codebase-design.
+complete).
 
 Add the /cart route to App.tsx (or a shadcn `sheet` drawer triggered from
 the nav cart icon, per whichever layout T000 recorded as closer to the
@@ -366,16 +391,19 @@ than building both). Build:
 
 Bilingual + RTL required — verify both before reporting done.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T007_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T007 complete, note the checkout-CTA
 decision. Stop and report.
 ```
 
 ### Prompt T008 — `/signin` & `/register`
 ```text
+Run this in: Codex — GPT-6 Luna.
+Activate skills: shadcn-ui, ui-styling.
+
 /goal Execute Task T008: /signin and /register Pages.
-Read @AGENTS.md (Invariant #7), @PROJECT_SNAPSHOT.md ("Reference IA
-Notes" for both pages must exist; T002 must be complete). Activate
-skills: ui-components.
+Read @AGENTS.md (Invariant #7) @PROJECT_SNAPSHOT.md ("Reference IA
+Notes" for both pages must exist; T002 must be complete).
 
 Add /signin and /register routes to App.tsx. Build both forms with
 shadcn `form` + `input` + `label` + `button`, using react-hook-form
@@ -391,13 +419,17 @@ show the returned error message on failure. Visibly note near the form
 pending full backend integration — do not let the UI imply real
 persistence/security it doesn't have.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T008_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T008 complete. Stop and report.
 ```
 
 ### Prompt T009 — Navigation Integration
 ```text
+Run this in: Codex — GPT-6 Luna.
+Activate skills: shadcn-ui, ui-styling.
+
 /goal Execute Task T009: Navigation Integration.
-Read @AGENTS.md , @RULES.md (§6), @PROJECT_SNAPSHOT.md (T002, T004, T007,
+Read @AGENTS.md @RULES.md (§6) @PROJECT_SNAPSHOT.md (T002, T004, T007,
 T008 must be complete).
 
 Update Navigation.tsx (the existing single nav component — do not create
@@ -409,14 +441,18 @@ when present, with a sign-out action). Ensure the mobile menu variant
 (check Navigation.tsx for an existing mobile breakpoint pattern) includes
 the same three additions. Bilingual + RTL required.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T009_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T009 complete. Stop and report.
 ```
 
 ### Prompt T010 — Bilingual/RTL QA Pass
 ```text
+Run this in: Google Antigravity — Claude Sonnet 4.6 (Thinking).
+Activate skills: ui-styling, web-design-guidelines.
+
 /goal Execute Task T010: Bilingual/RTL QA Pass.
-Read @AGENTS.md , @RULES.md (§1), @PROJECT_SNAPSHOT.md (T004-T009 must be
-complete). Activate skills: ui-components.
+Read @AGENTS.md @RULES.md (§1) @PROJECT_SNAPSHOT.md (T004-T009 must be
+complete).
 
 Do NOT skip this by spot-checking. For each of /shop,
 /product-brand/:brandId, /product/:slug, /cart, /signin, /register:
@@ -428,15 +464,18 @@ component that doesn't reflow correctly (overlapping text, cut-off
 buttons, broken flex direction). Fix every issue found — this task's
 job is fixing, not just cataloguing.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T010_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T010 complete, list what was fixed. Stop
 and report.
 ```
 
 ### Prompt T011 — Responsive & Accessibility Sweep
 ```text
+Run this in: Google Antigravity — Gemini 3.8 Flash.
+Activate skills: web-design-guidelines, ui-styling.
+
 /goal Execute Task T011: Responsive & Accessibility Sweep.
-Read @AGENTS.md , @PROJECT_SNAPSHOT.md (T010 must be complete). Activate
-skills: ui-components.
+Read @AGENTS.md @PROJECT_SNAPSHOT.md (T010 must be complete).
 
 For each of /shop, /product-brand/:brandId, /product/:slug, /cart,
 /signin, /register: check rendering at mobile (~375px), tablet (~768px),
@@ -449,16 +488,19 @@ labels, color contrast on custom text (not just shadcn defaults) is
 readable, and the quantity stepper/Add-to-Cart controls are keyboard
 operable.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T011_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T011 complete, list what was fixed. Stop
 and report.
 ```
 
 ### Prompt T012 — Final Review: Data Integrity, Mock-Auth Honesty, Scope Audit
 ```text
+Run this in: Google Antigravity — Claude Opus 4.6 (Thinking).
+Activate skills: code-review, codebase-design.
+
 /goal Execute Task T012: Final Review.
-Read @AGENTS.md , @RULES.md , @PROJECT_SNAPSHOT.md in full (all of T000-
-T011 must be marked complete). Activate skills: security-review,
-code-review.
+Read @AGENTS.md @RULES.md @PROJECT_SNAPSHOT.md in full (all of T000-
+T011 must be marked complete).
 
 Do NOT modify UI. Audit the full diff introduced across T000-T011
 against two axes:
@@ -478,7 +520,7 @@ Fix any Standards-axis violation directly (these are correctness bugs,
 not style debates). For Spec-axis findings, report them — do not
 unilaterally revert working functionality without flagging it first.
 
-Produce a final report appended to PROJECT_SNAPSHOT.md under "## Phase 2
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T012_walkthrough.md, Produce a final report appended to Update PROJECT_SNAPSHOT.md under "## Phase 2
 Completion Report": what was built, what real data/assets are still
 outstanding (pull forward the PRICING_TODO.md list from T001 and the
 brand-logo asset gap from PROJECT_SNAPSHOT.md), and what would be needed
@@ -490,27 +532,19 @@ Stop and report.
 
 ---
 
-## Model Roster — Reconciliation Note (2026-09-25)
+## Model & Application Routing — Reconciliation Note (2026-09-25)
 
-The header of this file declares: **Gemini 3.8 Flash**, **Gemini 3.1 Pro**,
-**Claude Sonnet 4.6**, **Claude Opus 4.6**. This predates the Phase 3
-planning pass. No external "Sept 2026 cross-provider pricing table" was
-supplied or found in the repo. The Phase 3 tasks below use the **same four
-models** already declared above, following the same routing rubric:
+Two coding agent applications are supported:
+- **Google Antigravity:** Supports Anthropic (Claude Opus 4.6, Claude Sonnet 4.6) and Google Gemini (Gemini 3.1 Pro, Gemini 3.8 Flash).
+- **Codex:** Supports OpenAI GPT models only (GPT-6 Astra, GPT-6 Sol, GPT-6 Luna, GPT-5.6 Sol, GPT-5.6 Luna).
 
-- **Gemini 3.8 Flash** — broad, checklist-shaped verification passes,
-  responsive sweep work. Cheap and fast.
-- **Gemini 3.1 Pro** — read-only or templated tasks with low ambiguity.
-- **Claude Sonnet 4.6 (Thinking)** — well-defined but non-trivial feature
-  work (the large middle band).
-- **Claude Opus 4.6 (Thinking)** — irreversible architecture, security
-  surface, genuinely ambiguous trade-offs, or final-gate reviews.
-
-> **Drift note (D10):** The user prompt referenced a separate roster with
-> "Gemini 3.5 Flash" — this does not match the existing header's "Gemini
-> 3.8 Flash." We retain "3.8 Flash" as declared in the existing header
-> since that's the canonical version in this file. If a model version
-> renaming has occurred, update this note rather than silently switching.
+Routing follows a pragmatic cost/capability rubric:
+- **Codex — GPT-6 Sol:** Best general premium coding model for well-defined multi-step TypeScript stores, service providers, and data models (T001, T002, T003). Released Sept 2026 at attractive pricing.
+- **Codex — GPT-6 Luna:** Fast and cheap for templated, routine UI extensions and batch operations (T005, T008, T009, T018).
+- **Google Antigravity — Gemini 3.1 Pro:** Vision and live browsing capability for reference site capture (T000).
+- **Google Antigravity — Gemini 3.8 Flash:** Broad, checklist-shaped verification and responsive/accessibility sweeps (T011, T019).
+- **Google Antigravity — Claude Sonnet 4.6 (Thinking):** Core and complex UI layout, shadcn composition, and RTL layout QA (T004, T006, T007, T010, T014, T015, T016, T017).
+- **Google Antigravity — Claude Opus 4.6 (Thinking):** Architectural foundations, IndexedDB storage adapters, and final review gates (Step 1, T012, T013, T020).
 
 ---
 
@@ -526,26 +560,28 @@ models** already declared above, following the same routing rubric:
 Run each task below in its own fresh conversation, in order. Each row
 links to its paste-ready prompt underneath the table.
 
-| Task | Name | Model | Justification | Skills |
-|:---|:---|:---|:---|:---|
-| **T013** | Admin Foundations (types, mock service, storage adapter) | Claude Opus 4.6 (Thinking) | Sets the admin domain model, mock-service interface, IndexedDB adapter, and seed generator that every subsequent admin task depends on — the one place where a wrong call is expensive to unwind, paralleling why Step 1 used Opus. | `codebase-design`, `zod`, `writing-for-agents` |
-| **T014** | Admin Shell & Layout (sidebar, header, routing, role-gate) | Claude Sonnet 4.6 (Thinking) | Well-defined but non-trivial: admin routing tree, lazy loading, sidebar state, role-gate stub, all composing shadcn primitives correctly — several moving parts that must agree. | `ui-ux-pro-max`, `ui-styling`, `shadcn-ui`, `web-design-guidelines` |
-| **T015** | Catalog & Inventory UI (table, create/edit wizard, variant matrix, image dropzone) | Claude Sonnet 4.6 (Thinking) | The most complex admin screen: TanStack Table integration, Zod-validated multi-step form, variant matrix builder, real binary image upload — each is non-trivial and they must work together. | `table-features`, `table-state`, `ui-ux-pro-max`, `zod`, `shadcn-ui` |
-| **T016** | Order Management UI (list, status tabs, detail drawer, state machine, tracking ID) | Claude Sonnet 4.6 (Thinking) | State-machine enforcement in the UI, status transition validation, detail drawer with timeline — well-defined but the state machine logic must be correct first time. | `table-features`, `table-state`, `ui-styling`, `shadcn-ui` |
-| **T017** | Financials & Analytics UI (summary cards, charts, ledger, mock refund) | Claude Sonnet 4.6 (Thinking) | Dashboard metrics, chart rendering, ledger table, and mock refund flow — multiple UI patterns but each is well-constrained. | `ui-ux-pro-max`, `table-features`, `shadcn-ui` |
-| **T018** | Bulk Actions & CSV Export | Gemini 3.1 Pro | Templated: batch status update on selected rows + CSV serialization of table data — well-specified, low ambiguity, building on T015/T016's DataGrid. | `table-features`, `table-state` |
-| **T019** | English-Only QA + Accessibility Sweep | Gemini 3.8 Flash | Broad, checklist-shaped verification across all admin routes — fast and cheap is the right tool. No bilingual complexity (admin is English-only). | `web-design-guidelines`, `ui-styling` |
-| **T020** | Final Review: mock-auth honesty, float-money audit, sync-boundary, order-provenance, scope | Claude Opus 4.6 (Thinking) | Last gate before calling Phase 3 done — checks for float-money leaks, mock-auth disclosure compliance, sync-boundary violations, synthetic-order labeling, and scope creep across T013–T019. Needs highest reasoning to catch what per-task reviews missed. | `code-review`, `codebase-design` |
+| Task | Name | Application | Model | Justification | Skills |
+|:---|:---|:---|:---|:---|:---|
+| **T013** | Admin Foundations (types, mock service, storage adapter) | Google Antigravity | Claude Opus 4.6 (Thinking) | Sets the admin domain model, mock-service interface, IndexedDB adapter, and seed generator that every subsequent admin task depends on — the one place where a wrong call is expensive to unwind, paralleling why Step 1 used Opus. | `codebase-design`, `zod`, `writing-for-agents`, `vitest` |
+| **T014** | Admin Shell & Layout (sidebar, header, routing, role-gate) | Google Antigravity | Claude Sonnet 4.6 (Thinking) | Well-defined but non-trivial: admin routing tree, lazy loading, sidebar state, role-gate stub, all composing shadcn primitives correctly — several moving parts that must agree. | `ui-ux-pro-max`, `ui-styling`, `shadcn-ui`, `web-design-guidelines` |
+| **T015** | Catalog & Inventory UI (table, create/edit wizard, variant matrix, image dropzone) | Google Antigravity | Claude Sonnet 4.6 (Thinking) | The most complex admin screen: TanStack Table integration, Zod-validated multi-step form, variant matrix builder, real binary image upload — each is non-trivial and they must work together. | `table-features`, `table-state`, `ui-ux-pro-max`, `zod`, `shadcn-ui` |
+| **T016** | Order Management UI (list, status tabs, detail drawer, state machine, tracking ID) | Google Antigravity | Claude Sonnet 4.6 (Thinking) | State-machine enforcement in the UI, status transition validation, detail drawer with timeline — well-defined but the state machine logic must be correct first time. | `table-features`, `table-state`, `ui-styling`, `shadcn-ui` |
+| **T017** | Financials & Analytics UI (summary cards, charts, ledger, mock refund) | Google Antigravity | Claude Sonnet 4.6 (Thinking) | Dashboard metrics, chart rendering, ledger table, and mock refund flow — multiple UI patterns but each is well-constrained. | `ui-ux-pro-max`, `table-features`, `shadcn-ui`, `ui-styling` |
+| **T018** | Bulk Actions & CSV Export | Codex | GPT-6 Luna | Templated batch actions and CSV serialization on existing DataGrid; routine operations handled fast and cheaply by GPT-6 Luna. | `table-features`, `table-state` |
+| **T019** | English-Only QA + Accessibility Sweep | Google Antigravity | Gemini 3.8 Flash | Broad, checklist-shaped verification across all admin routes — fast and cheap is the right tool. No bilingual complexity (admin is English-only). | `web-design-guidelines`, `ui-styling` |
+| **T020** | Final Review: mock-auth honesty, float-money audit, sync-boundary, order-provenance, scope | Google Antigravity | Claude Opus 4.6 (Thinking) | Last gate before calling Phase 3 done — checks for float-money leaks, mock-auth disclosure compliance, sync-boundary violations, synthetic-order labeling, and scope creep across T013–T019. Needs highest reasoning to catch what per-task reviews missed. | `code-review`, `codebase-design` |
 
 ---
 
 ### Prompt T013 — Admin Foundations (types, mock service, storage adapter)
 ```text
+Run this in: Google Antigravity — Claude Opus 4.6 (Thinking).
+Activate skills: codebase-design, zod, writing-for-agents, vitest.
+
 /goal Execute Task T013: Admin Foundations.
-Read @AGENTS.md (especially Invariants #6, #7, #9), @RULES.md (§2, §3, §9),
+Read @AGENTS.md (especially Invariants #6, #7, #9) @RULES.md (§2, §3, §9)
 @PROJECT_SNAPSHOT.md (T002 and T003 must be complete — if not, stop and
-report), and @.agents/rules/50-admin.md.
-Activate skills: codebase-design, zod, writing-for-agents.
+report) and @.agents/rules/50-admin.md first.
 
 This task creates the admin data infrastructure. Do NOT build any UI —
 that's T014+.
@@ -651,17 +687,19 @@ that's T014+.
    - LocalAdminProvider.updateOrderStatus: verify valid transition
      succeeds, invalid transition throws.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T013_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T013 complete, note new files and the
 idb dependency. Stop and report.
 ```
 
 ### Prompt T014 — Admin Shell & Layout
 ```text
+Run this in: Google Antigravity — Claude Sonnet 4.6 (Thinking).
+Activate skills: ui-ux-pro-max, ui-styling, shadcn-ui, web-design-guidelines.
+
 /goal Execute Task T014: Admin Shell & Layout.
-Read @AGENTS.md, @RULES.md (§6, §9), @PROJECT_SNAPSHOT.md (T013 must be
-complete), and @.agents/rules/50-admin.md.
-Activate skills: ui-ux-pro-max, ui-styling, shadcn-ui,
-web-design-guidelines.
+Read @AGENTS.md @RULES.md (§6, §9) @PROJECT_SNAPSHOT.md (T013 must be
+complete) and @.agents/rules/50-admin.md first.
 
 Build the admin shell — the layout wrapper all admin pages render inside.
 Do NOT build catalog/order/financial pages yet — those are T015–T017.
@@ -710,16 +748,19 @@ Admin is English-only — no bilingual/RTL requirement.
 Verify: npm run build clean, npm run dev boots, /admin renders the shell
 with sidebar and header. Customer-facing routes unaffected.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T014_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T014 complete, note @tanstack/react-query
 dependency addition. Stop and report.
 ```
 
 ### Prompt T015 — Catalog & Inventory UI
 ```text
-/goal Execute Task T015: Catalog & Inventory UI.
-Read @AGENTS.md, @RULES.md (§2, §4, §9), @PROJECT_SNAPSHOT.md (T014 must
-be complete), and @.agents/rules/50-admin.md, @.agents/rules/20-state.md.
+Run this in: Google Antigravity — Claude Sonnet 4.6 (Thinking).
 Activate skills: table-features, table-state, ui-ux-pro-max, zod, shadcn-ui.
+
+/goal Execute Task T015: Catalog & Inventory UI.
+Read @AGENTS.md @RULES.md (§2, §4, §9) @PROJECT_SNAPSHOT.md (T014 must
+be complete) and @.agents/rules/50-admin.md @.agents/rules/20-state.md first.
 
 Build the admin catalog management screens inside the AdminLayout shell.
 
@@ -777,16 +818,19 @@ Build the admin catalog management screens inside the AdminLayout shell.
 Admin is English-only. Verify: npm run build clean, /admin/catalog
 renders product grid, /admin/catalog/new shows the wizard.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T015_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T015 complete. Stop and report.
 ```
 
 ### Prompt T016 — Order Management UI
 ```text
-/goal Execute Task T016: Order Management UI.
-Read @AGENTS.md, @RULES.md (§2, §9), @PROJECT_SNAPSHOT.md (T015 must be
-complete — DataGrid and StatusPill are prerequisites),
-@.agents/rules/50-admin.md (Order Provenance section).
+Run this in: Google Antigravity — Claude Sonnet 4.6 (Thinking).
 Activate skills: table-features, table-state, ui-styling, shadcn-ui.
+
+/goal Execute Task T016: Order Management UI.
+Read @AGENTS.md @RULES.md (§2, §9) @PROJECT_SNAPSHOT.md (T015 must be
+complete — DataGrid and StatusPill are prerequisites) and
+@.agents/rules/50-admin.md (Order Provenance section).
 
 Build the admin order management screens. Per Open Decision #5, all
 orders are seeded/synthetic mock data — clearly labeled.
@@ -835,15 +879,18 @@ Admin is English-only. Verify: npm run build clean, /admin/orders shows
 the order grid with status tabs, clicking an order shows the detail with
 timeline and status controls.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T016_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T016 complete. Stop and report.
 ```
 
 ### Prompt T017 — Financials & Analytics UI
 ```text
+Run this in: Google Antigravity — Claude Sonnet 4.6 (Thinking).
+Activate skills: ui-ux-pro-max, table-features, shadcn-ui, ui-styling.
+
 /goal Execute Task T017: Financials & Analytics UI.
-Read @AGENTS.md, @RULES.md (§2), @PROJECT_SNAPSHOT.md (T016 must be
-complete), @.agents/rules/50-admin.md.
-Activate skills: ui-ux-pro-max, table-features, shadcn-ui.
+Read @AGENTS.md @RULES.md (§2) @PROJECT_SNAPSHOT.md (T016 must be
+complete) and @.agents/rules/50-admin.md first.
 
 Build the admin dashboard and financials screens.
 
@@ -888,15 +935,18 @@ Admin is English-only. Verify: npm run build clean, /admin/dashboard
 shows metrics and recent orders, /admin/financials shows the period
 selector and charts.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T017_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T017 complete. Stop and report.
 ```
 
 ### Prompt T018 — Bulk Actions & CSV Export
 ```text
-/goal Execute Task T018: Bulk Actions & CSV Export.
-Read @AGENTS.md, @RULES.md, @PROJECT_SNAPSHOT.md (T015 and T016 must be
-complete — DataGrid with row selection is a prerequisite).
+Run this in: Codex — GPT-6 Luna.
 Activate skills: table-features, table-state.
+
+/goal Execute Task T018: Bulk Actions & CSV Export.
+Read @AGENTS.md @RULES.md @PROJECT_SNAPSHOT.md (T015 and T016 must be
+complete — DataGrid with row selection is a prerequisite).
 
 Add bulk operations and CSV export to the admin catalog and order tables.
 
@@ -933,14 +983,18 @@ Add bulk operations and CSV export to the admin catalog and order tables.
 Admin is English-only. Verify: npm run build clean, bulk actions work on
 both catalog and orders, CSV downloads correctly.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T018_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T018 complete. Stop and report.
 ```
 
 ### Prompt T019 — English-Only QA + Accessibility Sweep
 ```text
+Run this in: Google Antigravity — Gemini 3.8 Flash.
+Activate skills: web-design-guidelines, ui-styling.
+
 /goal Execute Task T019: Admin QA + Accessibility Sweep.
-Read @AGENTS.md, @RULES.md, @PROJECT_SNAPSHOT.md (T013–T018 must be
-complete). Activate skills: web-design-guidelines, ui-styling.
+Read @AGENTS.md @RULES.md @PROJECT_SNAPSHOT.md (T013–T018 must be
+complete).
 
 This is the admin equivalent of T010/T011 but English-only (no bilingual/
 RTL complexity per Open Decision #2).
@@ -975,16 +1029,19 @@ RTL complexity per Open Decision #2).
 
 Fix every issue found — this task's job is fixing, not cataloguing.
 
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T019_walkthrough.md,
 Update PROJECT_SNAPSHOT.md: mark T019 complete, list what was fixed.
 Stop and report.
 ```
 
 ### Prompt T020 — Final Review: Admin Phase 3
 ```text
-/goal Execute Task T020: Admin Phase 3 Final Review.
-Read @AGENTS.md (all 9 Invariants), @RULES.md (all sections including §9),
-@PROJECT_SNAPSHOT.md (T013–T019 must be marked complete).
+Run this in: Google Antigravity — Claude Opus 4.6 (Thinking).
 Activate skills: code-review, codebase-design.
+
+/goal Execute Task T020: Admin Phase 3 Final Review.
+Read @AGENTS.md (all 9 Invariants) @RULES.md (all sections including §9)
+@PROJECT_SNAPSHOT.md (T013–T019 must be marked complete).
 
 Do NOT modify UI. Audit the full diff introduced across T013–T019 against
 five axes:
@@ -1019,7 +1076,7 @@ five axes:
 Fix any Standards-axis violation directly. Report Spec-axis findings
 without reverting.
 
-Produce a final report appended to PROJECT_SNAPSHOT.md under "## Phase 3
+Generate a short commit message for the changes you made now, Generate a walkthrough for this task and save it in the Tasks_Docs T020_walkthrough.md, Produce a final report appended to Update PROJECT_SNAPSHOT.md under "## Phase 3
 Admin Portal Completion Report": what was built, what mock limitations
 exist, and what would be needed to connect the admin portal to a real
 backend (real auth, real database, real image storage, real order pipeline)

@@ -212,6 +212,32 @@ actual Vitest install.
 - OD5 (Order Provenance): Seeded/synthetic mock orders only.
 - See "Admin Portal — Open Decisions" section above for full justifications.
 
+### D14: Task Execution Matrix Optimization Pass (2026-09-25)
+- **Skills Reconciliation:** Harmonized all tasks across Phase 2 (T000–T012)
+  and Phase 3 (T013–T020) with the ground-truth `## Skill Inventory`. Removed
+  non-installed/guessed skill names (`domain-modeling`, `ui-components`,
+  `testing`, `prototype`, `security-review`). Added installed skills matching
+  actual task activities (`shadcn-ui`, `ui-styling`, `ui-ux-pro-max`,
+  `web-design-guidelines`, `vitest`, `codebase-design`). Synchronized both the
+  master table Skills columns and prompt-block `Activate skills: ...` lines.
+- **Application & Model Routing:** Added `Application` column to both Phase 2
+  and Phase 3 master tables. Routed to two supported environments:
+  Google Antigravity (Anthropic Claude + Google Gemini) and Codex (OpenAI GPT).
+  Reassigned pure TypeScript/store/provider tasks (T001, T002, T003) to
+  `Codex — GPT-6 Sol` for superior multi-step coding value. Reassigned routine,
+  templated tasks (T005, T008, T009, T018) to `Codex — GPT-6 Luna` for fast,
+  cheap execution. Kept browser-heavy/vision (T000) on `Google Antigravity —
+  Gemini 3.1 Pro`, sweeps (T011, T019) on `Google Antigravity — Gemini 3.8
+  Flash`, complex UI/layout/RTL (T004, T006, T007, T010, T014–T017) on
+  `Google Antigravity — Claude Sonnet 4.6 (Thinking)`, and architectural
+  foundations/final reviews (Step 1, T012, T013, T020) on `Google Antigravity —
+  Claude Opus 4.6 (Thinking)`. Added self-contained `Run this in: ...` headers
+  to all prompt blocks.
+- **Reference Formatting Sanitization:** Swept all `@-mentions` in
+  `TASK_EXECUTION_MATRIX.md` to ensure every reference is followed strictly by
+  whitespace and no attached punctuation (periods, commas, colons), avoiding
+  path ingestion failures in automated tooling.
+
 ---
 
 ## Architect Handoff to Phase 3 Implementation
